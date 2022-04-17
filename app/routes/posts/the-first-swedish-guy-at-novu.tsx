@@ -3,7 +3,6 @@ export default function post() {
     <>
       <h2>The first Swedish guy at Novu</h2>
       <p>2022-05-04</p>
-      <br />
       <p>
         Hi, my name is David and I am 29 years old and living in Sweden, this
         year (2022) it is ten years since I wrote my first line of code (C#).
