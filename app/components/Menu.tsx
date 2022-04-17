@@ -13,14 +13,24 @@ export const Menu = () => (
     }}
   >
     <Row>
-      <Column xs={1}>
+      <Column xs={12} lg={1}>
         <Link to='/'>Home</Link>
       </Column>
-      <Column xs={1}>
+      <Column xs={12} lg={1}>
         <Link to='/posts'>Posts</Link>
       </Column>
-      <Column xs={8} />
-      <Column xs={1}>
+      <Column xs={12} lg={5} />
+      <Column xs={12} lg={1}>
+        <a href='https://www.novu.co/' target='_blank' rel='noreferrer'>
+          Novu
+        </a>
+      </Column>
+      <Column xs={12} lg={2}>
+        <a href='https://www.wod-portal.com/' target='_blank' rel='noreferrer'>
+          Wod Portal
+        </a>
+      </Column>
+      <Column xs={12} lg={1}>
         <a
           href='https://github.com/davidsoderberg'
           target='_blank'
@@ -29,7 +39,7 @@ export const Menu = () => (
           Github
         </a>
       </Column>
-      <Column xs={1}>
+      <Column xs={12} lg={1}>
         <a
           href='https://twitter.com/dsouthmountain'
           target='_blank'
