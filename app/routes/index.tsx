@@ -50,7 +50,7 @@ const Index = () => {
             </ul>
             <div style={{ textAlign: 'center' }}>
               <img
-                src='https://avatars.githubusercontent.com/u/2233092?v=4'
+                src='me.jpeg'
                 alt='David Söderberg'
                 style={{
                   width: '50%',
