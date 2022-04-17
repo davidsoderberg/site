@@ -19,7 +19,7 @@ const Index = () => (
     <Container fluid style={{ paddingBottom: '15px' }}>
       <Row>
         <Column lg={7}>
-          <h2>Hi nerds</h2>
+          <h2>Hi nerds 👋</h2>
           <p>
             I am David, I am currently working as a Software Engineer with a
             Typescript stack at{' '}
@@ -37,15 +37,15 @@ const Index = () => (
             types of databases.
           </p>
           <ul>
-            <li>I’m currently working on a new Remix app.</li>
-            <li>I’m currently learning Graphql and Remix.</li>
-            <li>Ask me about React, Redux, Nest.js stuff.</li>
+            <li>⌨️ I’m currently working on a new Remix app.</li>
+            <li>📘 I’m currently learning Graphql and Remix.</li>
+            <li>❔ Ask me about React, Redux, Nest.js stuff.</li>
             <li>
-              Fun fact: I started out to be a chef but switched to be a
+              🍔 Fun fact: I started out to be a chef but switched to be a
               developer, so food is my thing anyway.
             </li>
             <li>
-              How to reach me:{' '}
+              📫 How to reach me:{' '}
               <a
                 href='https://twitter.com/dsouthmountain'
                 target='_blank'
@@ -58,7 +58,7 @@ const Index = () => (
           </ul>
         </Column>
         <Column lg={5}>
-          <h2>Jobs</h2>
+          <h2>👨‍💼 Jobs</h2>
           <ul>
             <li>Software Developer, Novu (2022-04-04)</li>
             <li>Product Owner, Fortnox (2020-07-01 - 2022-04-01)</li>
