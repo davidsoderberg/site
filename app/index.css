@@ -1,12 +1,14 @@
 html {
   background: rgb(21, 21, 21);
   color: #fff;
-  font: 600 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+  font: 14px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+  line-height: 1.5em;
 }
 
 .wrapper {
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 15px;
 }
 .icons img {
   margin-right: 5px;
