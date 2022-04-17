@@ -4,7 +4,10 @@ export default function posts() {
   return (
     <>
       <h2>
-        <Link to='/posts/the-first-swedish-guy-at-novu'>
+        <Link
+          style={{ textDecoration: 'none' }}
+          to='/posts/the-first-swedish-guy-at-novu'
+        >
           The first Swedish guy at Novu
         </Link>
       </h2>
