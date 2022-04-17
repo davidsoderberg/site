@@ -22,37 +22,16 @@ const Index = () => (
             .
           </p>
           <p>
-            Today I am developing some private Node.js/React apps with diffrent
+            Today I am developing some private Remix apps with diffrent
             types of databases.
           </p>
           <ul>
             <li>⌨️ I’m currently working on a new Remix app.</li>
             <li>📘 I’m currently learning Graphql and Remix.</li>
-            <li>❔ Ask me about React, Redux, Nest.js stuff.</li>
+            <li>❔ Ask me about Remix, React, Nest.js stuff.</li>
             <li>
               🍔 Fun fact: I started out to be a chef but switched to be a
               developer, so food is my thing anyway.
-            </li>
-            <li>
-              I store my code on Github:{' '}
-              <a
-                href='https://github.com/davidsoderberg'
-                target='_blank'
-                rel='noreferrer'
-              >
-                @davidsoderberg
-              </a>
-            </li>
-            <li>
-              📫 How to reach me:{' '}
-              <a
-                href='https://twitter.com/dsouthmountain'
-                target='_blank'
-                rel='noreferrer'
-              >
-                @dsouthmountain
-              </a>{' '}
-              (Twitter)
             </li>
           </ul>
         </Column>
