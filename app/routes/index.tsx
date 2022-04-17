@@ -154,11 +154,11 @@ const Index = () => (
                 alt='JavaScript'
               />
               <img
-                src='https://camo.githubusercontent.com/b7e290d2aeff9829bba45e897265ceebd34b25f6f7efba4b08e1b23cfe0815e7/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7068702d2532333737374242342e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d706870266c6f676f436f6c6f723d7768697465'
+                src='php.svg'
                 alt='PHP'
               />
               <img
-                src='https://camo.githubusercontent.com/7d7b100e379663ee40a20989e6c61737e6396c1dafc3a7c6d2ada8d4447eb0e4/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6f64652e6a732d3644413535463f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6f64652e6a73266c6f676f436f6c6f723d7768697465'
+                src='nodejs.svg'
                 alt='NodeJS'
               />
             </p>
@@ -167,11 +167,11 @@ const Index = () => (
             <h4>GraphQL</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/9ad071f3788625b60549260fb99aeb8516ce3ae6ed2506e88663a2b6375c7d34/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d4772617068514c2d4531303039383f7374796c653d666f722d7468652d6261646765266c6f676f3d6772617068716c266c6f676f436f6c6f723d7768697465'
+                src='graphql.svg'
                 alt='GraphQL'
               />
               <img
-                src='https://camo.githubusercontent.com/d9952651b677177c9ec05802b314d09d9f34364fcdad7b939c2c999c745d31dc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d41706f6c6c6f4772617068514c2d3331314338373f7374796c653d666f722d7468652d6261646765266c6f676f3d61706f6c6c6f2d6772617068716c'
+                src='apollographql.svg'
                 alt='Apollo-GraphQL'
               />
             </p>
@@ -184,39 +184,39 @@ const Index = () => (
             <h4>Frameworks</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/8286a45a106e1a3c07489f83a38159981d888518a740b59c807ffc1b7b1e2f7b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f657870726573732e6a732d2532333430346435392e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d65787072657373266c6f676f436f6c6f723d253233363144414642'
+                src='/expressjs.svg'
                 alt='Express.js'
               />
               <img
-                src='https://camo.githubusercontent.com/b768ae6e4f89b74512e6de02a8367fd71465bc3d88ef1cf2f1622e2017c32bea/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f626f6f7473747261702d2532333536334437432e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d626f6f747374726170266c6f676f436f6c6f723d7768697465'
+                src='bootstrap.svg'
                 alt='Bootstrap'
               />
               <img
-                src='https://camo.githubusercontent.com/85b8858163097e34c31ef8eeda533e1fa18be0ec8ce58f494b6b5cedc2f27196/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c61726176656c2d2532334646324432302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6c61726176656c266c6f676f436f6c6f723d7768697465'
+                src='laravel.svg'
                 alt='Laravel'
               />
               <img
-                src='https://camo.githubusercontent.com/ab4c3c731a174a63df861f7b118d6c8a6c52040a021a552628db877bd518fe84/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656163742d2532333230323332612e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7265616374266c6f676f436f6c6f723d253233363144414642'
+                src='react.svg'
                 alt='React'
               />
               <img
-                src='https://camo.githubusercontent.com/9a7c7ebbabb2096c0ad0cac6f64bc9fe93f4954a3ae3f51d6f3e076ba462aab1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656475782d2532333539336438382e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7265647578266c6f676f436f6c6f723d7768697465'
+                src='redux.svg'
                 alt='Redux'
               />
               <img
-                src='https://camo.githubusercontent.com/4f9d20f3a284d2f6634282f61f82a62e99ee9906537dc9859decfdc9efbb51ec/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f52656163745f526f757465722d4341343234353f7374796c653d666f722d7468652d6261646765266c6f676f3d72656163742d726f75746572266c6f676f436f6c6f723d7768697465'
+                src='reactrouter.svg'
                 alt='React Router'
               />
               <img
-                src='https://camo.githubusercontent.com/d951e189221e39e49428a00be5c673b3e0e59ce0c6c6293bdedd424f593b5e63/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d6174657269616c75692d2532333030383143422e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6d6174657269616c2d7569266c6f676f436f6c6f723d7768697465'
+                src='materialui.svg'
                 alt='Material UI'
               />
               <img
-                src='https://camo.githubusercontent.com/8855980a487f9e31426fbfc2cbbfdda5aa3b7f1d390e262e652e639e911b3d87/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6e6573746a732d2532334530323334452e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6573746a73266c6f676f436f6c6f723d7768697465'
+                src='nestjs.svg'
                 alt='NestJS'
               />
               <img
-                src='https://camo.githubusercontent.com/b7395b00d152dc8f19cec61f582369bd580e31b8ed93d34646ec43aa675baa7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6578742d626c61636b3f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6578742e6a73266c6f676f436f6c6f723d7768697465'
+                src='nextjs.svg'
                 alt='Next JS'
               />
             </p>
@@ -225,19 +225,19 @@ const Index = () => (
             <h4>Test frameworks</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/9981d1e5e4e05ee1389b50e95a5123b77691fbb3744e7fb9957ce43481232bc6/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6a61736d696e652d2532333841343138322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6a61736d696e65266c6f676f436f6c6f723d7768697465'
+                src='jasmine.svg'
                 alt='Jasmine'
               />
               <img
-                src='https://camo.githubusercontent.com/a2cc7362377d69d8ad5147e49f7b269cab69f00509828ce2d583b9dde9130499/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d637970726573732d2532334535453545353f7374796c653d666f722d7468652d6261646765266c6f676f3d63797072657373266c6f676f436f6c6f723d303538613565'
+                src='cypress.svg'
                 alt='cypress'
               />
               <img
-                src='https://camo.githubusercontent.com/38eb294a1bdc730fae415015ecac4d6c009e39d2a9c8f8631f1d16bf3f918189/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d6a6573742d2532334332313332353f7374796c653d666f722d7468652d6261646765266c6f676f3d6a657374266c6f676f436f6c6f723d7768697465'
+                src='jest.svg'
                 alt='Jest'
               />
               <img
-                src='https://camo.githubusercontent.com/75aae47c314f4e0e3c2729c983bbc8bd0f3e6e2728d71936ab1aa3c0251929bc/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f2d54657374696e674c6962726172792d2532334533333333323f7374796c653d666f722d7468652d6261646765266c6f676f3d74657374696e672d6c696272617279266c6f676f436f6c6f723d7768697465'
+                src='testinglibary.svg'
                 alt='Testing-Library'
               />
             </p>
@@ -250,49 +250,49 @@ const Index = () => (
             <h4>Databases</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/c839570bc71901106b11b8411d9277a6a8356a9431e4a16d6c26db82caab7d62/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4d6f6e676f44422d2532333465613934622e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6d6f6e676f6462266c6f676f436f6c6f723d7768697465'
+                src='mongodb.svg'
                 alt='MongoDB'
               />
               <img
-                src='https://camo.githubusercontent.com/918fce8d50581bd97b7133e677a78ed2cad14f970522f219daaeb6d1c81060e1/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6d7973716c2d2532333030662e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6d7973716c266c6f676f436f6c6f723d7768697465'
+                src='mysql.svg'
                 alt='MySQL'
               />
               <img
-                src='https://camo.githubusercontent.com/29e7fc6c62f61f432d3852fbfa4190ff07f397ca3bde27a8196bcd5beae3ff77/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f706f7374677265732d2532333331363139322e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d706f737467726573716c266c6f676f436f6c6f723d7768697465'
+                src='postgres.svg'
                 alt='Postgres'
               />
               <img
-                src='https://camo.githubusercontent.com/ebd60befd49443c14417baff1700c7887f1a3c9c171612b2021a24c597e4b2ea/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f72656469732d2532334444303033312e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7265646973266c6f676f436f6c6f723d7768697465'
+                src='redis.svg'
                 alt='Redis'
               />
             </p>
             <h4>Package managers</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/b47580b7e8e0b4ce9bb718070140318f72d316a0c88e0dd53a5ac4b0bdfc755e/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e504d2d2532333030303030302e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d6e706d266c6f676f436f6c6f723d7768697465'
+                src='npm.svg'
                 alt='NPM'
               />
               <img
-                src='https://camo.githubusercontent.com/fd232c52265a587ee5408f80de8736329ae914ca10caa506e4133cb0c5286a10/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7961726e2d2532333243384542422e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7961726e266c6f676f436f6c6f723d7768697465'
+                src='yarn.svg'
                 alt='Yarn'
               />
             </p>
             <h4>Builders</h4>
             <p>
               <img
-                src='https://camo.githubusercontent.com/cfb221c05f485331b66bcf123878fc7de981faffc16fe430ff53bb1ad4f41aad/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f7765627061636b2d2532333844443646392e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d7765627061636b266c6f676f436f6c6f723d626c61636b'
+                src='webpack.svg'
                 alt='Webpack'
               />
               <img
-                src='https://camo.githubusercontent.com/3a1853bcde3555bc65ea48d85c4fe4abc44143c663ccab970765f0f9355e3588/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f45534c696e742d3442333236333f7374796c653d666f722d7468652d6261646765266c6f676f3d65736c696e74266c6f676f436f6c6f723d7768697465'
+                src='eslint.svg'
                 alt='ESLint'
               />
               <img
-                src='https://camo.githubusercontent.com/a8b1da67e08c2cb950a978c27d56b7a966427a4f911fe142843b8cc2aa6a1db5/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f426162656c2d4639444333653f7374796c653d666f722d7468652d6261646765266c6f676f3d626162656c266c6f676f436f6c6f723d626c61636b'
+                src='babel.svg'
                 alt='Babel'
               />
               <img
-                src='https://camo.githubusercontent.com/ab0162d43b2780ea6f028275ec59df2cf9f5128b478e379de86926a9c52bf556/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f676974687562616374696f6e732d2532333236373145352e7376673f7374796c653d666f722d7468652d6261646765266c6f676f3d676974687562616374696f6e73266c6f676f436f6c6f723d7768697465'
+                src='githubactions.svg'
                 alt='GitHub Actions'
               />
             </p>
@@ -301,61 +301,61 @@ const Index = () => (
             <h4>Servers</h4>
             <p>
               <img
-                src='https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white'
+                src='nginx.svg'
                 alt='Nginx'
               />
               <img
-                src='https://img.shields.io/badge/apache-%23D42029.svg?style=for-the-badge&logo=apache&logoColor=white'
+                src='apache.svg'
                 alt='Apache'
               />
             </p>
             <h4>Hosts</h4>
             <p>
               <img
-                src='https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7'
+                src='netlify.svg'
                 alt='Netlify'
               />
               <img
-                src='https://img.shields.io/badge/SCALEWAY-%234f0599.svg?style=for-the-badge&logo=scaleway&logoColor=white'
+                src='scaleway.svg'
                 alt='Scaleway'
               />
             </p>
             <h4>Tools</h4>
             <p>
               <img
-                src='https://img.shields.io/badge/Insomnia-black?style=for-the-badge&logo=insomnia&logoColor=5849BE'
+                src='insomnia.svg'
                 alt='Insomnia'
               />
               <img
-                src='https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white'
+                src='vscode.svg'
                 alt='Visual Studio Code'
               />
               <img
-                src='https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white'
+                src='git.svg'
                 alt='Git'
               />
               <img
-                src='https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white'
+                src='github.svg'
                 alt='GitHub'
               />
               <img
-                src='https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0'
+                src='mac.svg'
                 alt='Mac OS'
               />
               <img
-                src='https://img.shields.io/badge/Google%20Chrome-4285F4?style=for-the-badge&logo=GoogleChrome&logoColor=white'
+                src='chrome.svg'
                 alt='Google Chrome'
               />
               <img
-                src='https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white'
+                src='docker.svg'
                 alt='Docker'
               />
               <img
-                src='https://img.shields.io/badge/jira-%230A0FFF.svg?style=for-the-badge&logo=jira&logoColor=white'
+                src='jira.svg'
                 alt='Jira'
               />
               <img
-                src='https://img.shields.io/badge/-Swagger-%23Clojure?style=for-the-badge&logo=swagger&logoColor=white'
+                src='swagger.svg'
                 alt='Swagger'
               />
             </p>

@@ -16,6 +16,7 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'David Söderberg - Software Developer',
   viewport: 'width=device-width,initial-scale=1',
+  description: 'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.'
 });
 
 export default function App() {
