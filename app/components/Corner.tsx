@@ -15,7 +15,7 @@ export const Corner = () => {
   return (
     <GHCorner
       href='https://github.com/davidsoderberg/site'
-      bgColor='#F72826'
+      bgColor='#39d353'
       size={100}
       openInNewTab={true}
     />
