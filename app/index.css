@@ -15,6 +15,10 @@ html {
   border-radius: 4px;
 }
 
+li {
+  margin-bottom: 5px;
+}
+
 a {
   color: #79ff97;
 }
