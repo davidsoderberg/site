@@ -1,8 +1,10 @@
 import GitHubCalendar from 'react-github-calendar';
 import { Container, Row, Col as Column } from 'react-grid-system';
+import { Corner } from '../Corner';
 
 const Index = () => (
   <div className='wrapper'>
+    <Corner />
     <h1 style={{ textAlign: 'center' }}>
       David Söderberg (
       <a
