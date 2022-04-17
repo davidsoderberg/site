@@ -5,6 +5,10 @@ html {
   line-height: 1.5em;
 }
 
+.hljs {
+  background: rgb(21, 21, 21) !important;
+}
+
 .wrapper {
   width: 80%;
   margin: 0 auto;
