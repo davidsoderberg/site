@@ -1,8 +1,10 @@
 ---
 title: How I built my site
+list: false
+date: 2022-04-17
 meta:
   title: David Söderberg - How I built my site
-  date: 2022-04-17
+  description: About how I built my site with Remix and mdx.
 ---
 
 import { Corner } from '../../components/Corner.tsx';
@@ -13,4 +15,33 @@ import { Corner } from '../../components/Corner.tsx';
 
 2022-04-17
 
-This morning I decied to build a site for me as a developer
+This morning I decied to build a site for me as a developer, so what should my site contain?
+Image of me and text about me seems like number one to add to the site and I thought lets use my readme file at Github.
+To start build the site I like to use Remix and like to use the bare bone with Typescript.
+
+```bash
+npx create-remix@latest
+```
+
+I copied the html the readme.md file produced and used it as boilerplate for my site.
+The Github stats are generated with help of <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank" rel="noreferrer">github-readme-stats</a> and I host my own version on Vercel.
+
+
+To get code highight I use rehype-highlight installed with:
+
+```bash
+npm install rehype-highlight --save
+```
+
+and I need to add some code in remix.config.js, I added this code:
+
+```js
+mdx: async (filename) => {
+  const [rehypeHighlight] = await Promise.all([
+    import('rehype-highlight').then((mod) => mod.default),
+  ]);
+  return {
+    rehypePlugins: [rehypeHighlight],
+  };
+},
+```

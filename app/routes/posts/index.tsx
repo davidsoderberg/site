@@ -1,17 +1,18 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import * as firstPost from './the-first-swedish-guy-at-novu.mdx';
+import * as secondPost from './how-i-built-my-site.mdx';
 
 function postFromModule(mod) {
   return {
     slug: mod.filename.replace(/\.mdx?$/, ''),
     ...mod.meta,
-    title: mod.attributes.title
+    ...mod.attributes
   };
 }
 
 export const loader: LoaderFunction = () => {
-  return [postFromModule(firstPost)];
+  return [postFromModule(firstPost), postFromModule(secondPost)].filter((post) => post.list);
 };
 
 export const meta: MetaFunction = () => ({
