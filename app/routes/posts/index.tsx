@@ -1,4 +1,9 @@
 import { Link } from '@remix-run/react';
+import type { MetaFunction } from '@remix-run/node';
+
+export const meta: MetaFunction = () => ({
+  title: 'David Söderberg - Posts',
+});
 
 export default function posts() {
   return (

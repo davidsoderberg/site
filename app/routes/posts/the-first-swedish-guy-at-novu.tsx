@@ -1,3 +1,9 @@
+import type { MetaFunction } from '@remix-run/node';
+
+export const meta: MetaFunction = () => ({
+  title: 'David Söderberg - The first Swedish guy at Novu',
+});
+
 export default function post() {
   return (
     <>
