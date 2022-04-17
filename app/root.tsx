@@ -24,13 +24,12 @@ export default function App() {
       <head>
         <Meta />
         <Links />
-        <script>
-          var hsscript = document.createElement("script"); hsscript.src =
-          "https://cdn.jsdelivr.net/npm/hockeystack@latest/hockeystack.min.js";
-          hsscript.async = 1; hsscript.dataset.apikey =
-          "fed1181f4d796883b46992336ef0c0"; hsscript.dataset.cookieless = 1;
-          document.getElementsByTagName('head')[0].append(hsscript);
-        </script>
+        <script
+          async
+          data-apikey='fed1181f4d796883b46992336ef0c0'
+          data-cookieless
+          src='https://cdn.jsdelivr.net/npm/hockeystack@latest/hockeystack.min.js'
+        />
       </head>
       <body>
         <Wrapper>
