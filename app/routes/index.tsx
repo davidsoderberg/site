@@ -52,8 +52,9 @@ const Index = () => {
               <img
                 src='me.jpeg'
                 alt='David Söderberg'
+                width='50%'
+                height='auto'
                 style={{
-                  width: '50%',
                   border: '1px solid #fff',
                   borderRadius: '4px',
                 }}
@@ -143,7 +144,7 @@ const Index = () => {
             setShow(!show);
           }}
           style={{
-            textDecoration: 'none'
+            textDecoration: 'none',
           }}
         >
           What do I know?
