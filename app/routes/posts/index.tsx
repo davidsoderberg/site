@@ -1,25 +1,24 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
-import * as firstPost from './the-first-swedish-guy-at-novu.mdx';
-import * as secondPost from './how-i-built-my-site.mdx';
+import { posts as postslist } from './list';
 
-function postFromModule(mod) {
-  return {
-    slug: mod.filename.replace(/\.mdx?$/, ''),
-    ...mod.meta,
-    ...mod.attributes
-  };
-}
+const postFromModule = (mod) => ({
+  slug: mod.filename.replace(/\.mdx?$/, ''),
+  ...mod.meta,
+  ...mod.attributes,
+});
 
 export const loader: LoaderFunction = () => {
-  return [postFromModule(firstPost), postFromModule(secondPost)].filter((post) => post.list);
+  return postslist
+    .map((post) => postFromModule(post))
+    .filter((post) => post.list);
 };
 
 export const meta: MetaFunction = () => ({
   title: 'David Söderberg - Posts',
 });
 
-export default function posts() {
+export default function Posts() {
   const posts = useLoaderData();
   return (
     <>
