@@ -3,7 +3,13 @@ import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { mdx } from '../../utils/mdx.server';
 
 export const loader: LoaderFunction = async () => {
-  return (await mdx()).filter((post) => post.list);
+  const posts = (await mdx()).filter((post) => post.list);
+  posts.sort((a, z) => {
+    const aTime = new Date(a.date).getTime();
+    const zTime = new Date(z.date).getTime();
+    return aTime > zTime ? -1 : aTime === zTime ? 0 : 1;
+  });
+  return posts;
 };
 
 export const meta: MetaFunction = () => ({

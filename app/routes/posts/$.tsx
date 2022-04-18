@@ -1,9 +1,8 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { useMemo } from 'react';
-import { getMDXComponent } from 'mdx-bundler/client';
 import { compileMdx } from '../../utils/mdx.server';
 import styles from 'highlight.js/styles/github-dark.css';
+import { MDX } from '../../components/Mdx';
 
 export const links = () => {
   return [
@@ -24,6 +23,5 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function Post() {
   const { code } = useLoaderData();
-  const Component = useMemo(() => getMDXComponent(code), [code]);
-  return <Component />;
+  return <MDX code={code} />;
 }
