@@ -57,7 +57,7 @@ export const loader: LoaderFunction = async ({ params, request }) => {
   if (!mdx.frontmatter.list && !preview) {
     mdx = await getNotFound();
   }
-  const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;
+  const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;  
   return json(mdx, {
     status: status,
     headers: {

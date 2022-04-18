@@ -1,5 +1,6 @@
 import { readdir, readFile } from 'fs/promises';
 import { bundleMDX } from 'mdx-bundler';
+import readingTime from 'reading-time';
 const path = __dirname + '/../posts';
 const defaultCwd = __dirname + '/../app/routes/posts';
 
@@ -39,7 +40,7 @@ export const compileMdx = async (
     const { default: gfm } = await import('remark-gfm');
 
     const fileString = await getFileContent(filename, rootPath);
-    const { code, frontmatter } = await bundleMDX({
+    const { code, frontmatter, matter } = await bundleMDX({
       source: fileString,
       cwd,
       mdxOptions(options) {
@@ -52,7 +53,10 @@ export const compileMdx = async (
 
     return {
       code,
-      frontmatter,
+      frontmatter: {
+        ...frontmatter,
+        readingTime: readingTime(matter.content),
+      },
     };
   } catch (e) {
     return getNotFound();
@@ -65,8 +69,8 @@ export const getNotFound = async () => {
     frontmatter: {
       ...frontmatter,
       date: new Date().toISOString(),
-      status: 404
+      status: 404,
     },
     code,
   };
-}
+};
