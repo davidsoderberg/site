@@ -16,14 +16,11 @@ export const mdx = async (
   const mdxFiles = files.filter((file) => file.includes('.mdx'));
   return mdxFiles.reduce(async (prev, filePath) => {
     const list = await prev;
-    const {
-      frontmatter: { meta, ...rest },
-    } = await compileMdx(filePath, rootPath, cwd);
+    const { frontmatter } = await compileMdx(filePath, rootPath, cwd);
 
     list.push({
       slug: filePath.replace('.mdx', ''),
-      ...meta,
-      ...rest,
+      ...frontmatter,
     });
 
     return list;
@@ -35,25 +32,37 @@ export const compileMdx = async (
   rootPath: string = path,
   cwd: string = defaultCwd
 ) => {
-  // @ts-ignore
-  const { default: highlight } = await import('rehype-highlight');
-  // @ts-ignore
-  const { default: gfm } = await import('remark-gfm');
+  try {
+    // @ts-ignore
+    const { default: highlight } = await import('rehype-highlight');
+    // @ts-ignore
+    const { default: gfm } = await import('remark-gfm');
 
-  const fileString = await getFileContent(filename, rootPath);
-  const { code, frontmatter } = await bundleMDX({
-    source: fileString,
-    cwd,
-    mdxOptions(options) {
-      options.remarkPlugins = [...(options.remarkPlugins ?? []), gfm];
-      options.rehypePlugins = [...(options.rehypePlugins ?? []), highlight];
+    const fileString = await getFileContent(filename, rootPath);
+    const { code, frontmatter } = await bundleMDX({
+      source: fileString,
+      cwd,
+      mdxOptions(options) {
+        options.remarkPlugins = [...(options.remarkPlugins ?? []), gfm];
+        options.rehypePlugins = [...(options.rehypePlugins ?? []), highlight];
 
-      return options;
-    },
-  });
+        return options;
+      },
+    });
 
-  return {
-    code,
-    frontmatter,
-  };
+    return {
+      code,
+      frontmatter,
+    };
+  } catch (e) {
+    const { code, frontmatter }: any = await compileMdx('not-found.mdx', rootPath, cwd);
+    return {
+      frontmatter: {
+        ...frontmatter,
+        date: new Date().toISOString(),
+        status: 404
+      },
+      code,
+    };
+  }
 };
