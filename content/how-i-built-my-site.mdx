@@ -17,17 +17,17 @@ import { Corner } from '../../components/Corner.tsx';
 
 This morning I decied to build a site for me as a developer, so what should my site contain?
 Image of me and text about me seems like number one to add to the site and I thought lets use my readme file at Github.
-To start build the site I like to use Remix and like to use the bare bone with Typescript.
+To start build the site I like to use <a href="https://remix.run" target="_blank" rel="noreferrer">Remix</a> and like to use the bare bone with Typescript.
 
 ```bash
 npx create-remix@latest
 ```
 
-I copied the html the readme.md file produced and used it as boilerplate for my site.
-The Github stats are generated with help of <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank" rel="noreferrer">github-readme-stats</a> and I host my own version on Vercel.
+I copied the html the <a href="https://github.com/davidsoderberg/davidsoderberg/blob/main/README.md" target="_blank" rel="noreferrer">readme.md</a> file produced and used it as boilerplate for my site.
 
+The Github stats are generated with help of <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank" rel="noreferrer">github-readme-stats</a> and I host my own version on Vercel and the contribution calendar comes from a package called <a href="https://grubersjoe.github.io/react-github-calendar/" target="_blank" rel="noreferrer">react-github-calendar</a> and is very easy to use and modify with props.
 
-To get code highight I use rehype-highlight installed with:
+To get code highlight I use rehype-highlight installed with:
 
 ```bash
 npm install rehype-highlight --save
@@ -45,3 +45,28 @@ mdx: async (filename) => {
   };
 },
 ```
+
+Now I needed to link the css theme for highlight I added it to app/routes/posts.tsx
+
+```tsx
+import { Outlet } from '@remix-run/react';
+import styles from 'highlight.js/styles/github-dark.css';
+
+export const links = () => {
+  return [
+    {
+      rel: 'stylesheet',
+      href: styles,
+    },
+  ];
+};
+
+export default function Posts() {
+  return <Outlet />;
+}
+```
+
+Lastly I added the github corner with usage of <a href="https://www.npmjs.com/package/react-gh-corner" target="_blank" rel="noreferrer">react-gh-corner</a> I will use it in diffrent places at my site to link to diffrent stuff I will create and have created.
+
+
+I will soon publish a post about the diffrent packages I am using the most and my thoughts about them.
