@@ -2,6 +2,11 @@ import { readdir, readFile } from 'fs/promises';
 import { bundleMDX } from 'mdx-bundler';
 const path = __dirname + '/../content';
 
+const getFileContent = async (filename: string) => {
+  const file = await readFile(path + '/' + filename);
+  return await file.toString();
+}
+
 export const mdx = async () => {
   const files = await readdir(path);
   const mdxFiles = files.filter((file) => file.includes('.mdx'));
@@ -23,12 +28,11 @@ export const mdx = async () => {
 
 export const compileMdx = async (filename: string) => {
   // @ts-ignore
-  const { default: myRehypePlugin } = await import('rehype-highlight');
+  const { default: highlight } = await import('rehype-highlight');
   // @ts-ignore
   const { default: gfm } = await import('remark-gfm');  
 
-  const file = await readFile(path + '/' + filename);
-  const fileString = await file.toString();
+  const fileString = await getFileContent(filename);
   const { code, frontmatter } = await bundleMDX({
     source: fileString,
     cwd: __dirname + '/../app/routes/posts',
@@ -36,7 +40,7 @@ export const compileMdx = async (filename: string) => {
       options.remarkPlugins = [...(options.remarkPlugins ?? []), gfm];
       options.rehypePlugins = [
         ...(options.rehypePlugins ?? []),
-        myRehypePlugin,
+        highlight,
       ];
 
       return options;
