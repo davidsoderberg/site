@@ -12,6 +12,10 @@ export const loader: LoaderFunction = async () => {
   return posts;
 };
 
+export const handle = {
+  getSitemapEntries: () => [{ route: `/posts`, priority: 0.7 }],
+};
+
 export const meta: MetaFunction = () => ({
   title: 'David Söderberg - Posts',
 });

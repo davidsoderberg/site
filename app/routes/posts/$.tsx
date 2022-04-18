@@ -6,9 +6,24 @@ import type {
 } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { compileMdx, getNotFound } from '../../utils/mdx.server';
+import { compileMdx, getNotFound, mdx } from '../../utils/mdx.server';
 import styles from 'highlight.js/styles/github-dark.css';
 import { MDX } from '../../components/Mdx';
+
+export const handle = {
+  getSitemapEntries: async (request) => {
+    const posts = (await mdx()).filter((post) => post.list);
+    posts.sort((a, z) => {
+      const aTime = new Date(a.date).getTime();
+      const zTime = new Date(z.date).getTime();
+      return aTime > zTime ? -1 : aTime === zTime ? 0 : 1;
+    });
+
+    return posts.map((page) => {
+      return { route: `/posts/${page.slug}`, priority: 0.6 };
+    });
+  },
+};
 
 export const links: LinksFunction = () => {
   return [
@@ -37,11 +52,11 @@ export const loader: LoaderFunction = async ({ params, request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
   const preview = searchParams.get('preview');
-  
+
   let mdx = await compileMdx(params['*'] + '.mdx');
-  if(!mdx.frontmatter.list && !preview) {
+  if (!mdx.frontmatter.list && !preview) {
     mdx = await getNotFound();
-  }  
+  }
   const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;
   return json(mdx, {
     status: status,
