@@ -1,17 +1,9 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
-import { posts as postslist } from './list';
+import { mdx } from '../../utils/mdx.server';
 
-const postFromModule = (mod) => ({
-  slug: mod.filename.replace(/\.mdx?$/, ''),
-  ...mod.meta,
-  ...mod.attributes,
-});
-
-export const loader: LoaderFunction = () => {
-  return postslist
-    .map((post) => postFromModule(post))
-    .filter((post) => post.list);
+export const loader: LoaderFunction = async () => {
+  return (await mdx()).filter((post) => post.list);
 };
 
 export const meta: MetaFunction = () => ({
