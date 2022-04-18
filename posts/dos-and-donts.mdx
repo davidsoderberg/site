@@ -1,0 +1,78 @@
+---
+title: Do's and don'ts.
+list: true
+date: 2022-04-18
+description: My do's and don'ts and when it comes to programing js/ts
+---
+
+So at Novu I have collegue and friend that tries to learn programing and I watched him learn programing on Twitch yesterday.
+Do not get me wrong he did great and I see how he tries to learn how to be a good developer and that inspired me to write this post.
+So this post can make alot of you angry at me but here goes nothing...
+
+### Always try to use arrow functions
+
+Are you doing OOP in a framework like Nest.js fine this applies to that type of programing.
+Are you programing in React? Okay please sit down and be ready for a ride, here we go...
+
+Okay this is how a function that not using arrow syntax looks like:
+
+```js
+function timesTwo(params) {
+  return params * 2;
+}
+```
+
+And this is how the same function looks with arrow syntax:
+
+```js
+const timesTwo = (params) => params * 2;
+```
+
+So why do I prefer arrow functions? I prefer arrow functions because No binding of `this`.
+`this` makes scope much harder to understand.
+I know most developers understand scope but should we force hard thinking on our self or our developer friends, specially when programing can be challenging anyway.
+
+### Always use guard clauses
+So with always guard clauses in my mind when I am programing I create clean and readable code.
+Am I writing the cleanest and most readable code in the world? No but guard clauses helps me to get a bit on the way.
+
+Okay lets take an example:
+
+```js
+function userCanWatchVideo(user) {
+  if (user.role !== 'admin') {
+    if (user.subscribes === true) {
+      return true;
+    } else {
+      return false;
+    }
+  } else {
+    return true;
+  }
+}
+```
+
+I know I may have made it over complicated but you get the hang of it.
+So lets refactoring it now:
+
+```js
+function userCanWatchVideo(user) {
+  if (user.role === 'admin') {
+    return true;
+  }
+  if (user.subscribes === true) {
+    return true;
+  }
+  return false;
+}
+```
+See much easier to read so user is admin or subscribes okay he can watch video. Otherwise user can't watch video.
+
+### Always use semicolons and curly braces
+Okay I know it is not needed everywhere but it makes your friends life to read your code if you always use them.
+Because at least my brain are trained to see them where an line of code is ending. Yeah I know there will not be more code if the rest of the line is empty, but with semicolon I get an heads up from the code that you do not need to read longer then this.
+
+Okay and now we are going to talk about curly braces, I know you do not need to use them all the time either but it is the same as with the semicolon, show your developer friends where an if statement starts and ends or even a arrow function.
+
+And one last thing use tabs instead of spaces, now 50% of you hate me ;)
+Okay thats it for now I might get back to this post and add more things...
