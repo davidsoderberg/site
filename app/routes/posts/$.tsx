@@ -6,7 +6,7 @@ import type {
 } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { compileMdx } from '../../utils/mdx.server';
+import { compileMdx, getNotFound } from '../../utils/mdx.server';
 import styles from 'highlight.js/styles/github-dark.css';
 import { MDX } from '../../components/Mdx';
 
@@ -33,8 +33,15 @@ export const meta: MetaFunction = ({ data: { frontmatter } }) => {
   };
 };
 
-export const loader: LoaderFunction = async ({ params }) => {
-  const mdx = await compileMdx(params['*'] + '.mdx');
+export const loader: LoaderFunction = async ({ params, request }) => {
+  const url = new URL(request.url);
+  const searchParams = url.searchParams;
+  const preview = searchParams.get('preview');
+  
+  let mdx = await compileMdx(params['*'] + '.mdx');
+  if(!mdx.frontmatter.list && !preview) {
+    mdx = await getNotFound();
+  }  
   const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;
   return json(mdx, {
     status: status,

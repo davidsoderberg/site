@@ -55,14 +55,18 @@ export const compileMdx = async (
       frontmatter,
     };
   } catch (e) {
-    const { code, frontmatter }: any = await compileMdx('not-found.mdx', rootPath, cwd);
-    return {
-      frontmatter: {
-        ...frontmatter,
-        date: new Date().toISOString(),
-        status: 404
-      },
-      code,
-    };
+    return getNotFound();
   }
 };
+
+export const getNotFound = async () => {
+  const { code, frontmatter }: any = await compileMdx('not-found.mdx');
+  return {
+    frontmatter: {
+      ...frontmatter,
+      date: new Date().toISOString(),
+      status: 404
+    },
+    code,
+  };
+}
