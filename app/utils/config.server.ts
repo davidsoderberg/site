@@ -5,6 +5,7 @@ interface config {
   PREVIEW_SECRET: string;
   RAINDROP_CLIENT_ID: string;
   RAINDROP_CLIENT_SECRET: string;
+  RAINDROP_COLLECTION_ID: string;
 }
 
 export const getConfig = async () => {

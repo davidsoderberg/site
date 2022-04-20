@@ -1,10 +1,10 @@
 import type { LoaderFunction } from '@remix-run/node';
-import { mdx } from '../utils/mdx.server';
+import { getListOfMdx } from '../utils/mdx.server';
 import { getDomainUrl } from '../utils/misc';
 
 // Found this soultion here: https://github.com/kentcdodds/kentcdodds.com
 export const loader: LoaderFunction = async ({ request }) => {
-  const posts = (await mdx()).filter((post) => post.list);
+  const posts = (await getListOfMdx()).filter((post) => post.list);
   posts.sort((a, z) => {
     const aTime = new Date(a.date).getTime();
     const zTime = new Date(z.date).getTime();

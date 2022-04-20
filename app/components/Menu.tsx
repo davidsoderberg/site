@@ -24,7 +24,12 @@ export const Menu = () => (
           Posts
         </Link>
       </Column>
-      <Column xs={12} lg={5} />
+      <Column xs={12} lg={1}>
+        <Link style={{ textDecoration: 'none' }} to='/bookmarks'>
+          Bookmarks
+        </Link>
+      </Column>
+      <Column xs={12} lg={4} />
       <Column xs={12} lg={1}>
         <a
           style={{ textDecoration: 'none' }}

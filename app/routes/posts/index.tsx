@@ -1,9 +1,9 @@
 import { Link, useLoaderData } from '@remix-run/react';
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
-import { mdx } from '../../utils/mdx.server';
+import { getListOfMdx } from '../../utils/mdx.server';
 
 export const loader: LoaderFunction = async () => {
-  const posts = (await mdx()).filter((post) => post.list);
+  const posts = (await getListOfMdx()).filter((post) => post.list);
   posts.sort((a, z) => {
     const aTime = new Date(a.date).getTime();
     const zTime = new Date(z.date).getTime();

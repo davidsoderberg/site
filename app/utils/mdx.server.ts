@@ -10,7 +10,7 @@ const getFileContent = async (filename: string, rootPath: string = path) => {
   return await file.toString();
 };
 
-export const mdx = async (rootPath: string = path) => {
+export const getListOfMdx = async (rootPath: string = path) => {
   const files = await readdir(rootPath);
   const mdxFiles = files.filter((file) => file.includes('.mdx'));
   return mdxFiles.reduce(async (prev, filePath) => {

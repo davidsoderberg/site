@@ -6,14 +6,14 @@ import type {
 } from '@remix-run/node';
 import { json } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { compileMdx, getNotFound, mdx } from '../../utils/mdx.server';
+import { compileMdx, getNotFound, getListOfMdx } from '../../utils/mdx.server';
 import styles from 'highlight.js/styles/github-dark.css';
 import { MDX } from '../../components/Mdx';
 import { getConfig } from '../../utils/config.server';
 
 export const handle = {
   getSitemapEntries: async () => {
-    const posts = (await mdx()).filter((post) => post.list);
+    const posts = (await getListOfMdx()).filter((post) => post.list);
     posts.sort((a, z) => {
       const aTime = new Date(a.date).getTime();
       const zTime = new Date(z.date).getTime();
