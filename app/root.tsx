@@ -6,6 +6,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useMatches,
 } from '@remix-run/react';
 import { Wrapper } from './components/Wrapper';
 import styles from './index.css';
@@ -16,14 +17,22 @@ export const meta: MetaFunction = () => ({
   charset: 'utf-8',
   title: 'David Söderberg - Software Developer',
   viewport: 'width=device-width,initial-scale=1',
-  description: 'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.'
+  description:
+    'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.',
 });
 
 export default function App() {
+  const matches = useMatches();
+  const match = matches.find(
+    (match) => match.handle && match.handle.canonical
+  );
+  const canonical = match?.handle.canonical(match.data);
+  
   return (
     <html lang='en'>
       <head>
         <Meta />
+        {!!canonical && <link rel="canonical" href={canonical} />}
         <Links />
         <script
           async

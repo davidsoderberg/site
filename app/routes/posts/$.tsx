@@ -9,9 +9,10 @@ import { useLoaderData } from '@remix-run/react';
 import { compileMdx, getNotFound, mdx } from '../../utils/mdx.server';
 import styles from 'highlight.js/styles/github-dark.css';
 import { MDX } from '../../components/Mdx';
+import { getConfig } from '../../utils/config.server';
 
 export const handle = {
-  getSitemapEntries: async (request) => {
+  getSitemapEntries: async () => {
     const posts = (await mdx()).filter((post) => post.list);
     posts.sort((a, z) => {
       const aTime = new Date(a.date).getTime();
@@ -22,6 +23,9 @@ export const handle = {
     return posts.map((page) => {
       return { route: `/posts/${page.slug}`, priority: 0.6 };
     });
+  },
+  canonical: (data: any) => {
+    return data?.frontmatter?.canonical;
   },
 };
 
@@ -49,15 +53,16 @@ export const meta: MetaFunction = ({ data: { frontmatter } }) => {
 };
 
 export const loader: LoaderFunction = async ({ params, request }) => {
+  const config = await getConfig();
   const url = new URL(request.url);
   const searchParams = url.searchParams;
-  const preview = searchParams.get('preview');
+  const preview = searchParams.get('preview') === config.PREVIEW_SECRET;
 
   let mdx = await compileMdx(params['*'] + '.mdx');
   if (!mdx.frontmatter.list && !preview) {
     mdx = await getNotFound();
   }
-  const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;  
+  const status = mdx.frontmatter.status ? mdx.frontmatter.status : 200;
   return json(mdx, {
     status: status,
     headers: {

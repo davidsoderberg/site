@@ -15,7 +15,7 @@ export const Menu = () => (
   >
     <Row>
       <Column xs={12} lg={1}>
-        <Link style={{ textDecoration: 'none' }} to='/'>
+        <Link style={{ textDecoration: 'none', padding: '15px', paddingBottom: '15px' }} to='/'>
           Home
         </Link>
       </Column>

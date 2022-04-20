@@ -1,6 +1,7 @@
 import { readdir, readFile } from 'fs/promises';
 import { bundleMDX } from 'mdx-bundler';
 import readingTime from 'reading-time';
+import matter from 'gray-matter';
 const path = __dirname + '/../posts';
 const defaultCwd = __dirname + '/../app/routes/posts';
 
@@ -9,19 +10,17 @@ const getFileContent = async (filename: string, rootPath: string = path) => {
   return await file.toString();
 };
 
-export const mdx = async (
-  rootPath: string = path,
-  cwd: string = defaultCwd
-) => {
+export const mdx = async (rootPath: string = path) => {
   const files = await readdir(rootPath);
   const mdxFiles = files.filter((file) => file.includes('.mdx'));
   return mdxFiles.reduce(async (prev, filePath) => {
     const list = await prev;
-    const { frontmatter } = await compileMdx(filePath, rootPath, cwd);
+    const content = await getFileContent(filePath, rootPath);
+    const res = matter(content);
 
     list.push({
       slug: filePath.replace('.mdx', ''),
-      ...frontmatter,
+      ...res.data,
     });
 
     return list;
