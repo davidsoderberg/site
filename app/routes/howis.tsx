@@ -59,7 +59,7 @@ export const MoodIcon = ({ mood }: { mood: string }) => {
   }
 };
 
-export default function Bookmarks() {
+export default function Howis() {
   const { mood } = useLoaderData();
   return (
     <>
