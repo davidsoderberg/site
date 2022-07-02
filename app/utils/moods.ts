@@ -9,5 +9,6 @@ export const Moods = Object.freeze({
   confused: 'confused',
   sick: 'sick',
   hungry: 'hungry',
-  tipsy: 'tipsy'
+  tipsy: 'tipsy',
+  sleeping: 'sleeping'
 });
