@@ -44,12 +44,6 @@ export default function App() {
         <Meta />
         {!!canonical && <link rel='canonical' href={canonical} />}
         <Links />
-        <script
-          async
-          data-apikey='fed1181f4d796883b46992336ef0c0'
-          data-cookieless
-          src='https://cdn.jsdelivr.net/npm/hockeystack@latest/hockeystack.min.js'
-        />
       </head>
       <body>
         <Wrapper>
