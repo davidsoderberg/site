@@ -6,9 +6,11 @@ interface config {
   RAINDROP_CLIENT_ID: string;
   RAINDROP_CLIENT_SECRET: string;
   RAINDROP_COLLECTION_ID: string;
+  UPSTASH_URL: string;
+  UPSTASH_TOKEN: string;
 }
 
-export const getConfig = async () => {
+export const getConfig = async (): Promise<config> => {
   const config: config = await new Promise(function (resolve, reject) {
     https
       .get(

@@ -10,6 +10,7 @@ import styles from 'highlight.js/styles/github-dark.css';
 import { getPosts } from '../utils/posts';
 import { getConfig } from '../utils/config.server';
 import * as notFound from './posts/not-found.mdx';
+import { admin } from '../utils/admin.server';
 
 export const handle = {
   canonical: (data: any) => {
@@ -47,7 +48,6 @@ export const meta: MetaFunction = ({ data }) => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const config = await getConfig();
   const url = new URL(request.url);
   const pathName = url.pathname;
   if (pathName === '/posts') {
@@ -59,8 +59,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     return notFound;
   }
 
-  const searchParams = url.searchParams;
-  const preview = searchParams.get('preview') === config.PREVIEW_SECRET;
+  const preview = admin(request);
   if (!post.attributes.list && !preview) {
     return redirect('/posts/not-found');
   }
