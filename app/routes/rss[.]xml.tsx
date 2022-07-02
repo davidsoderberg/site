@@ -1,15 +1,10 @@
 import type { LoaderFunction } from '@remix-run/node';
-import { getListOfMdx } from '../utils/mdx.server';
 import { getDomainUrl } from '../utils/misc';
+import { getPosts } from '../utils/posts';
 
 // Found this soultion here: https://github.com/kentcdodds/kentcdodds.com
 export const loader: LoaderFunction = async ({ request }) => {
-  const posts = (await getListOfMdx()).filter((post) => post.list);
-  posts.sort((a, z) => {
-    const aTime = new Date(a.date).getTime();
-    const zTime = new Date(z.date).getTime();
-    return aTime < zTime ? -1 : aTime === zTime ? 0 : 1;
-  });
+  const posts = getPosts();
 
   const blogUrl = `${getDomainUrl(request)}/posts`;
 
@@ -26,9 +21,9 @@ export const loader: LoaderFunction = async ({ request }) => {
           .map((post) =>
             `
             <item>
-              <title>${cdata(post.title)}</title>
-              <description>${cdata(post.description)}</description>
-              <pubDate>${post.date}</pubDate>
+              <title>${cdata(post.attributes.title)}</title>
+              <description>${cdata(post.attributes.description)}</description>
+              <pubDate>${post.attributes.date}</pubDate>
               <link>${blogUrl}/${post.slug}</link>
               <guid>${blogUrl}/${post.slug}</guid>
             </item>

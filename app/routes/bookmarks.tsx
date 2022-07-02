@@ -1,41 +1,32 @@
 import type { MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
-import { MDX } from '../components/Mdx';
-import { compileMdx } from '../utils/mdx.server';
 import { raindropService } from '../utils/raindrop.server';
 
 export const handle = {
   getSitemapEntries: () => [{ route: `/bookmarks`, priority: 0.7 }],
 };
 
-export const meta: MetaFunction = ({ data: { frontmatter } }) => {
-  const title = `David Söderberg - ${frontmatter.title}`;
+export const meta: MetaFunction = () => {
+  const title = `David Söderberg - Bookmarks`;
   return {
     title,
     'og:title': title,
-    description: frontmatter.description,
+    description: 'My programing related bookmarks you might enjoy as well.',
   };
 };
 
 export const loader = async () => {
-  const path = __dirname + '/../content';
-  const { code: content, frontmatter } = await compileMdx(
-    'bookmarks.mdx',
-    path
-  );
   const drops = await raindropService.raindrops();
   return {
     bookmarks: drops.items,
-    content,
-    frontmatter,
   };
 };
 
 export default function Bookmarks() {
-  const { bookmarks, content } = useLoaderData();
+  const { bookmarks } = useLoaderData();
   return (
     <>
-      <MDX code={content} />
+      <h2>Bookmarks</h2>
       {bookmarks.map((item) => {    
         return (
           <div key={item._id}>

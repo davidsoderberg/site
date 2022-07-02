@@ -3,7 +3,15 @@ title: Do's and don'ts.
 list: true
 date: 2022-04-18
 description: My do's and don'ts and when it comes to programing js/ts.
+image: '/me.jpeg'
+meta:
+  title: David Söderberg - Do's and don'ts.
+  description: My do's and don'ts and when it comes to programing js/ts.
 ---
+
+## {attributes.title}
+
+{attributes.date.toISOString().split('T')[0]}
 
 So at Novu I have collegue and friend that tries to learn programing and I watched him learn programing on Twitch yesterday.
 Do not get me wrong he did great and I see how he tries to learn how to be a good developer and that inspired me to write this post.
@@ -33,6 +41,7 @@ So why do I prefer arrow functions? I prefer arrow functions because No binding 
 I know most developers understand scope but should we force hard thinking on our self or our developer friends, specially when programing can be challenging anyway.
 
 ### Always use guard clauses
+
 So with always guard clauses in my mind when I am programing I create clean and readable code.
 Am I writing the cleanest and most readable code in the world? No but guard clauses helps me to get a bit on the way.
 
@@ -66,18 +75,20 @@ function userCanWatchVideo(user) {
   return false;
 }
 ```
+
 See much easier to read so user is admin or subscribes okay he can watch video. Otherwise user can't watch video.
 
 ### Always use semicolons and curly braces
+
 Okay I know it is not needed everywhere but it makes your friends life to read your code if you always use them.
 Because at least my brain are trained to see them where an line of code is ending. Yeah I know there will not be more code if the rest of the line is empty, but with semicolon I get an heads up from the code that you do not need to read longer then this.
 
 Okay and now we are going to talk about curly braces, I know you do not need to use them all the time either but it is the same as with the semicolon, show your developer friends where an if statement starts and ends or even a arrow function.
 
 ### Always declare access modifiers in classes <small>(new since 2022-04-19)</small>
+
 Are you doing OOP in a framework like Nest.js? Okay then please declare the access modifier (public, protected, private) for all properties and methods in all classes you are creating and sort them in the order public, protected, private.
 First all properties sorted and then constructor (if you have one) and then all other methods sorted by access modifier.
-
 
 And one last thing use tabs instead of spaces, now 50% of you hate me ;)
 
