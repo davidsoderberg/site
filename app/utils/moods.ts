@@ -7,5 +7,7 @@ export const Moods = Object.freeze({
   tired: 'tired',
   strong: 'strong',
   confused: 'confused',
-  sick: 'sick'
+  sick: 'sick',
+  hungry: 'hungry',
+  tipsy: 'tipsy'
 });

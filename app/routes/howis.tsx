@@ -54,6 +54,10 @@ export const MoodIcon = ({ mood }: { mood: string }) => {
       return <>🥱</>;
     case Moods.sick:
       return <>🤒</>;
+    case Moods.hungry:
+      return <>🍔</>;
+    case Moods.tipsy: 
+      return <>🍻</>;
     default:
       return <>😃</>;
   }
