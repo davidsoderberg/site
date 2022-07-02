@@ -1,4 +1,4 @@
-import * as dosandonts from '../routes/posts/dos-and-donts.mdx'
+import * as dosandonts from '../routes/posts/dos-and-donts.mdx';
 import * as fisttwomonths from '../routes/posts/first-two-months.mdx';
 import * as howibuiltmysite from '../routes/posts/how-i-built-my-site.mdx';
 import * as mystack from '../routes/posts/my-stack.mdx';
@@ -9,13 +9,16 @@ export const posts = [
   fisttwomonths,
   howibuiltmysite,
   mystack,
-  thefirstswedishguyatnovu
+  thefirstswedishguyatnovu,
 ];
 
-const listPosts = posts
+const listPosts = posts;
 
-export const getPosts = () => {
-  const posts = listPosts.filter((post) => post.attributes.list);
+export const getPosts = (filter: boolean = true) => {
+  let posts = listPosts;
+  if(filter) {
+    posts = posts.filter((post) => post.attributes.list);
+  }
   posts.sort((a, z) => {
     const aTime = new Date(a.attributes.date).getTime();
     const zTime = new Date(z.attributes.date).getTime();
@@ -24,7 +27,7 @@ export const getPosts = () => {
   return posts.map((post) => {
     return {
       ...post,
-      slug: post.filename.replace('.mdx', '')
-    }
-  });;
-}
+      slug: post.filename.replace('.mdx', ''),
+    };
+  });
+};

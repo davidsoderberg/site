@@ -5,8 +5,10 @@ import type {
   LoaderFunction,
   MetaFunction,
 } from '@remix-run/node';
+import { redirect } from '@remix-run/node';
 import styles from 'highlight.js/styles/github-dark.css';
 import { getPosts } from '../utils/posts';
+import { getConfig } from '../utils/config.server';
 import * as notFound from './posts/not-found.mdx';
 
 export const handle = {
@@ -45,15 +47,24 @@ export const meta: MetaFunction = ({ data }) => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-  const pathName = new URL(request.url).pathname;
+  const config = await getConfig();
+  const url = new URL(request.url);
+  const pathName = url.pathname;
   if (pathName === '/posts') {
     return {};
   }
   const slug = pathName.replace('/posts/', '');
-  const post = getPosts().find((post) => post.slug === slug);
+  const post = getPosts(false).find((post) => post.slug === slug);
   if (!post) {
     return notFound;
   }
+
+  const searchParams = url.searchParams;
+  const preview = searchParams.get('preview') === config.PREVIEW_SECRET;
+  if (!post.attributes.list && !preview) {
+    return redirect('/posts/not-found');
+  }
+
   return post;
 };
 
