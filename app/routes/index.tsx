@@ -1,4 +1,3 @@
-import { useLoaderData } from '@remix-run/react';
 import { useState } from 'react';
 import { Container, Row, Col as Column } from 'react-grid-system';
 import { Corner } from '../components/Corner';
@@ -7,34 +6,64 @@ import { GithubRepo } from '../components/GithubRepo';
 import { GithubStats } from '../components/GithubStats';
 import { GithubTopLangs } from '../components/GithubTopLangs';
 import { KnowledgeIcons } from '../components/KnowledgeIcons';
-import { MDX } from '../components/Mdx';
-import { compileMdx } from '../utils/mdx.server';
-
-export const loader = async () => {
-  const path = __dirname + '/../content';
-  const { code: about } = await compileMdx('about.mdx', path);
-  const { code: sidebar } = await compileMdx('sidebar.mdx', path);
-
-  return {
-    about,
-    sidebar,
-  };
-};
 
 const Index = () => {
   const [show, setShow] = useState(false);
-  const { about, sidebar } = useLoaderData();
-
   return (
     <>
       <Corner />
       <Container fluid style={{ paddingBottom: '15px' }}>
         <Row>
           <Column lg={7}>
-            <MDX code={about} />
+            <h2>Hi nerds 👋</h2>
+
+            <p>
+              I am David, I am currently working as a Software Engineer with a
+              Typescript stack at{' '}
+              <a
+                href='https://github.com/novuhq'
+                target='_blank'
+                rel='noreferrer'
+              >
+                @novuhq
+              </a>
+              .
+            </p>
+            <p>
+              Today I am developing some private Remix apps with diffrent
+              typesof databases.
+            </p>
+            <ul>
+              <li>⌨️ I’m currently working on a new Remix app.</li>
+              <li>📘 I’m currently learning Remix.</li>
+              <li>❔ Ask me about Remix, React, Nest.js stuff.</li>
+              <li>
+                🍔 Fun fact: I started out to be a chef but switched to be a
+                developer, so food is my thing anyway.
+              </li>
+            </ul>
           </Column>
           <Column lg={5}>
-            <MDX code={sidebar} />
+            <h2>👨‍💼 Jobs</h2>
+            <ul>
+              <li>Software Developer, Novu (2022-04-04)</li>
+              <li>Product Owner, Fortnox (2020-07-01 - 2022-04-01)</li>
+              <li>Scrum Master, Fortnox (2019-09-02 - 2020-06-30)</li>
+              <li>Software Developer, Fortnox (2017-04-03 - 2020-06-30)</li>
+              <li>Software Developer, Isotop (2017-08-24 - 2017-04-02 )</li>
+            </ul>
+            <div style={{ textAlign: 'center' }}>
+              <img
+                src='me.jpeg'
+                alt='David Söderberg'
+                width='50%'
+                height='auto'
+                style={{
+                  border: '1px solid #fff',
+                  borderRadius: '4px',
+                }}
+              />
+            </div>
           </Column>
         </Row>
       </Container>
