@@ -8,6 +8,7 @@ interface config {
   RAINDROP_COLLECTION_ID: string;
   UPSTASH_URL: string;
   UPSTASH_TOKEN: string;
+  URL: string;
 }
 
 export const getConfig = async (): Promise<config> => {

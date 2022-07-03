@@ -1,9 +1,12 @@
-import { Link } from '@remix-run/react';
+import { useLoaderData } from '@remix-run/react';
 
-export const Logo = () => (
-  <h1 style={{ textAlign: 'center' }}>
-    <Link to='/' style={{ textDecoration: 'none' }}>
-      David Söderberg
-    </Link>
-  </h1>
-);
+export const Logo = () => {
+  const { url } = useLoaderData();
+  return (
+    <h1 style={{ textAlign: 'center' }}>
+      <a href={url} style={{ textDecoration: 'none' }}>
+        David Söderberg
+      </a>
+    </h1>
+  );
+};

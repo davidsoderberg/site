@@ -13,6 +13,7 @@ import { Wrapper } from './components/Wrapper';
 import styles from './index.css';
 import Howis, { loader as howIsLoader } from './routes/howis';
 import { When } from './components/When';
+import { getConfig } from './utils/config.server';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -26,10 +27,18 @@ export const meta: MetaFunction = () => ({
 
 export const loader: LoaderFunction = async (args) => {
   const url = args.request.url;
+  const config = await getConfig();
   if(url.includes('howisdavid.com')) {
-    return howIsLoader();
+    const res = await howIsLoader();
+    return {
+      ...res,
+      url: config.URL
+    }
   }
-  return null;
+  return {
+    url: config.URL,
+    moods: []
+  };
 }
 
 export default function App() {
@@ -47,7 +56,7 @@ export default function App() {
       </head>
       <body>
         <Wrapper>
-          <When truthy={data !== null} fallback={<Outlet />}>
+          <When truthy={data.moods.length > 0} fallback={<Outlet />}>
             <Howis />
           </When>
         </Wrapper>
