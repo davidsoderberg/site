@@ -72,6 +72,7 @@ export default function Howis() {
       <h2
         style={{
           textAlign: 'center',
+          marginTop: '30px'
         }}
       >
         How is David?
