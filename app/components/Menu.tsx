@@ -1,8 +1,7 @@
-import { Link, useLoaderData } from '@remix-run/react';
+import { Link } from '@remix-run/react';
 import { Container, Row, Col as Column } from 'react-grid-system';
 
 export const Menu = () => {
-  const { url } = useLoaderData();
   return (
     <Container
       fluid
@@ -17,26 +16,34 @@ export const Menu = () => {
     >
       <Row>
         <Column xs={12} lg={1}>
-          <a
+          <Link
             style={{
               textDecoration: 'none',
               padding: '15px',
               paddingBottom: '15px',
             }}
-            href={url}
+            to='/'
           >
             Home
-          </a>
+          </Link>
         </Column>
         <Column xs={12} lg={1}>
-          <a style={{ textDecoration: 'none' }} href={url + '/posts'}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to='/posts'
+            prefetch='intent'
+          >
             Posts
-          </a>
+          </Link>
         </Column>
         <Column xs={12} lg={1}>
-          <a style={{ textDecoration: 'none' }} href={url + '/bookmarks'}>
+          <Link
+            style={{ textDecoration: 'none' }}
+            to='/bookmarks'
+            prefetch='intent'
+          >
             Bookmarks
-          </a>
+          </Link>
         </Column>
         <Column xs={12} lg={4} />
         <Column xs={12} lg={1}>

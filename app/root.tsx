@@ -11,7 +11,7 @@ import {
   useMatches,
 } from '@remix-run/react';
 import { Wrapper } from './components/Wrapper';
-import styles from './index.css';
+import styles from './styles/index.css';
 import Howis, { loader as howIsLoader } from './routes/howis';
 import { When } from './components/When';
 import { getConfig } from './utils/config.server';
@@ -34,24 +34,15 @@ export const loader: LoaderFunction = async ({request}) => {
   const config = await getConfig();
   const { headers, id } = await getVisitId(request);
   const isAdmin = await admin(request);
-  if (url.includes('howisdavid.com')) {
-    const res = await howIsLoader();
-    return json(
-      {
-        ...res,
-        url: config.URL,
-        id,
-        isAdmin
-      },
-      { headers }
-    );
-  }
+  const res = await howIsLoader();
+  const isHowIs = url.includes('howisdavid.com');
   return json(
     {
+      ...res,
       url: config.URL,
-      moods: [],
       id,
-      isAdmin
+      isAdmin,
+      isHowIs
     },
     { headers }
   );
@@ -79,7 +70,7 @@ export default function App() {
       </head>
       <body>
         <Wrapper>
-          <When truthy={data.moods.length > 0} fallback={<Outlet />}>
+          <When truthy={data.isHowIs} fallback={<Outlet />}>
             <Howis />
           </When>
         </Wrapper>

@@ -6,7 +6,7 @@ export const GithubRepo = ({username, repo, alt}) => {
       rel='noreferrer'
     >
       <img
-        src={`https://github-readme-stats-delta-ebon-21.vercel.app/api/pin/?username=${username}&repo=${repo}&theme=dark`}
+        src={`https://github-readme-stats-delta-ebon-21.vercel.app/api/pin/?username=${username}&repo=${repo}&theme=dark&bg_color=2A303C&text_color=fff`}
         alt={alt}
       />
     </a>
