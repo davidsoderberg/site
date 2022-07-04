@@ -1,4 +1,5 @@
 import type { LoaderFunction, MetaFunction } from '@remix-run/node';
+import { json } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -14,6 +15,9 @@ import styles from './index.css';
 import Howis, { loader as howIsLoader } from './routes/howis';
 import { When } from './components/When';
 import { getConfig } from './utils/config.server';
+import { getVisitId } from './utils/visit.server';
+import { useEffect } from 'react';
+import { admin } from './utils/admin.server';
 
 export const links = () => [{ rel: 'stylesheet', href: styles }];
 
@@ -25,27 +29,46 @@ export const meta: MetaFunction = () => ({
     'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.',
 });
 
-export const loader: LoaderFunction = async (args) => {
-  const url = args.request.url;
+export const loader: LoaderFunction = async ({request}) => {
+  const url = request.url;
   const config = await getConfig();
-  if(url.includes('howisdavid.com')) {
+  const { headers, id } = await getVisitId(request);
+  const isAdmin = await admin(request);
+  if (url.includes('howisdavid.com')) {
     const res = await howIsLoader();
-    return {
-      ...res,
-      url: config.URL
-    }
+    return json(
+      {
+        ...res,
+        url: config.URL,
+        id,
+        isAdmin
+      },
+      { headers }
+    );
   }
-  return {
-    url: config.URL,
-    moods: []
-  };
-}
+  return json(
+    {
+      url: config.URL,
+      moods: [],
+      id,
+      isAdmin
+    },
+    { headers }
+  );
+};
 
 export default function App() {
   const data = useLoaderData();
   const matches = useMatches();
   const match = matches.find((match) => match.handle && match.handle.canonical);
   const canonical = match?.handle.canonical(match.data);
+
+  useEffect(() => {
+    if (!data.id) {
+      return;
+    }
+    localStorage.setItem('visit-id', data.id);
+  }, [data.id]);
 
   return (
     <html lang='en'>
