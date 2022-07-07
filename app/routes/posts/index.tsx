@@ -32,7 +32,7 @@ export default function Posts() {
             </h2>
             <p>{post.attributes.date.split('T')[0]}</p>
             <p>{post.attributes.description}</p>
-            <hr />
+            <div className="divider"></div>
           </div>
         );
       })}

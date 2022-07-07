@@ -41,7 +41,7 @@ export default function Bookmarks() {
               </a>
             </h3>
             <p>{item.excerpt}</p>
-            <hr />
+            <div className="divider"></div>
           </div>
         );
       })}

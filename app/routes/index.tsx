@@ -6,6 +6,7 @@ import { GithubRepo } from '../components/GithubRepo';
 import { GithubStats } from '../components/GithubStats';
 import { GithubTopLangs } from '../components/GithubTopLangs';
 import { KnowledgeIcons } from '../components/KnowledgeIcons';
+import { When } from '../components/When';
 
 const Index = () => {
   const [show, setShow] = useState(false);
@@ -42,6 +43,27 @@ const Index = () => {
                 developer, so food is my thing anyway.
               </li>
             </ul>
+            <When truthy={false}>
+              <div className='divider'></div>
+              <div className='form-control w-full'>
+                <h4
+                  style={{
+                    marginTop: '0px',
+                    marginBottom: '5px',
+                  }}
+                >
+                  Newsletter
+                </h4>
+                <div className='input-group'>
+                  <input
+                    type='email'
+                    placeholder='Email'
+                    className='input input-bordered w-full'
+                  />
+                  <button className='btn'>Subscribe</button>
+                </div>
+              </div>
+            </When>
           </Column>
           <Column lg={5}>
             <h2>👨‍💼 Jobs</h2>
@@ -61,6 +83,7 @@ const Index = () => {
                 style={{
                   border: '1px solid #fff',
                   borderRadius: '4px',
+                  display: 'inline',
                 }}
               />
             </div>
