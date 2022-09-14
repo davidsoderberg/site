@@ -4,6 +4,7 @@ import * as howibuiltmysite from '../routes/posts/how-i-built-my-site.mdx';
 import * as mystack from '../routes/posts/my-stack.mdx';
 import * as thefirstswedishguyatnovu from '../routes/posts/the-first-swedish-guy-at-novu.mdx';
 import * as firstfivemonths from '../routes/posts/five-months-of-remote-work.mdx';
+import * as aweekincypruswithnovu from '../routes/posts/a-week-in-cyprus-with-novu.mdx';
 
 export const posts = [
   dosandonts,
@@ -11,7 +12,7 @@ export const posts = [
   howibuiltmysite,
   mystack,
   thefirstswedishguyatnovu,
-  firstfivemonths
+  firstfivemonths,
 ];
 
 const listPosts = posts;
