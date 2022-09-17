@@ -13,6 +13,7 @@ export const posts = [
   mystack,
   thefirstswedishguyatnovu,
   firstfivemonths,
+  aweekincypruswithnovu
 ];
 
 const listPosts = posts;
