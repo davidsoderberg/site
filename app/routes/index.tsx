@@ -12,7 +12,7 @@ import { getPosts } from '../utils/posts';
 
 export const loader = async () => {
   const posts = await getPosts();
-  const latest = posts.at(-1);
+  const latest = posts.reverse().at(-1);
   return {
     ...latest?.attributes,
     slug: latest?.slug,
