@@ -1,3 +1,4 @@
+import { Link, useLoaderData } from '@remix-run/react';
 import { useState } from 'react';
 import { Container, Row, Col as Column } from 'react-grid-system';
 import { Corner } from '../components/Corner';
@@ -7,9 +8,23 @@ import { GithubStats } from '../components/GithubStats';
 import { GithubTopLangs } from '../components/GithubTopLangs';
 import { KnowledgeIcons } from '../components/KnowledgeIcons';
 import { When } from '../components/When';
+import { getPosts } from '../utils/posts';
+
+export const loader = async () => {
+  const posts = await getPosts();
+  const latest = posts.at(-1);
+  return {
+    ...latest?.attributes,
+    slug: latest?.slug,
+  };
+};
 
 const Index = () => {
   const [show, setShow] = useState(false);
+  const data = useLoaderData();
+
+  console.log(data);
+
   return (
     <>
       <Corner />
@@ -43,6 +58,41 @@ const Index = () => {
                 developer, so food is my thing anyway.
               </li>
             </ul>
+            <h4
+              style={{
+                margin: '0px',
+              }}
+            >
+              Latest post
+            </h4>
+            <div className='form-control w-full borderBox'>
+              <h3
+                style={{
+                  margin: '0px',
+                }}
+              >
+                <Link
+                  style={{ textDecoration: 'none' }}
+                  to={`/posts/${data.slug}`}
+                >
+                  {data.title}
+                </Link>
+              </h3>
+              <p
+                style={{
+                  margin: '0px',
+                }}
+              >
+                {data.date.split('T')[0]}
+              </p>
+              <p
+                style={{
+                  marginBottom: '0px',
+                }}
+              >
+                {data.description}
+              </p>
+            </div>
             <When truthy={false}>
               <div className='divider'></div>
               <div className='form-control w-full'>

@@ -4,7 +4,7 @@
 
 html {
   color: #fff !important;
-  font: 16px 'Segoe UI', Ubuntu, "Helvetica Neue", Sans-Serif;
+  font: 16px 'Segoe UI', Ubuntu, 'Helvetica Neue', Sans-Serif;
   line-height: 1.5em;
 }
 
@@ -60,10 +60,9 @@ ul {
   display: block;
   list-style-type: disc;
   margin-block-start: 1em;
-  margin-block-end: 1em;  
+  margin-block-end: 1em;
   padding-inline-start: 20px;
 }
-
 
 li {
   margin-bottom: 5px;
@@ -79,4 +78,11 @@ button {
 
 img {
   max-width: 100%;
+}
+
+.borderBox {
+  background-color: hsl(var(--bc) / var(--tw-bg-opacity));
+  --tw-bg-opacity: 0.1;
+  padding: 16px;
+  border-radius: 4px;
 }
