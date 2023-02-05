@@ -45,7 +45,7 @@ export const Menu = () => {
             Bookmarks
           </Link>
         </Column>
-        <Column xs={12} lg={4} />
+        <Column xs={12} lg={6} />
         <Column xs={12} lg={1}>
           <a
             style={{ textDecoration: 'none' }}
@@ -54,16 +54,6 @@ export const Menu = () => {
             rel='noreferrer'
           >
             Novu
-          </a>
-        </Column>
-        <Column xs={12} lg={2}>
-          <a
-            style={{ textDecoration: 'none' }}
-            href='https://www.wod-portal.com/'
-            target='_blank'
-            rel='noreferrer'
-          >
-            Wod Portal
           </a>
         </Column>
         <Column xs={12} lg={1}>
