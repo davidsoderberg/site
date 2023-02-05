@@ -5,6 +5,8 @@ import * as mystack from '../routes/posts/my-stack.mdx';
 import * as thefirstswedishguyatnovu from '../routes/posts/the-first-swedish-guy-at-novu.mdx';
 import * as firstfivemonths from '../routes/posts/five-months-of-remote-work.mdx';
 import * as aweekincypruswithnovu from '../routes/posts/a-week-in-cyprus-with-novu.mdx';
+import * as twotimesinisraelpart1 from '../routes/posts/two-times-in-israel-part-1.mdx';
+import * as twotimesinisraelpart2 from '../routes/posts/two-times-in-israel-part-2.mdx';
 
 export const posts = [
   dosandonts,
@@ -13,7 +15,9 @@ export const posts = [
   mystack,
   thefirstswedishguyatnovu,
   firstfivemonths,
-  aweekincypruswithnovu
+  aweekincypruswithnovu,
+  twotimesinisraelpart1,
+  twotimesinisraelpart2
 ];
 
 const listPosts = posts;
