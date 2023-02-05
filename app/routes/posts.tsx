@@ -61,7 +61,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   const preview = admin(request);
   if (!post.attributes.list && !preview) {
-    // return redirect('/posts/not-found');
+    return redirect('/posts/not-found');
   }
 
   return post;
