@@ -23,8 +23,6 @@ const Index = () => {
   const [show, setShow] = useState(false);
   const data = useLoaderData();
 
-  console.log(data);
-
   return (
     <>
       <Corner />
