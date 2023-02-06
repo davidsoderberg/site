@@ -11,13 +11,14 @@ module.exports = {
   // serverBuildPath: "api/index.js",
   // publicPath: "/build/",
   mdx: async (filename) => {
-    const [rehypeHighlight, gfm] = await Promise.all([
+    const [rehypeHighlight, gfm, emoji] = await Promise.all([
       import('rehype-highlight').then((mod) => mod.default),
       import('remark-gfm').then((mod) => mod.default),
+      import('remark-emoji').then((mod) => mod.default),
     ]);
 
     return {
-      remarkPlugins: [gfm],
+      remarkPlugins: [gfm, emoji],
       rehypePlugins: [rehypeHighlight],
     };
   },
