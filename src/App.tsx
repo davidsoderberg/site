@@ -10,6 +10,7 @@ function App() {
         title='Which day is your favorite?'
         excerpt='1 year and 4 months since last post :O'
         date='2024-06-30'
+        hide={true}
       />
       <Post
         to={'/two-times-in-israel-part-2'}
