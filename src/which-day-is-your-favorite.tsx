@@ -70,7 +70,45 @@ export const WhichDayIsYourFavorite = () => {
       </blockquote>
       <p>
         As I said two offsites have passed and a lot of co workers have been
-        hiried and some have already left as well.
+        hiried and some have already left as well. We have shaped into two
+        development teams with different co workers two times and the last time
+        happened like a bit more than month ago.
+      </p>
+      <p>
+        For me this have been rough, first going from being one of THE
+        developers to being just a developer, but also I feel more isolated then
+        before. I feel like there is no team feeling and I feel no team
+        belonging. I thought this would change post offsite but it did not, it
+        just got worse instead.
+      </p>
+      <p>
+        I left my previous company in a role that was a very social and I feelt
+        a strong team feeling so I know it can be a comparision that my head do
+        unknowingly. This is something that makes work just work for me right
+        now. Those of you that have known me for the last 8-10 years know that
+        programming and my work is a big part of me and my life. So these
+        feelings I have right now is hard for me to handle.
+      </p>
+      <hr />
+      <p>
+        Another thing that have happend since my last post and is on a more
+        personal note. Is that I in February took the courage to contact a
+        CrossFit box (gym) to start doing CrossFit workouts for real. A lot of
+        ghost thoughts is behind this, I have never really been fit and have
+        always been thinking of people judging me for anything I do when it
+        comes to exercieses.
+      </p>
+      <p>
+        But a short meeting with the owner of the box, resulted in that I have
+        now done 12 workouts with a personal trainer. Last week I decided to
+        leave my current gym fully and instead get planned workouts from the
+        personal trainer that I can do in the box by myself.
+      </p>
+      <p>
+        Days when I have these workouts scheduled, is now days my favorite day.
+        It can be a Monday or Friday, it does not matter. My favorite thing and
+        day is not related to what I am working with anymore and that is scaring
+        me.
       </p>
     </div>
   );

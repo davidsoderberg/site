@@ -11,7 +11,8 @@ export const Header = () => {
           lineHeight: '24px',
           fontSize: '32px',
           fontWeight: 700,
-          margin: '16px 0',
+          marginTop: '32px',
+          marginBottom: '32px',
         })}
       >
         David Söderberg
