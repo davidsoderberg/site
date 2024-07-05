@@ -39,6 +39,7 @@ export const Post = ({
           backgroundColor: 'activePost',
           borderRadius: '8px',
           borderBottom: 'none',
+          boxShadow: 'default',
         },
       })}
     >

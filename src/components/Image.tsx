@@ -6,6 +6,7 @@ export const Image = ({ src, alt }: { src: string; alt?: string }) => {
       src={src}
       className={css({
         borderRadius: '8px',
+        boxShadow: 'default',
       })}
       alt={alt}
     />

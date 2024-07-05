@@ -14,6 +14,9 @@ export default defineConfig({
   theme: {
     extend: {
       tokens: {
+        shadows: {
+          default: { value: '0px 5px 20px rgba(0, 0, 0, 0.2)' },
+        },
         colors: {
           background: { value: '#2a303c' },
           activePost: { value: 'rgba(0, 0, 0, 0.2)' },
