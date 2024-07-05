@@ -8,6 +8,10 @@ export const Wrapper = ({ children }: { children: ReactNode }) => {
         backgroundColor: 'background',
         width: '100%',
         minHeight: '100vh',
+        border: '4px solid',
+        borderColor: 'white',
+        borderRadius: '8px',
+        paddingBottom: '16px',
       })}
     >
       <div
