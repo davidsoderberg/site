@@ -3,24 +3,16 @@ import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
-import { useTitle } from '../utils/useTitle';
-import { Helmet } from 'react-helmet';
+import { Meta } from '../components/Meta';
 
 export const AWeekInCyprusWithNovu = () => {
-  useTitle('A week in Cyprus with Novu');
-
   return (
     <Header>
-      <Helmet>
-        <meta
-          name='description'
-          content='An amazing week that I will never forget.'
-        />
-        <meta
-          property='og:image'
-          content='https://www.davidsouthmountain.se/door.jpg'
-        />
-      </Helmet>
+      <Meta
+        title='A week in Cyprus with Novu'
+        description='An amazing week that I will never forget.'
+        image='door.jpg'
+      />
       <Heading>A week in Cyprus with Novu</Heading>
       <Date>2022-09-17</Date>
       <Text>

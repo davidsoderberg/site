@@ -2,20 +2,15 @@ import { Header } from '../components/Header';
 import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
-import { useTitle } from '../utils/useTitle';
-import { Helmet } from 'react-helmet';
+import { Meta } from '../components/Meta';
 
 export const FiveMonthsOfRemoteWork = () => {
-  useTitle('Five months of remote work');
-
   return (
     <Header>
-      <Helmet>
-        <meta
-          name='description'
-          content='How my first five months at Novu have been this far...'
-        />
-      </Helmet>
+      <Meta
+        title='Five months of remote work'
+        description='How my first five months at Novu have been this far...'
+      />
       <Heading>Five months of remote work</Heading>
       <Date>2022-08-31</Date>
       <Text>

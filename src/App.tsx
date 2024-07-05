@@ -1,10 +1,7 @@
 import { Header } from './components/Header';
 import { Post } from './components/Post';
-import { useTitle } from './utils/useTitle';
 
 function App() {
-  useTitle('Software Developer');
-
   return (
     <Header>
       <Post

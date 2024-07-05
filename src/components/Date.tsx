@@ -1,13 +1,19 @@
-import { ReactNode } from 'react';
-import { css } from '../../styled-system/css';
+import { css, cx } from '../../styled-system/css';
 import { Text } from './Text';
+import { DefaultProps } from '../types/defaultProps';
 
-export const Date = ({ children }: { children: ReactNode }) => {
+export const Date = ({ children, className, style }: DefaultProps) => {
   return (
     <Text
-      className={css({
-        fontWeight: 'bolder',
-      })}
+      className={cx(
+        css(
+          {
+            fontWeight: 'bolder',
+          },
+          style
+        ),
+        className
+      )}
     >
       {children}
     </Text>

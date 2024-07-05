@@ -1,8 +1,30 @@
 import { css } from '../../styled-system/css';
+import { Card } from './Card';
 import { Date } from './Date';
 import { Heading } from './Heading';
 import { Link } from './Link';
 import { Text } from './Text';
+
+const PostContent = ({
+  to,
+  title,
+  excerpt,
+  date,
+}: {
+  to: string;
+  title: string;
+  excerpt: string;
+  date: string;
+}) => (
+  <>
+    {' '}
+    <Heading>
+      <Link href={to}>{title}</Link>
+    </Heading>
+    <Date>{date}</Date>
+    <Text>{excerpt}</Text>
+  </>
+);
 
 export const Post = ({
   to,
@@ -23,9 +45,16 @@ export const Post = ({
     return null;
   }
 
+  if (selected) {
+    return (
+      <Card>
+        <PostContent to={to} title={title} excerpt={excerpt} date={date} />
+      </Card>
+    );
+  }
+
   return (
     <div
-      {...(selected ? { 'aria-selected': true } : {})}
       className={css({
         borderBottom: '1px solid',
         borderColor: 'border',
@@ -35,19 +64,9 @@ export const Post = ({
           borderBottom: 'none',
           marginBottom: 0,
         },
-        _selected: {
-          backgroundColor: 'selectedPost',
-          borderRadius: '8px',
-          borderBottom: 'none',
-          boxShadow: 'default',
-        },
       })}
     >
-      <Heading>
-        <Link href={to}>{title}</Link>
-      </Heading>
-      <Date>{date}</Date>
-      <Text>{excerpt}</Text>
+      <PostContent to={to} title={title} excerpt={excerpt} date={date} />
     </div>
   );
 };

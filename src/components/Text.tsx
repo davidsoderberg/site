@@ -1,20 +1,17 @@
-import { ReactNode } from 'react';
 import { css, cx } from '../../styled-system/css';
+import { DefaultProps } from '../types/defaultProps';
 
-export const Text = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className?: string;
-}) => {
+export const Text = ({ children, className, style }: DefaultProps) => {
   return (
     <p
       className={cx(
-        css({
-          color: 'white',
-          marginBottom: '16px',
-        }),
+        css(
+          {
+            color: 'white',
+            marginBottom: '16px',
+          },
+          style
+        ),
         className
       )}
     >

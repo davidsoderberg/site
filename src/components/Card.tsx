@@ -1,22 +1,24 @@
 import { css, cx } from '../../styled-system/css';
 import { DefaultProps } from '../types/defaultProps';
 
-export const Divider = ({
-  className,
-  style,
-}: Omit<DefaultProps, 'children'>) => {
+export const Card = ({ children, className, style }: DefaultProps) => {
   return (
-    <hr
+    <div
       className={cx(
         css(
           {
-            borderColor: 'border',
+            backgroundColor: 'selectedPost',
+            borderRadius: '8px',
             marginBottom: '16px',
+            padding: '8px 16px',
+            boxShadow: 'default',
           },
           style
         ),
         className
       )}
-    />
+    >
+      {children}
+    </div>
   );
 };

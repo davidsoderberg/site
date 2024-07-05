@@ -2,20 +2,15 @@ import { Header } from '../components/Header';
 import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
-import { useTitle } from '../utils/useTitle';
-import { Helmet } from 'react-helmet';
+import { Meta } from '../components/Meta';
 
 export const TheFirstSwedishGuyAtNovu = () => {
-  useTitle('The first Swedish guy at Novu');
-
   return (
     <Header>
-      <Helmet>
-        <meta
-          name='description'
-          content='About how I ended up at Novu after a few video calls.'
-        />
-      </Helmet>
+      <Meta
+        title='The first Swedish guy at Novu'
+        description='About how I ended up at Novu after a few video calls.'
+      />
       <Heading>The first Swedish guy at Novu</Heading>
       <Date>2022-04-05</Date>
       <Text>

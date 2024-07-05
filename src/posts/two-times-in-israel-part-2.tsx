@@ -5,24 +5,16 @@ import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { css } from '../../styled-system/css';
-import { useTitle } from '../utils/useTitle';
-import { Helmet } from 'react-helmet';
+import { Meta } from '../components/Meta';
 
 export const TwoTimesInIsraelPart2 = () => {
-  useTitle('Two times in Israel (part 2)');
-
   return (
     <Header>
-      <Helmet>
-        <meta
-          name='description'
-          content='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
-        />
-        <meta
-          property='og:image'
-          content='https://www.davidsouthmountain.se/israel.png'
-        />
-      </Helmet>
+      <Meta
+        title='Two times in Israel (part 2)'
+        description='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
+        image='israel.png'
+      />
       <Heading>Two times in Israel (part 2)</Heading>
       <Date>2023-02-05</Date>
       <Text

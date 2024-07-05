@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { css } from '../../styled-system/css';
+import { css, cx } from '../../styled-system/css';
+import { DefaultProps } from '../types/defaultProps';
 
-export const Wrapper = ({ children }: { children: ReactNode }) => {
+export const Wrapper = ({ children, className, style }: DefaultProps) => {
   return (
     <div
       className={css({
@@ -16,11 +16,17 @@ export const Wrapper = ({ children }: { children: ReactNode }) => {
       })}
     >
       <div
-        className={css({
-          width: '80%',
-          margin: '0 auto',
-          paddingBottom: '8px',
-        })}
+        className={cx(
+          css(
+            {
+              width: '80%',
+              margin: '0 auto',
+              paddingBottom: '8px',
+            },
+            style
+          ),
+          className
+        )}
       >
         {children}
       </div>

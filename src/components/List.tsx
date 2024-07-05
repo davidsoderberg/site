@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import { css, cx } from '../../styled-system/css';
+import { DefaultProps } from '../types/defaultProps';
 
-const className = css({
+const defaultClassName = css({
   marginLeft: '16px',
   marginBottom: '16px',
   color: 'white',
@@ -13,18 +13,23 @@ const className = css({
 export const List = ({
   children,
   variant = 'unordered',
-}: {
-  children: ReactNode;
+  className,
+  style,
+}: DefaultProps & {
   variant?: 'ordered' | 'unordered';
 }) => {
   if (variant === 'ordered') {
     return (
       <ol
         className={cx(
-          className,
-          css({
-            listStyleType: 'decimal',
-          })
+          defaultClassName,
+          css(
+            {
+              listStyleType: 'decimal',
+            },
+            style
+          ),
+          className
         )}
       >
         {children}
@@ -35,10 +40,14 @@ export const List = ({
   return (
     <ul
       className={cx(
-        className,
-        css({
-          listStyleType: 'disc',
-        })
+        defaultClassName,
+        css(
+          {
+            listStyleType: 'disc',
+          },
+          style
+        ),
+        className
       )}
     >
       {children}
