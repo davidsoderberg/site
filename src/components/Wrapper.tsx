@@ -12,6 +12,7 @@ export const Wrapper = ({ children }: { children: ReactNode }) => {
         borderColor: 'white',
         borderRadius: '8px',
         paddingBottom: '16px',
+        boxShadow: 'defaultInset',
       })}
     >
       <div

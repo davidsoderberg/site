@@ -16,6 +16,7 @@ export default defineConfig({
       tokens: {
         shadows: {
           default: { value: '0px 5px 20px rgba(0, 0, 0, 0.2)' },
+          defaultInset: { value: 'inset 0px 4px 16px rgba(255, 255, 255, 0.2)' },
         },
         colors: {
           background: { value: '#2a303c' },
