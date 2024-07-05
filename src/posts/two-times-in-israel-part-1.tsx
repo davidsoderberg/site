@@ -1,28 +1,33 @@
-import { Header } from './components/Header';
-import { Heading } from './components/Heading';
+import { Header } from '../components/Header';
+import { Date } from '../components/Date';
+import { Heading } from '../components/Heading';
+import { Link } from '../components/Link';
+import { Text } from '../components/Text';
+import { useTitle } from '../utils/useTitle';
 
 export const TwoTimesInIsraelPart1 = () => {
+  useTitle('Two times in Israel (part 1)');
+
   return (
-    <div>
-      <Header />
+    <Header>
       <Heading>Two times in Israel (part 1)</Heading>
-      2023-02-04<br />
-      <p>
+      <Date>2023-02-04</Date>
+      <Text>
         I see myself as any swedish guy, I dreamed about being a fire fighter or
         police officer when I was like 4-5 years old, I did not have any sports
         dream but I did dream about being on stage as a magician instead. I did
         school and high scool with okay grades and passed university with
         nothing outstanding.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Got a job during my exam internship and worked for that company 1 year
         and 7 months (7 months in Stockholm, the rest on distance). Changed to a
         company more local to me, worked there for almost exatly five years. I
         have had 2-3 girlfriends and have my own apartment (not renting). My
         parents are in professions with okay salaries, I have a brother that is
         in okay distance age wise and he is doing good as well.
-      </p>
-      <p>
+      </Text>
+      <Text>
         When I got the question if I would like to join Novu it feelt like a
         scam, it was to good to be true. Two guys from Israel have seen my small
         contribution to their repository and now the liked to hire me with a
@@ -34,8 +39,8 @@ export const TwoTimesInIsraelPart1 = () => {
         did my first day in Novu and a month later my first salary showed up and
         now it was real to me. Most of what happend after that you already know
         about until I came home from Cyprus.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Since Cyprus I have been in Israel two times, before I decided to go my
         first time my head went crazy about if I should go or not. The picture
         of Israel is not great to be honest (and not entirely true to be
@@ -43,8 +48,8 @@ export const TwoTimesInIsraelPart1 = () => {
         bombing and shooting that have happend and happens in Israel. In the end
         my thinking was okay I have 8 collegues living in Israel and if they can
         be in Israel I can be as well.
-      </p>
-      <p>
+      </Text>
+      <Text>
         So with that in mind I booked flight tickets and was going to stay at a
         Galis apartment with her planing what we should visit and see. So
         Thursday first of december I did go by train and airplaine to end up in
@@ -53,28 +58,28 @@ export const TwoTimesInIsraelPart1 = () => {
         where she is living with her boyfriend at the time (this is important
         for future reading). We had a meal at restaurant with good food and
         great beer.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Next day we started to plan the dinner for this evening with all
         collegues and their plus one. I made a mushroom pizza that made a great
         success in the group, we had a lot of food and fun this night.
-      </p>
-      <p>
+      </Text>
+      <Text>
         The first two days I thought I had sweat a lot but wait it get worse...
-      </p>
-      <p>
+      </Text>
+      <Text>
         Saturday and my first day as a tourist, me, Gali and another collegue
         traveled by car and visited the deadsea, desert and had pizza at Galis
         parents house that was the best pizza in very long time.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Now it is Sunday and a working day in Israel so we (me and Gali) had a
         productive day at work and in the evening another collegue joined us for
         an happy hour with a lot of alcohol and great discussions. Monday was
         another working day and most of the day did go to interviews and resting
         the hang over away 😛
-      </p>
-      <p>
+      </Text>
+      <Text>
         Tuesday and we did go to the old train station of Tel Aviv to have an
         amazing breakfast, after it we walked at the beach to get a beer. We
         meet up with another collegue to have hummus as lunch and it was great.
@@ -83,8 +88,8 @@ export const TwoTimesInIsraelPart1 = () => {
         is just amazing looking. This evening I spent alone in Galis apartment
         because she and her boyfriend had to go to the venue place of their
         future wedding (see I told you it was important 😛 ).
-      </p>
-      <p>
+      </Text>
+      <Text>
         Next day we took the train to Jerusalem, we did see the food market of
         Jersualem where I had my favorite thing wich is Shakshuka, after that we
         headed to the famous wall and the old city of King David (sorry it is
@@ -98,30 +103,30 @@ export const TwoTimesInIsraelPart1 = () => {
         to go home to Tomer another collegue and had an amazing dinner out with
         beer and drinks. We took the late buss home and I really needed that
         night of sleep.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Thursday and I am traveling home today, right before we headed of to the
         airport we had a beer or two. At the airport I had a hard time to pass
         the first security check because I was sweating and shaking a bit
         because of some medicins. After passed that one the rest was easy and I
         stayed at the hotel in Copenhagen before taking the train back home the
         day after.
-      </p>
-      <p>
+      </Text>
+      <Text>
         I am honered, moved, lucky and very happy with having such a great
         collegues in Israel and that I now call my friends. Special thanks to
         Gali and her boyfriend (see you in Sweden soon) and thanks to the other
         collegues that made my first trip to Israel an bless.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Okay this post got rather long so I will make a{' '}
-        <a href='/two-times-in-israel-part-2'>second blog post</a> about
+        <Link href='/two-times-in-israel-part-2'>second blog post</Link> about
         my second time in Israel.
-      </p>
+      </Text>
       <img
         src='/israel.png'
         alt='Welcome to Israel. Your life will never be the same.'
       />
-    </div>
+    </Header>
   );
 };

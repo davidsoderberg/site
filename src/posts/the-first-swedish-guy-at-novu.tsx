@@ -1,21 +1,24 @@
-import { Header } from './components/Header';
-import { Heading } from './components/Heading';
+import { Header } from '../components/Header';
+import { Date } from '../components/Date';
+import { Heading } from '../components/Heading';
+import { Text } from '../components/Text';
+import { useTitle } from '../utils/useTitle';
 
 export const TheFirstSwedishGuyAtNovu = () => {
+  useTitle('The first Swedish guy at Novu');
+
   return (
-    <div>
-      <Header />
+    <Header>
       <Heading>The first Swedish guy at Novu</Heading>
-      2022-04-05
-      <br />
-      <p>
+      <Date>2022-04-05</Date>
+      <Text>
         Hi, my name is David and I am 29 years old and living in Sweden, this
         year (2022) it is ten years since I wrote my first line of code (C#).
         Since I can remember I have always loved computers and software when my
         dad introduced the internet to me and that you did not need a phone to
         talk to someone without seeing there face amazed me.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Today I have made my second day at Novu not located in Sweden or not
         located anywhere for that matter... But how did a swedish guy end up in
         a company that are not located in Sweden you may ask? Well my story
@@ -35,8 +38,8 @@ export const TheFirstSwedishGuyAtNovu = () => {
         Jquery, then it was React and some Node framework (Nest.js, Feather.js,
         Express, Apollo, Sails.js...) and all of them needed a way to send an
         email to reset a password or send a magic link.
-      </p>
-      <p>
+      </Text>
+      <Text>
         So for my last project I needed a way of send an email and thats when I
         found Notifire (now Novu) in Githubs explorer and thought “wow this is
         what I have needed for many years now”. Installed it and found out that
@@ -47,8 +50,8 @@ export const TheFirstSwedishGuyAtNovu = () => {
         was basically it. I made my changes and created a pull request and
         people from Notifire made some really good comments, I adjusted and it
         got merged the day after.
-      </p>
-      <p>
+      </Text>
+      <Text>
         In five days I did three pull request. All of them got merged, the
         feedback was huge and very nice, I did not feel like I got criticize on
         my code, it felt more like they started an open discussion that did lead
@@ -59,8 +62,8 @@ export const TheFirstSwedishGuyAtNovu = () => {
         that point I asked if Notifire was a company that I could work at. Back
         then and it was not. I said I could be interested if they did, to make a
         point of contact for the future, well that turned out great 😛
-      </p>
-      <p>
+      </Text>
+      <Text>
         So in the days between Christmas and New Year they contacted me, offered
         to have a Discord call and my first thought was “oops, what bug have I
         now created 🤦&zwj;♂️”&nbsp;That was not the case. They liked to hire
@@ -75,15 +78,15 @@ export const TheFirstSwedishGuyAtNovu = () => {
         programming and that doing programming on you free time is a good thing
         for the company you work for. Two months (because of swedish contracts)
         after I had signed the contract am I now a part of Novu 🚀
-      </p>
-      <p>
+      </Text>
+      <Text>
         Like I know it is early to say but I am really happy to work at Novu
         now, all colleagues are amazing and kind. The technology is exactly what
         I like to work with very simular to what I use on my free time. Well to
         be hones everything is just great right now... Thanks Novu for giving me
         this opportunity, I hope and think we will be together for a long time
         ❤️
-      </p>
-    </div>
+      </Text>
+    </Header>
   );
 };

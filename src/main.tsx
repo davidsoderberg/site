@@ -5,13 +5,13 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './index.css';
 import { Wrapper } from './components/Wrapper.tsx';
-import { TwoTimesInIsraelPart2 } from './two-times-in-israel-part-2.tsx';
-import { TwoTimesInIsraelPart1 } from './two-times-in-israel-part-1.tsx';
-import { AWeekInCyprusWithNovu } from './a-week-in-cyprus-with-novu.tsx';
-import { FiveMonthsOfRemoteWork } from './five-months-of-remote-work.tsx';
-import { FirstTwoMonths } from './first-two-months.tsx';
-import { TheFirstSwedishGuyAtNovu } from './the-first-swedish-guy-at-novu.tsx';
-import { WhichDayIsYourFavorite } from './which-day-is-your-favorite.tsx';
+import { TwoTimesInIsraelPart2 } from './posts/two-times-in-israel-part-2.tsx';
+import { TwoTimesInIsraelPart1 } from './posts/two-times-in-israel-part-1.tsx';
+import { AWeekInCyprusWithNovu } from './posts/a-week-in-cyprus-with-novu.tsx';
+import { FiveMonthsOfRemoteWork } from './posts/five-months-of-remote-work.tsx';
+import { FirstTwoMonths } from './posts/first-two-months.tsx';
+import { TheFirstSwedishGuyAtNovu } from './posts/the-first-swedish-guy-at-novu.tsx';
+import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite.tsx';
 
 const router = createBrowserRouter([
   {

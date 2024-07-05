@@ -1,25 +1,30 @@
-import { Header } from './components/Header';
-import { Heading } from './components/Heading';
+import { Header } from '../components/Header';
+import { Date } from '../components/Date';
+import { Heading } from '../components/Heading';
+import { List } from '../components/List';
+import { Text } from '../components/Text';
+import { useTitle } from '../utils/useTitle';
 
 export const FirstTwoMonths = () => {
+  useTitle('The first two months at Novu');
+
   return (
-    <div>
-      <Header />
+    <Header>
       <Heading>The first two months at Novu</Heading>
-      2022-06-01<br />
-      <p>
+      <Date>2022-06-01</Date>
+      <Text>
         So when this week ends I have done two months at Novu and it feels like
         yesterday I had calls with both Tomer and Dima about starting at Novu.
         These two months have been the best two months in my career as
         developer/enginner maybe life even, now you may think thats how everyone
         feels at a new company...
-      </p>
-      <p>
+      </Text>
+      <Text>
         Well I know everyone is excited about starting at a new company and
         feels happy to do something new and of course I was/am the same. But it
         is diffrent with Novu here is what the diffrence was/is to me:
-      </p>
-      <ul>
+      </Text>
+      <List>
         <li>
           Everyone and I mean everyone inside of Novu is such amazing people
           (usually there is someone that you do not get along with)
@@ -40,27 +45,27 @@ export const FirstTwoMonths = () => {
         <li>
           You are allowed to have bad days and no one tells you to shape up
         </li>
-      </ul>
-      <p>
+      </List>
+      <Text>
         At the time I am writing this I have just woke up from the first night
         at home after a trip to Stockholm (capital of Sweden). In Stockholm I
         meet two of my collegues that travled from Israel just to meet me for a
         couple of days, one of them are sleeping at my couch stil. We will work
         together today and tomorrow she will get back to Israel.
-      </p>
-      <p>
+      </Text>
+      <Text>
         This trip to Stockholm and meet my collegues is one of the best
         experiance I have had in my life. Like it did not go according to the
         plans, but the adventures we had is/was amazing and I am sure it made us
         come closer to each other.
-      </p>
-      <p>
+      </Text>
+      <Text>
         Novu is a fully remote company and geeting the oppertunity to meet some
         of my collegues is truly a honor and a pleasure, so thanks Novu giving
         it to me. I also hope I get the chance to meet the rest of my amazing
         collegues at Novu soon because I bet and know they are equal as amazing
         as those I meet this time.
-      </p>
-    </div>
+      </Text>
+    </Header>
   );
 };

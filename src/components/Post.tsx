@@ -1,11 +1,15 @@
 import { css } from '../../styled-system/css';
+import { Date } from './Date';
 import { Heading } from './Heading';
+import { Link } from './Link';
+import { Text } from './Text';
 
 export const Post = ({
   to,
   title,
   excerpt,
   date,
+  active = false,
   hide = false,
 }: {
   to: string;
@@ -13,6 +17,7 @@ export const Post = ({
   excerpt: string;
   date: string;
   hide?: boolean;
+  active?: boolean;
 }) => {
   if (hide) {
     return null;
@@ -20,16 +25,28 @@ export const Post = ({
 
   return (
     <div
+      {...(active ? { 'data-active': true } : {})}
       className={css({
-        borderBottom: '1px solid #373C48',
-        marginBottom: '32px',
+        borderBottom: '1px solid',
+        borderColor: 'border',
+        marginBottom: '16px',
+        padding: '8px 16px',
+        '&:last-of-type': {
+          borderBottom: 'none',
+          marginBottom: 0,
+        },
+        _active: {
+          backgroundColor: 'activePost',
+          borderRadius: '8px',
+          borderBottom: 'none',
+        },
       })}
     >
-      <a href={to}>
-        <Heading>{title}</Heading>
-      </a>
-      <p>{date}</p>
-      <p>{excerpt}</p>
+      <Heading>
+        <Link href={to}>{title}</Link>
+      </Heading>
+      <Date>{date}</Date>
+      <Text>{excerpt}</Text>
     </div>
   );
 };

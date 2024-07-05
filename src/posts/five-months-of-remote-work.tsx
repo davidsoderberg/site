@@ -1,22 +1,25 @@
-import { Header } from './components/Header';
-import { Heading } from './components/Heading';
+import { Header } from '../components/Header';
+import { Date } from '../components/Date';
+import { Heading } from '../components/Heading';
+import { Text } from '../components/Text';
+import { useTitle } from '../utils/useTitle';
 
 export const FiveMonthsOfRemoteWork = () => {
+  useTitle('Five months of remote work');
+
   return (
-    <div>
-      <Header />
+    <Header>
       <Heading>Five months of remote work</Heading>
-      2022-08-31
-      <br />
-      <p>
+      <Date>2022-08-31</Date>
+      <Text>
         In the beginning of April this year(2022) I started at Novu after almost
         5 months since they reached out to hire me and now almost 5 months have
         passed since I started. I will now dive deep down in those 5 months and
         try to figure out what I have learned and why I really enjoy working
         remote and with Novu.
-      </p>
-      <h3>Working remote</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>Working remote</Heading>
+      <Text>
         Due to Covid-19 pandemic I worked remote 3 days a week and 2 days in
         office, we were allowed to work full time but an empty office is not fun
         to be in to be honest. When Covid-19 was at its worst in Sweden I worked
@@ -29,9 +32,9 @@ export const FiveMonthsOfRemoteWork = () => {
         logistics. I do not need to travel to an office, I do not need to
         prepare a lunchbox (I have my kitchen behind me when I am working,
         literally).
-      </p>
-      <h3>Communication</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>Communication</Heading>
+      <Text>
         Communication is hard even in a "office company" and it is not easier in
         a fully remote company. But my opinion right now about it is that the
         communication is better in Novu then any other company I have been in. I
@@ -39,9 +42,9 @@ export const FiveMonthsOfRemoteWork = () => {
         what I know so it is needed to be communicated. I do not say we are best
         in the world on communication but I think it is good because of being
         fully remote and also harder because of fully remote.
-      </p>
-      <h3>Community and public communication</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>Community and public communication</Heading>
+      <Text>
         This was not a topic I was afriad of starting at Novu, but when we
         decieded to make the engineering channel public in our Discord I got a
         bit afriad because sometimes you ask a "stupied" question because you
@@ -53,9 +56,9 @@ export const FiveMonthsOfRemoteWork = () => {
         Novus product better faster then the engineering team would ever be able
         to do. So if you are a community member and are reading this, thank
         you...
-      </p>
-      <h3>English</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>English</Heading>
+      <Text>
         If you would have asked me six years ago if I would work in a company
         that only speaks English I would with out a doubt say no. Because my
         English teacher in High School told me that my English is not good
@@ -63,9 +66,9 @@ export const FiveMonthsOfRemoteWork = () => {
         better. When writing this I feel as if I defenitly are speaking two
         languages fluently and I have had a friend from USA for five years now
         that have really helped me get to where I am now.
-      </p>
-      <h3>World wide</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>World wide</Heading>
+      <Text>
         With a fully remote company I have the privilege of being able to have
         collegues all over the world. This is one of the best thing to me
         because I have learned so much about people living in other countries
@@ -73,22 +76,22 @@ export const FiveMonthsOfRemoteWork = () => {
         to others. I am learing about different cultures and religons that I
         would never been able to learn in school, like that people in Israel do
         have weekend on Friday and Saturday.
-      </p>
-      <h3>Collegues</h3>
-      <p>
+      </Text>
+      <Heading variant='h3'>Collegues</Heading>
+      <Text>
         Oh my this header is a privilege to have in this post, the people at
         Novu is amazing. Nothing and I mean nothing feels bad to say or to do
         because they always support me or anyone in the company. I meet two of
         them two months ago and in like one week I will meet most of them in
         Cyprus and I am so EXCITED becuase people that are amazing remote must
         be even more amazing IRL right?
-      </p>
-      <p>
+      </Text>
+      <Text>
         Well this post did become a bit longer then I thought initialy but it
         feelt really good to write it, I hope you enjoyed it and maybe you now
         like to be a part of a remote company or even just an open source
         community.
-      </p>
-    </div>
+      </Text>
+    </Header>
   );
 };

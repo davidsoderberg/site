@@ -1,22 +1,26 @@
 import { Link } from 'react-router-dom';
 import { css } from '../../styled-system/css';
+import { ReactNode } from 'react';
 
-export const Header = () => {
+export const Header = ({ children = null }: { children?: ReactNode }) => {
   return (
-    <Link to='/'>
-      <h1
-        className={css({
-          color: '#39d353',
-          textAlign: 'center',
-          lineHeight: '24px',
-          fontSize: '32px',
-          fontWeight: 700,
-          marginTop: '32px',
-          marginBottom: '32px',
-        })}
-      >
-        David Söderberg
-      </h1>
-    </Link>
+    <div>
+      <Link to='/'>
+        <h1
+          className={css({
+            color: 'primary',
+            textAlign: 'center',
+            lineHeight: '24px',
+            fontSize: '32px',
+            fontWeight: 700,
+            paddingTop: '32px',
+            marginBottom: '32px',
+          })}
+        >
+          David Söderberg
+        </h1>
+      </Link>
+      {children}
+    </div>
   );
 };

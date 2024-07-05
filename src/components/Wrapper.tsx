@@ -5,11 +5,20 @@ export const Wrapper = ({ children }: { children: ReactNode }) => {
   return (
     <div
       className={css({
-        width: '80%',
-        margin: '0 auto',
+        backgroundColor: 'background',
+        width: '100%',
+        minHeight: '100vh',
       })}
     >
-      {children}
+      <div
+        className={css({
+          width: '80%',
+          margin: '0 auto',
+          paddingBottom: '8px',
+        })}
+      >
+        {children}
+      </div>
     </div>
   );
 };
