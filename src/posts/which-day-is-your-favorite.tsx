@@ -17,7 +17,7 @@ export const WhichDayIsYourFavorite = () => {
       <Heading>Which day is your favorite?</Heading>
       <Date>2024-06-30</Date>
       <Text>
-        1 year and 4 months since last post, time passed really quickly. Two
+        1 year and 4 months since last post, time passes really quickly. Two
         offsites and a lot of code have been done during that time.
       </Text>
       <Text>
@@ -79,21 +79,21 @@ export const WhichDayIsYourFavorite = () => {
         As I said two offsites have passed and a lot of co workers have been
         hiried and some have already left as well. We have shaped into two
         development teams with different co workers two times and the last time
-        happened like a bit more than month ago.
+        happened little a bit more than month ago.
       </Text>
       <Text>
-        For me this have been rough, first going from being one of THE
-        developers to being just a developer, but also I feel more isolated then
-        before. I feel like there is no team feeling and I feel no team
+        For me this have been rough, first going from being one of "the"
+        developers to being "just" a developer, but also I feel more isolated
+        then before. I feel like there is no team feeling and I feel no team
         belonging. I thought this would change post offsite but it did not, it
-        just got worse instead.
+        just got worse instead it feels like.
       </Text>
       <Text>
         I left my previous company in a role that was a very social and I feelt
         a strong team feeling so I know it can be a comparision that my head do
         unknowingly. This is something that makes work just work for me right
         now. Those of you that have known me for the last 8-10 years know that
-        programming and my work is a big part of me and my life. So these
+        programming and my work is/was a big part of me and my life. So these
         feelings I have right now is hard for me to handle.
       </Text>
       <Divider />
@@ -107,15 +107,33 @@ export const WhichDayIsYourFavorite = () => {
       </Text>
       <Text>
         But a short meeting with the owner of the box, resulted in that I have
-        now done 12 workouts with a personal trainer. Last week I decided to
+        now done 12 workouts with a personal trainer. Two weeks ago I decided to
         leave my current gym fully and instead get planned workouts from the
         personal trainer that I can do in the box by myself.
       </Text>
       <Text>
-        Days when I have these workouts scheduled, is now days my favorite day.
-        It can be a Monday or Friday, it does not matter. My favorite thing and
-        day is not related to what I am working with anymore and that is scaring
-        me.
+        I was so scared/nervous that I had to cancel the first booked meeting
+        because my head and stomach could not handle it. Second time I forced
+        myself to think of other things all day until I was outside of the box.
+      </Text>
+      <Text>
+        Days when I have these workouts scheduled, is now my favorite days. It
+        can be a Monday or Friday, it does not matter. My favorite thing and day
+        is not related to what I am working with anymore and that is also a bit
+        scaring me.
+      </Text>
+      <Text>
+        I think it is a good thing in the end thu, now I have something else
+        then work or programming that makes me wake up in the morning and gives
+        me the feeling of that today will be a great day.
+      </Text>
+      <Text className={css({ marginTop: '16px' })}>
+        I look bright at the future, I don't know what it will contain more then
+        workouts that I now feel more dedicated to then ever and more challenges
+        in Novu and my career. I am not scared of the future because I have plan
+        for the near future and I know I will come up with or have a plan for
+        the next near future when the near future have passed. Is it confusing?
+        Well my brain is confused right now so this might be to.
       </Text>
     </Header>
   );

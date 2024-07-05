@@ -8,9 +8,8 @@ function App() {
         to='/which-day-is-your-favorite'
         title='Which day is your favorite?'
         excerpt='1 year and 4 months since last post :O'
-        date='2024-06-30'
+        date='2024-07-05'
         selected={true}
-        hide={true}
       />
       <Post
         to={'/two-times-in-israel-part-2'}
@@ -19,7 +18,6 @@ function App() {
           'Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
         }
         date={'2023-02-05'}
-        selected={true}
       />
       <Post
         to={'/two-times-in-israel-part-1'}
