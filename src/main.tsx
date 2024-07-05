@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 
 import './index.css';
 import { Wrapper } from './components/Wrapper.tsx';
@@ -53,5 +54,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <Wrapper>
       <RouterProvider router={router} />
     </Wrapper>
+    <Analytics />
   </React.StrictMode>
 );
