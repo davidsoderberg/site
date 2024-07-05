@@ -127,7 +127,7 @@ export const WhichDayIsYourFavorite = () => {
         then work or programming that makes me wake up in the morning and gives
         me the feeling of that today will be a great day.
       </Text>
-      <Text className={css({ marginTop: '16px' })}>
+      <Text className={css({ marginTop: '32px' })}>
         I look bright at the future, I don't know what it will contain more then
         workouts that I now feel more dedicated to then ever and more challenges
         in Novu and my career. I am not scared of the future because I have plan
