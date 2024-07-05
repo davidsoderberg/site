@@ -12,6 +12,7 @@ export const Divider = ({
           {
             borderColor: 'border',
             marginBottom: '16px',
+            borderWidth: '1px',
           },
           style
         ),

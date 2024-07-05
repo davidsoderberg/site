@@ -56,7 +56,7 @@ export const Post = ({
   return (
     <div
       className={css({
-        borderBottom: '1px solid',
+        borderBottom: '2px solid',
         borderColor: 'border',
         marginBottom: '16px',
         padding: '8px 16px',
