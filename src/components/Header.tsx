@@ -12,11 +12,11 @@ export const Header = ({ children, className, style }: DefaultProps) => {
               {
                 color: 'primary',
                 textAlign: 'center',
-                lineHeight: '24px',
-                fontSize: '32px',
+                lineHeight: 'large',
+                fontSize: 'header',
                 fontWeight: 700,
-                paddingTop: '32px',
-                marginBottom: '32px',
+                paddingTop: 200,
+                marginBottom: 200,
               },
               style
             ),

@@ -56,10 +56,13 @@ export const Post = ({
   return (
     <div
       className={css({
-        borderBottom: '2px solid',
+        borderBottom: 'post',
         borderColor: 'border',
-        marginBottom: '16px',
-        padding: '8px 16px',
+        marginBottom: 100,
+        paddingTop: 50,
+        paddingBottom: 50,
+        paddingLeft: 100,
+        paddingRight: 100,
         '&:last-of-type': {
           borderBottom: 'none',
           marginBottom: 0,

@@ -7,10 +7,13 @@ export const Card = ({ children, className, style }: DefaultProps) => {
       className={cx(
         css(
           {
-            backgroundColor: 'selectedPost',
-            borderRadius: '8px',
-            marginBottom: '16px',
-            padding: '8px 16px',
+            backgroundColor: 'card',
+            borderRadius: 'default',
+            marginBottom: 100,
+            paddingTop: 50,
+            paddingBottom: 50,
+            paddingLeft: 100,
+            paddingRight: 100,
             boxShadow: 'default',
           },
           style

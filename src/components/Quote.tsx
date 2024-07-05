@@ -7,19 +7,22 @@ export const Quote = ({ children, className, style }: DefaultProps) => {
       className={cx(
         css(
           {
-            marginBottom: '16px',
-            borderLeft: '8px solid',
-            borderRight: '8px solid',
+            marginBottom: 100,
+            borderLeft: 'quote',
+            borderRight: 'quote',
             borderColor: 'white',
-            padding: '8px 16px',
-            borderRadius: '8px',
+            paddingTop: 50,
+            paddingBottom: 50,
+            paddingLeft: 100,
+            paddingRight: 100,
+            borderRadius: 'default',
             '&:before': {
               color: 'white',
               content: 'open-quote',
-              fontSize: '4em',
-              lineHeight: '16px',
-              marginRight: '0.25em',
-              verticalAlign: '-0.5em',
+              fontSize: 'quote',
+              lineHeight: 'small',
+              marginRight: 25,
+              verticalAlign: '-2rem',
             },
             '& > p:last-of-type': {
               marginBottom: 0,
@@ -27,9 +30,8 @@ export const Quote = ({ children, className, style }: DefaultProps) => {
             '&:after': {
               color: 'white',
               content: 'close-quote',
-              fontSize: '4em',
-              lineHeight: '16px',
-              marginTop: '-0.1em',
+              fontSize: 'quote',
+              lineHeight: 'small',
               textAlign: 'right',
               display: 'block',
             },

@@ -8,10 +8,10 @@ export const Wrapper = ({ children, className, style }: DefaultProps) => {
         backgroundColor: 'background',
         width: '100%',
         minHeight: '100vh',
-        border: '4px solid',
+        border: 'wrapper',
         borderColor: 'white',
-        borderRadius: '8px',
-        paddingBottom: '16px',
+        borderRadius: 'default',
+        paddingBottom: 100,
         boxShadow: 'defaultInset',
       })}
     >
@@ -21,7 +21,7 @@ export const Wrapper = ({ children, className, style }: DefaultProps) => {
             {
               width: '80%',
               margin: '0 auto',
-              paddingBottom: '8px',
+              paddingBottom: 50,
             },
             style
           ),

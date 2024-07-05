@@ -13,7 +13,7 @@ export const Image = ({
       className={cx(
         css(
           {
-            borderRadius: '8px',
+            borderRadius: 'default',
             boxShadow: 'default',
           },
           style

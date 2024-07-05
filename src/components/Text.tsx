@@ -8,7 +8,9 @@ export const Text = ({ children, className, style }: DefaultProps) => {
         css(
           {
             color: 'white',
-            marginBottom: '16px',
+            marginBottom: 100,
+            lineHeight: 'large',
+            fontSize: 'default',
           },
           style
         ),

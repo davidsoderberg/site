@@ -16,10 +16,11 @@ export const Heading = ({
           css(
             {
               color: 'white',
-              fontSize: '20px',
+              fontSize: 'small',
               fontWeight: 700,
-              lineHeight: '20px',
-              margin: '16px 0',
+              lineHeight: 'medium',
+              marginTop: 100,
+              marginBottom: 100,
             },
             style
           ),
@@ -35,10 +36,11 @@ export const Heading = ({
     <h2
       className={css({
         color: 'white',
-        fontSize: '24px',
+        fontSize: 'medium',
         fontWeight: 700,
-        lineHeight: '24px',
-        margin: '16px 0',
+        lineHeight: 'large',
+        marginTop: 100,
+        marginBottom: 100,
       })}
     >
       {children}

@@ -2,11 +2,11 @@ import { css, cx } from '../../styled-system/css';
 import { DefaultProps } from '../types/defaultProps';
 
 const defaultClassName = css({
-  marginLeft: '16px',
-  marginBottom: '16px',
+  marginLeft: 100,
+  marginBottom: 100,
   color: 'white',
   '& > li': {
-    marginBottom: '8px',
+    marginBottom: 50,
   },
 });
 

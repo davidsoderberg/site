@@ -11,8 +11,8 @@ export const Divider = ({
         css(
           {
             borderColor: 'border',
-            marginBottom: '16px',
-            borderWidth: '1px',
+            marginBottom: 100,
+            border: 'default',
           },
           style
         ),
