@@ -16,6 +16,10 @@ export const AWeekInCyprusWithNovu = () => {
           name='description'
           content='An amazing week that I will never forget.'
         />
+        <meta
+          property='og:image'
+          content='https://www.davidsouthmountain.se/door.jpg'
+        />
       </Helmet>
       <Heading>A week in Cyprus with Novu</Heading>
       <Date>2022-09-17</Date>

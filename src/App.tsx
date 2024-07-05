@@ -3,7 +3,7 @@ import { Post } from './components/Post';
 import { useTitle } from './utils/useTitle';
 
 function App() {
-  useTitle();
+  useTitle('Software Developer');
 
   return (
     <Header>

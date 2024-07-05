@@ -18,6 +18,10 @@ export const TwoTimesInIsraelPart2 = () => {
           name='description'
           content='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
         />
+        <meta
+          property='og:image'
+          content='https://www.davidsouthmountain.se/israel.png'
+        />
       </Helmet>
       <Heading>Two times in Israel (part 2)</Heading>
       <Date>2023-02-05</Date>
