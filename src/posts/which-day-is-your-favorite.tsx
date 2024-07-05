@@ -6,12 +6,16 @@ import { Heading } from '../components/Heading';
 import { Quote } from '../components/Quote';
 import { Text } from '../components/Text';
 import { useTitle } from '../utils/useTitle';
+import { Helmet } from 'react-helmet';
 
 export const WhichDayIsYourFavorite = () => {
   useTitle('Which day is your favorite?');
 
   return (
     <Header>
+      <Helmet>
+        <meta name='description' content='1 year and 4 months since last post :O' />
+      </Helmet>
       <Heading>Which day is your favorite?</Heading>
       <Date>2024-06-30</Date>
       <Text>

@@ -35,7 +35,7 @@ function App() {
       <Post
         to={'/a-week-in-cyprus-with-novu'}
         title={'A week in Cyprus with Novu'}
-        excerpt={'An amazing week that I will never forget'}
+        excerpt={'An amazing week that I will never forget.'}
         date={'2022-09-17'}
       />
       <Post

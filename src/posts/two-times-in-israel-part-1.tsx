@@ -4,12 +4,19 @@ import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { useTitle } from '../utils/useTitle';
+import { Helmet } from 'react-helmet';
 
 export const TwoTimesInIsraelPart1 = () => {
   useTitle('Two times in Israel (part 1)');
 
   return (
     <Header>
+      <Helmet>
+        <meta
+          name='description'
+          content='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
+        />
+      </Helmet>
       <Heading>Two times in Israel (part 1)</Heading>
       <Date>2023-02-04</Date>
       <Text>

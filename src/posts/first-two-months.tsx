@@ -4,12 +4,16 @@ import { Heading } from '../components/Heading';
 import { List } from '../components/List';
 import { Text } from '../components/Text';
 import { useTitle } from '../utils/useTitle';
+import { Helmet } from 'react-helmet';
 
 export const FirstTwoMonths = () => {
   useTitle('The first two months at Novu');
 
   return (
     <Header>
+      <Helmet>
+        <meta name='description' content='About my two first month at Novu.' />
+      </Helmet>
       <Heading>The first two months at Novu</Heading>
       <Date>2022-06-01</Date>
       <Text>
