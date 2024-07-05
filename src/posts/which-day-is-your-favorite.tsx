@@ -130,7 +130,7 @@ export const WhichDayIsYourFavorite = () => {
       <Text className={css({ marginTop: 200 })}>
         I look bright at the future, I don't know what it will contain more then
         workouts that I now feel more dedicated to then ever and more challenges
-        in Novu and my career. I am not scared of the future because I have plan
+        in Novu and my career. I am not scared of the future because I have a plan
         for the near future and I know I will come up with or have a plan for
         the next near future when the near future have passed. Is it confusing?
         Well my brain is confused right now so this might be to.

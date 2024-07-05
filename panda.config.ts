@@ -9,6 +9,7 @@ export default defineConfig({
 
   // Files to exclude
   exclude: [],
+  presets: [],
 
   // Useful for theme customization
   theme: {
