@@ -12,7 +12,7 @@ function App() {
         title='Which day is your favorite?'
         excerpt='1 year and 4 months since last post :O'
         date='2024-06-30'
-        active={true}
+        selected={true}
         hide={true}
       />
       <Post
@@ -22,7 +22,7 @@ function App() {
           'Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
         }
         date={'2023-02-05'}
-        active={true}
+        selected={true}
       />
       <Post
         to={'/two-times-in-israel-part-1'}

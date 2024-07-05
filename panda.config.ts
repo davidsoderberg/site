@@ -20,7 +20,7 @@ export default defineConfig({
         },
         colors: {
           background: { value: '#2a303c' },
-          activePost: { value: 'rgba(0, 0, 0, 0.2)' },
+          selectedPost: { value: 'rgba(0, 0, 0, 0.2)' },
           primary: { value: '#39d353' },
           border: { value: '#373c48' },
           white: { value: '#fff' },

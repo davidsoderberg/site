@@ -9,7 +9,7 @@ export const Post = ({
   title,
   excerpt,
   date,
-  active = false,
+  selected = false,
   hide = false,
 }: {
   to: string;
@@ -17,7 +17,7 @@ export const Post = ({
   excerpt: string;
   date: string;
   hide?: boolean;
-  active?: boolean;
+  selected?: boolean;
 }) => {
   if (hide) {
     return null;
@@ -25,7 +25,7 @@ export const Post = ({
 
   return (
     <div
-      {...(active ? { 'data-active': true } : {})}
+      {...(selected ? { 'aria-selected': true } : {})}
       className={css({
         borderBottom: '1px solid',
         borderColor: 'border',
@@ -35,8 +35,8 @@ export const Post = ({
           borderBottom: 'none',
           marginBottom: 0,
         },
-        _active: {
-          backgroundColor: 'activePost',
+        _selected: {
+          backgroundColor: 'selectedPost',
           borderRadius: '8px',
           borderBottom: 'none',
           boxShadow: 'default',
