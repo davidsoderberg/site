@@ -3,6 +3,7 @@ import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
+import { Image } from '../components/Image';
 import { useTitle } from '../utils/useTitle';
 import { Helmet } from 'react-helmet';
 
@@ -130,7 +131,7 @@ export const TwoTimesInIsraelPart1 = () => {
         <Link href='/two-times-in-israel-part-2'>second blog post</Link> about
         my second time in Israel.
       </Text>
-      <img
+      <Image
         src='/israel.png'
         alt='Welcome to Israel. Your life will never be the same.'
       />

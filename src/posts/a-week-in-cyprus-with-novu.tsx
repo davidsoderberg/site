@@ -2,6 +2,7 @@ import { Header } from '../components/Header';
 import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
+import { Image } from '../components/Image';
 import { useTitle } from '../utils/useTitle';
 import { Helmet } from 'react-helmet';
 
@@ -134,7 +135,7 @@ export const AWeekInCyprusWithNovu = () => {
         week have opened alot of doors between the members of Novu and the door
         for the future of Novu is wide open.
       </Text>
-      <img src='/door.jpg' />
+      <Image src='/door.jpg' />
     </Header>
   );
 };

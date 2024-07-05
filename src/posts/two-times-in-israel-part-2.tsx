@@ -3,6 +3,7 @@ import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
+import { Image } from '../components/Image';
 import { css } from '../../styled-system/css';
 import { useTitle } from '../utils/useTitle';
 import { Helmet } from 'react-helmet';
@@ -116,7 +117,7 @@ export const TwoTimesInIsraelPart2 = () => {
         great start to be able to solve any of those heading our way.
       </Text>
       <Text>Go Novu!</Text>
-      <img
+      <Image
         src='/israel.png'
         alt='Welcome to Israel. Your life will never be the same.'
       />
