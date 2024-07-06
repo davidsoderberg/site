@@ -9,9 +9,8 @@ export const GithubStats = () => {
       rel='noreferrer'
     >
       <Image
-        src='https://github-readme-stats-delta-ebon-21.vercel.app/api?username=davidsoderberg&count_private=true&theme=dark&show_icons=true&bg_color=2A303C&text_color=fff'
+        src='https://github-readme-stats-delta-ebon-21.vercel.app/api?username=davidsoderberg&count_private=true&theme=dark&show_icons=true&bg_color=2A303C&text_color=fff&hide_border=true'
         alt='GitHub stats'
-        style={{ borderRadius: 'none' }}
       />
     </Link>
   );

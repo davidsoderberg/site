@@ -11,11 +11,12 @@ import { GithubStats } from './components/GithubStats';
 import { GithubRepo } from './components/GithubRepo';
 import { GithubTopLangs } from './components/GithubTopLangs';
 import { css } from '../styled-system/css';
+import { Card } from './components/Card';
 
 export const App = () => {
   return (
     <Header>
-      <Container fluid>
+      <Container style={{ padding: 0 }} fluid>
         <Row>
           <Column lg={7}>
             <Heading>Hi nerds 👋</Heading>
@@ -65,9 +66,19 @@ export const App = () => {
           </Column>
         </Row>
       </Container>
-      <GithubCalendar />
-      <Container fluid>
-        <Row>
+      <Card
+        style={{
+          backgroundColor: 'transparent',
+          paddingTop: 25,
+          paddingBottom: 25,
+          marginBottom: 200,
+          marginTop: 200,
+        }}
+      >
+        <GithubCalendar />
+      </Card>
+      <Container style={{ padding: 0 }} fluid>
+        <Row nogutter>
           <Column xs={12} lg={7}>
             <GithubStats />
             <Row

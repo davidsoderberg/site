@@ -28,7 +28,11 @@ export const Header = ({ children, className, style }: DefaultProps) => {
           David Söderberg
         </h1>
       </Link>
-      <Card>
+      <Card
+        className={css({
+          backgroundColor: 'transparent',
+        })}
+      >
         <div
           className={hstack({
             padding: 50,

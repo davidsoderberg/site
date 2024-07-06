@@ -1,13 +1,13 @@
 import GitHubCalendar from 'react-github-calendar';
-import { css } from '../../styled-system/css';
 import { token } from '../../styled-system/tokens';
+import { center } from '../../styled-system/patterns';
 
 export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
   return (
     <div
-      className={css({
-        marginTop: 200,
-        marginBottom: 200,
+      className={center({
+        marginTop: 100,
+        marginBottom: 100,
       })}
     >
       <GitHubCalendar

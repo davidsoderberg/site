@@ -17,9 +17,8 @@ export const GithubRepo = ({
       rel='noreferrer'
     >
       <Image
-        src={`https://github-readme-stats-delta-ebon-21.vercel.app/api/pin/?username=${username}&repo=${repo}&theme=dark&bg_color=2A303C&text_color=fff`}
+        src={`https://github-readme-stats-delta-ebon-21.vercel.app/api/pin/?username=${username}&repo=${repo}&theme=dark&bg_color=2A303C&text_color=fff&hide_border=true`}
         alt={alt}
-        style={{ borderRadius: 'none' }}
       />
     </Link>
   );
