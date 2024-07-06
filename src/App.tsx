@@ -85,6 +85,7 @@ export const App = () => {
             <Row
               className={css({
                 marginTop: 100,
+                marginBottom: 100,
               })}
             >
               <Column lg={12}>
