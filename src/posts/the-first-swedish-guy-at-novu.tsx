@@ -1,8 +1,7 @@
 import { Header } from '../components/Header';
-import { Date } from '../components/Date';
-import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 
 export const TheFirstSwedishGuyAtNovu = () => {
   return (
@@ -11,8 +10,7 @@ export const TheFirstSwedishGuyAtNovu = () => {
         title='The first Swedish guy at Novu'
         description='About how I ended up at Novu after a few video calls.'
       />
-      <Heading>The first Swedish guy at Novu</Heading>
-      <Date>2022-04-05</Date>
+      <PostHeader title={'The first Swedish guy at Novu'} date={'2022-04-05'} />
       <Text>
         Hi, my name is David and I am 29 years old and living in Sweden, this
         year (2022) it is ten years since I wrote my first line of code (C#).

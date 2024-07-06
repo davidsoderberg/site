@@ -70,8 +70,8 @@ export const App = () => {
       <Card
         style={{
           backgroundColor: 'transparent',
-          paddingTop: 25,
-          paddingBottom: 25,
+          paddingTop: 0,
+          paddingBottom: 0,
           marginBottom: 200,
           marginTop: 200,
         }}

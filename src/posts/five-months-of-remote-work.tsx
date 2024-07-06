@@ -1,8 +1,8 @@
 import { Header } from '../components/Header';
-import { Date } from '../components/Date';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 
 export const FiveMonthsOfRemoteWork = () => {
   return (
@@ -11,8 +11,7 @@ export const FiveMonthsOfRemoteWork = () => {
         title='Five months of remote work'
         description='How my first five months at Novu have been this far...'
       />
-      <Heading>Five months of remote work</Heading>
-      <Date>2022-08-31</Date>
+      <PostHeader title={'Five months of remote work'} date={'2022-08-31'} />
       <Text>
         In the beginning of April this year(2022) I started at Novu after almost
         5 months since they reached out to hire me and now almost 5 months have

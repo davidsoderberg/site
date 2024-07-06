@@ -4,20 +4,29 @@ import { center } from '../../styled-system/patterns';
 
 export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
   return (
-    <div
-      className={center({
-        marginTop: 100,
-        marginBottom: 100,
-      })}
-    >
+    <div className={center()}>
       <GitHubCalendar
         style={{
           color: token('colors.white'),
+          marginTop: token('spacing.150'),
+          marginBottom: token('spacing.150'),
         }}
         weekStart={1}
         theme={{
-          dark: ['#39d353', '#26a641', '#006d32', '#0e4429', '#2d333b'],
-          light: ['#39d353', '#26a641', '#006d32', '#0e4429', '#2d333b'],
+          dark: [
+            token('colors.primary'),
+            token('colors.primary.1'),
+            token('colors.primary.2'),
+            token('colors.primary.3'),
+            token('colors.card'),
+          ],
+          light: [
+            token('colors.primary'),
+            token('colors.primary.1'),
+            token('colors.primary.2'),
+            token('colors.primary.3'),
+            token('colors.card'),
+          ],
         }}
         blockSize={16}
         showWeekdayLabels={true}

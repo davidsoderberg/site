@@ -1,11 +1,10 @@
 import { Header } from '../components/Header';
-import { Date } from '../components/Date';
-import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { css } from '../../styled-system/css';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 
 export const TwoTimesInIsraelPart2 = () => {
   return (
@@ -15,8 +14,7 @@ export const TwoTimesInIsraelPart2 = () => {
         description='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
         image='israel.png'
       />
-      <Heading>Two times in Israel (part 2)</Heading>
-      <Date>2023-02-05</Date>
+      <PostHeader title={'Two times in Israel (part 2)'} date={'2023-02-05'} />
       <Text
         className={css({
           fontWeight: 'bolder',

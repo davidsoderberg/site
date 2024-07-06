@@ -59,7 +59,12 @@ export default defineConfig({
         colors: {
           background: { value: '#2a303c' },
           card: { value: 'rgba(0, 0, 0, 0.2)' },
-          primary: { value: '#39d353' },
+          primary: {
+            value: '#39d353',
+            1: { value: '#26a641' },
+            2: { value: '#006d32' },
+            3: { value: '#0e4429' },
+          },
           border: { value: 'rgba(0, 0, 0, 0.2)' },
           white: { value: '#fff' },
         },

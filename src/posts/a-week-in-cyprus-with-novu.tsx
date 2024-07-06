@@ -1,9 +1,8 @@
 import { Header } from '../components/Header';
-import { Date } from '../components/Date';
-import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 
 export const AWeekInCyprusWithNovu = () => {
   return (
@@ -13,8 +12,7 @@ export const AWeekInCyprusWithNovu = () => {
         description='An amazing week that I will never forget.'
         image='door.jpg'
       />
-      <Heading>A week in Cyprus with Novu</Heading>
-      <Date>2022-09-17</Date>
+      <PostHeader title={'A week in Cyprus with Novu'} date={'2022-09-17'} />
       <Text>
         Five months have passed and half of the company trip to Cyprus have
         almost passed... I am writing this on a boat trip and enjoying being

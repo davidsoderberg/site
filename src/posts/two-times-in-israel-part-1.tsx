@@ -1,10 +1,9 @@
 import { Header } from '../components/Header';
-import { Date } from '../components/Date';
-import { Heading } from '../components/Heading';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 
 export const TwoTimesInIsraelPart1 = () => {
   return (
@@ -14,8 +13,7 @@ export const TwoTimesInIsraelPart1 = () => {
         description='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
         image='israel.png'
       />
-      <Heading>Two times in Israel (part 1)</Heading>
-      <Date>2023-02-04</Date>
+      <PostHeader title={'Two times in Israel (part 1)'} date={'2023-02-04'} />
       <Text>
         I see myself as any swedish guy, I dreamed about being a fire fighter or
         police officer when I was like 4-5 years old, I did not have any sports

@@ -1,9 +1,8 @@
 import { css } from '../../styled-system/css';
-import { Date } from '../components/Date';
 import { Divider } from '../components/Divider';
 import { Header } from '../components/Header';
-import { Heading } from '../components/Heading';
 import { Meta } from '../components/Meta';
+import { PostHeader } from '../components/PostHeader';
 import { Quote } from '../components/Quote';
 import { Text } from '../components/Text';
 
@@ -14,8 +13,7 @@ export const WhichDayIsYourFavorite = () => {
         title='Which day is your favorite?'
         description='1 year and 4 months since last post :O'
       />
-      <Heading>Which day is your favorite?</Heading>
-      <Date>2024-06-30</Date>
+      <PostHeader title={'Which day is your favorite?'} date={'2024-06-30'} />
       <Text>
         1 year and 4 months since last post, time passes really quickly. Two
         offsites and a lot of code have been done during that time.
@@ -85,8 +83,8 @@ export const WhichDayIsYourFavorite = () => {
         For me this have been rough, first going from being one of "the"
         developers to being "just" a developer, but also I feel more isolated
         than before. I feel like there is no team feeling and I feel no team
-        belonging. I thought this would change after the offsite but it did not, it
-        just got worse instead it feels like.
+        belonging. I thought this would change after the offsite but it did not,
+        it just got worse instead it feels like.
       </Text>
       <Text>
         I left my previous company in a role that was a very social and I feelt
@@ -99,11 +97,11 @@ export const WhichDayIsYourFavorite = () => {
       <Divider />
       <Text>
         Another thing that have happend since my last post and is on a more
-        personal note. In February took I the courage to contact a
-        CrossFit box (gym) to start doing CrossFit workouts for real. A lot of
-        ghost thoughts is behind this, I have never really been fit and have
-        always been thinking of people judging me for anything I do when it
-        comes to working out.
+        personal note. In February took I the courage to contact a CrossFit box
+        (gym) to start doing CrossFit workouts for real. A lot of ghost thoughts
+        is behind this, I have never really been fit and have always been
+        thinking of people judging me for anything I do when it comes to working
+        out.
       </Text>
       <Text>
         But a short meeting with the owner of the box, resulted in that I have
@@ -112,9 +110,9 @@ export const WhichDayIsYourFavorite = () => {
         personal trainer that I can do in the box by myself.
       </Text>
       <Text>
-        I was so scared/nervous that I had to cancel the first time
-        because my head and stomach could not handle it. Second time I forced
-        myself to think of other things all day until I was outside of the box.
+        I was so scared/nervous that I had to cancel the first time because my
+        head and stomach could not handle it. Second time I forced myself to
+        think of other things all day until I was outside of the box.
       </Text>
       <Text>
         Days when I have these workouts scheduled, is now my favorite days. It
@@ -123,17 +121,17 @@ export const WhichDayIsYourFavorite = () => {
         scary for me.
       </Text>
       <Text>
-        I think it is a good thing in the end, now I have something else
-        than work or programming that makes me wake up in the morning and gives
-        me the feeling of that today will be a great day.
+        I think it is a good thing in the end, now I have something else than
+        work or programming that makes me wake up in the morning and gives me
+        the feeling of that today will be a great day.
       </Text>
       <Text className={css({ marginTop: 200 })}>
         I look bright at the future, I don't know what it will contain more than
         workouts that I now feel more dedicated to than ever and more challenges
-        in Novu and my career. I am not scared of the future because I have a plan
-        for the near future and I know I will come up with or have a plan for
-        the next near future when the near future have passed. Is it confusing?
-        Well my brain is confused right now so this might be to.
+        in Novu and my career. I am not scared of the future because I have a
+        plan for the near future and I know I will come up with or have a plan
+        for the next near future when the near future have passed. Is it
+        confusing? Well my brain is confused right now so this might be to.
       </Text>
     </Header>
   );
