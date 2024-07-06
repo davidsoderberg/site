@@ -1,4 +1,4 @@
-import { css } from '../../styled-system/css';
+import { Styles, css, cx } from '../../styled-system/css';
 import { Card } from './Card';
 import { Date } from './Date';
 import { Heading } from './Heading';
@@ -31,6 +31,8 @@ export const Post = ({
   title,
   excerpt,
   date,
+  className,
+  style,
   selected = false,
   hide = false,
 }: {
@@ -40,6 +42,8 @@ export const Post = ({
   date: string;
   hide?: boolean;
   selected?: boolean;
+  className?: string;
+  style?: Styles;
 }) => {
   if (hide) {
     return null;
@@ -47,7 +51,7 @@ export const Post = ({
 
   if (selected) {
     return (
-      <Card>
+      <Card className={className} style={style}>
         <PostContent to={to} title={title} excerpt={excerpt} date={date} />
       </Card>
     );
@@ -55,19 +59,25 @@ export const Post = ({
 
   return (
     <div
-      className={css({
-        borderBottom: 'post',
-        borderColor: 'border',
-        marginBottom: 100,
-        paddingTop: 50,
-        paddingBottom: 50,
-        paddingLeft: 100,
-        paddingRight: 100,
-        '&:last-of-type': {
-          borderBottom: 'none',
-          marginBottom: 0,
-        },
-      })}
+      className={cx(
+        css(
+          {
+            borderBottom: 'post',
+            borderColor: 'border',
+            marginBottom: 100,
+            paddingTop: 50,
+            paddingBottom: 50,
+            paddingLeft: 100,
+            paddingRight: 100,
+            '&:last-of-type': {
+              borderBottom: 'none',
+              marginBottom: 0,
+            },
+          },
+          style
+        ),
+        className
+      )}
     >
       <PostContent to={to} title={title} excerpt={excerpt} date={date} />
     </div>

@@ -1,11 +1,13 @@
-import { Link } from 'react-router-dom';
 import { css, cx } from '../../styled-system/css';
 import { DefaultProps } from '../types/defaultProps';
+import { Card } from './Card';
+import { hstack } from '../../styled-system/patterns';
+import { Link } from './Link';
 
 export const Header = ({ children, className, style }: DefaultProps) => {
   return (
     <div>
-      <Link to='/'>
+      <Link href='/'>
         <h1
           className={cx(
             css(
@@ -26,6 +28,41 @@ export const Header = ({ children, className, style }: DefaultProps) => {
           David Söderberg
         </h1>
       </Link>
+      <Card>
+        <div
+          className={hstack({
+            padding: 50,
+            justifyContent: 'space-between',
+          })}
+        >
+          <div
+            className={hstack({
+              fontSize: 'small',
+              gap: 200,
+            })}
+          >
+            <Link href='/'>Home</Link>
+            <Link href='/posts'>Posts</Link>
+          </div>
+          <div
+            className={hstack({
+              fontSize: 'small',
+              gap: 200,
+            })}
+          >
+            <Link href='https://novu.co/' target='_blank' rel='noreferrer'>
+              Novu
+            </Link>
+            <Link
+              href='https://github.com/davidsoderberg'
+              target='_blank'
+              rel='noreferrer'
+            >
+              Github
+            </Link>
+          </div>
+        </div>
+      </Card>
       {children}
     </div>
   );

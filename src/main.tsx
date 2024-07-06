@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './App.tsx';
+import { App } from './App.tsx';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import './index.css';
@@ -14,11 +14,16 @@ import { TheFirstSwedishGuyAtNovu } from './posts/the-first-swedish-guy-at-novu.
 import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite.tsx';
 import { Meta } from './components/Meta.tsx';
 import { Analytics } from './components/Analytics.tsx';
+import { Posts } from './posts.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
+  },
+  {
+    path: '/posts',
+    element: <Posts />
   },
   {
     path: '/two-times-in-israel-part-2',

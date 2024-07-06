@@ -6,12 +6,18 @@ export const Link = ({
   href,
   className,
   style,
+  target,
+  rel,
 }: DefaultProps & {
   href: string;
+  target?: '_blank' | '_self' | '_parent' | '_top';
+  rel?: string;
 }) => {
   return (
     <a
       href={href}
+      target={target}
+      rel={rel}
       className={cx(
         css(
           {
