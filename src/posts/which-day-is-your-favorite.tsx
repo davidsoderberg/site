@@ -22,7 +22,7 @@ export const WhichDayIsYourFavorite = () => {
       </Text>
       <Text>
         The Saturday of seven of October 2023 I woke up to the news of that
-        Israel had been attacked with 5000 missiles. Less then an hour later I
+        Israel had been attacked with 5000 missiles. Less than an hour later I
         sent a message to all my friends and co workers in Israel to see that
         they was alive and okay. About two hours later had I heard from everyone
         that they was okay, those two hours was for sure the two longest hour
@@ -55,7 +55,7 @@ export const WhichDayIsYourFavorite = () => {
           })}
         >
           Today I am thinking about when I can go to Israel next, the question
-          is not if but when I will go. Taking the position I have today is far
+          is not if but when I will go. Taking the position I have today was far
           from obvious or risk-free, but today my colleagues and friends in
           Israel mean more than I could have ever believed in December almost
           two years ago.
@@ -79,13 +79,13 @@ export const WhichDayIsYourFavorite = () => {
         As I said two offsites have passed and a lot of co workers have been
         hiried and some have already left as well. We have shaped into two
         development teams with different co workers two times and the last time
-        happened little a bit more than month ago.
+        happened about a month ago.
       </Text>
       <Text>
         For me this have been rough, first going from being one of "the"
         developers to being "just" a developer, but also I feel more isolated
-        then before. I feel like there is no team feeling and I feel no team
-        belonging. I thought this would change post offsite but it did not, it
+        than before. I feel like there is no team feeling and I feel no team
+        belonging. I thought this would change after the offsite but it did not, it
         just got worse instead it feels like.
       </Text>
       <Text>
@@ -99,11 +99,11 @@ export const WhichDayIsYourFavorite = () => {
       <Divider />
       <Text>
         Another thing that have happend since my last post and is on a more
-        personal note. Is that I in February took the courage to contact a
+        personal note. In February took I the courage to contact a
         CrossFit box (gym) to start doing CrossFit workouts for real. A lot of
         ghost thoughts is behind this, I have never really been fit and have
         always been thinking of people judging me for anything I do when it
-        comes to exercieses.
+        comes to working out.
       </Text>
       <Text>
         But a short meeting with the owner of the box, resulted in that I have
@@ -112,7 +112,7 @@ export const WhichDayIsYourFavorite = () => {
         personal trainer that I can do in the box by myself.
       </Text>
       <Text>
-        I was so scared/nervous that I had to cancel the first booked meeting
+        I was so scared/nervous that I had to cancel the first time
         because my head and stomach could not handle it. Second time I forced
         myself to think of other things all day until I was outside of the box.
       </Text>
@@ -120,16 +120,16 @@ export const WhichDayIsYourFavorite = () => {
         Days when I have these workouts scheduled, is now my favorite days. It
         can be a Monday or Friday, it does not matter. My favorite thing and day
         is not related to what I am working with anymore and that is also a bit
-        scaring me.
+        scary for me.
       </Text>
       <Text>
-        I think it is a good thing in the end thu, now I have something else
-        then work or programming that makes me wake up in the morning and gives
+        I think it is a good thing in the end, now I have something else
+        than work or programming that makes me wake up in the morning and gives
         me the feeling of that today will be a great day.
       </Text>
       <Text className={css({ marginTop: 200 })}>
-        I look bright at the future, I don't know what it will contain more then
-        workouts that I now feel more dedicated to then ever and more challenges
+        I look bright at the future, I don't know what it will contain more than
+        workouts that I now feel more dedicated to than ever and more challenges
         in Novu and my career. I am not scared of the future because I have a plan
         for the near future and I know I will come up with or have a plan for
         the next near future when the near future have passed. Is it confusing?
