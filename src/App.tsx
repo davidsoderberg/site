@@ -12,6 +12,7 @@ import { GithubRepo } from './components/GithubRepo';
 import { GithubTopLangs } from './components/GithubTopLangs';
 import { css } from '../styled-system/css';
 import { Card } from './components/Card';
+import { hstack } from '../styled-system/patterns';
 
 export const App = () => {
   return (
@@ -62,7 +63,7 @@ export const App = () => {
               <li>Software Developer, Fortnox (2017-04-03 - 2020-06-30)</li>
               <li>Software Developer, Isotop (2017-08-24 - 2017-04-02 )</li>
             </List>
-            <Image src={'me.jpeg'} />
+            <Image style={{ width: '100%' }} src={'me.jpeg'} />
           </Column>
         </Row>
       </Container>
@@ -86,21 +87,20 @@ export const App = () => {
                 marginTop: 100,
               })}
             >
-              <Column xs={12} lg={6}>
+              <Column lg={12}>
                 <GithubRepo
                   username='novuhq'
                   repo='novu'
                   alt='Novu by novuhq'
                 />
               </Column>
-              <Column xs={12} lg={6}>
-                <GithubRepo username='davidsoderberg' repo='site' alt='Site' />
-              </Column>
             </Row>
           </Column>
           <Column xs={12} lg={1} />
           <Column xs={12} lg={4}>
-            <GithubTopLangs />
+            <div className={hstack({ justifyContent: 'flex-end' })}>
+              <GithubTopLangs />
+            </div>
           </Column>
         </Row>
       </Container>
