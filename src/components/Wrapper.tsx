@@ -13,6 +13,11 @@ export const Wrapper = ({ children, className, style }: DefaultProps) => {
         borderRadius: 'default',
         paddingBottom: 100,
         boxShadow: 'defaultInset',
+        xsDown: {
+          border: 'none',
+          borderRadius: 0,
+          boxShadow: 'none',
+        },
       })}
     >
       <div
@@ -22,6 +27,10 @@ export const Wrapper = ({ children, className, style }: DefaultProps) => {
               width: '80%',
               margin: '0 auto',
               paddingBottom: 50,
+              xsDown: {
+                width: '100%',
+                padding: 100,
+              },
             },
             style
           ),

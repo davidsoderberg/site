@@ -16,6 +16,12 @@ export const Quote = ({ children, className, style }: DefaultProps) => {
             paddingLeft: 100,
             paddingRight: 100,
             borderRadius: 'default',
+            xsDown: {
+              borderLeft: 'none',
+              borderRight: 'none',
+              paddingLeft: 0,
+              paddingRight: 0,
+            },
             '&:before': {
               color: 'white',
               content: 'open-quote',
