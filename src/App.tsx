@@ -35,11 +35,11 @@ export const App = () => {
             </Text>
             <Text>
               Today I am developing some private Remix apps with diffrent
-              typesof databases.
+              types of databases.
             </Text>
             <List>
               <li>⌨️ I’m currently working on a new Remix app.</li>
-              <li>📘 I’m currently learning Remix.</li>
+              <li>📘 I’m currently learning Panda CSS.</li>
               <li>❔ Ask me about Remix, React, Nest.js stuff.</li>
               <li>
                 🍔 Fun fact: I started out to be a chef but switched to be a
