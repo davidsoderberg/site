@@ -14,6 +14,13 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
+      breakpoints: {
+        xs: '576px',
+        sm: '768px',
+        md: '992px',
+        lg: '1200px',
+        xl: '1408px',
+      },
       tokens: {
         fontSizes: {
           default: { value: '16px' },

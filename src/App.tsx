@@ -34,8 +34,8 @@ export const App = () => {
               .
             </Text>
             <Text>
-              Today I am developing some private Remix apps with diffrent
-              types of databases.
+              Today I am developing some private Remix apps with diffrent types
+              of databases.
             </Text>
             <List>
               <li>⌨️ I’m currently working on a new Remix app.</li>
@@ -99,7 +99,14 @@ export const App = () => {
           </Column>
           <Column xs={12} lg={1} />
           <Column xs={12} lg={4}>
-            <div className={hstack({ justifyContent: 'flex-end' })}>
+            <div
+              className={hstack({
+                justifyContent: 'flex-end',
+                xsDown: {
+                  justifyContent: 'center',
+                },
+              })}
+            >
               <GithubTopLangs />
             </div>
           </Column>

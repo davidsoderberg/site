@@ -37,12 +37,20 @@ export const Header = ({ children, className, style }: DefaultProps) => {
           className={hstack({
             padding: 50,
             justifyContent: 'space-between',
+            xsDown: {
+              flexDirection: 'column',
+              gap: 50,
+            },
           })}
         >
           <div
             className={hstack({
               fontSize: 'small',
               gap: 200,
+              xsDown: {
+                justifyContent: 'space-between',
+                width: '100%',
+              },
             })}
           >
             <Link href='/'>Home</Link>
@@ -52,6 +60,10 @@ export const Header = ({ children, className, style }: DefaultProps) => {
             className={hstack({
               fontSize: 'small',
               gap: 200,
+              xsDown: {
+                justifyContent: 'space-between',
+                width: '100%',
+              },
             })}
           >
             <Link href='https://novu.co/' target='_blank' rel='noreferrer'>
