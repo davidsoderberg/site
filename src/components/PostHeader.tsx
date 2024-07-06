@@ -15,6 +15,11 @@ export const PostHeader = ({
       className={hstack({
         justifyContent: 'space-between',
         marginBottom: '100',
+        xsDown: {
+          alignItems: 'flex-start',
+          flexDirection: 'column',
+          gap: 0,
+        },
       })}
     >
       <Heading>{title}</Heading>
