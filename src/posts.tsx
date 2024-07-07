@@ -44,7 +44,7 @@ export const Posts = () => {
           Filter by tag:
         </Text>
         <Tags
-          tags={[PostTags.NOVU, PostTags.WORKOUT, PostTags.ISRAEL]}
+          tags={Object.values(PostTags)}
           selected={selectedTag}
           onClick={(tag) => {
             if (selectedTag === tag) {
