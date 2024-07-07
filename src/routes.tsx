@@ -94,7 +94,6 @@ export const pages: (RouteObject | Post)[] = [
     title: 'Which day is your favorite?',
     excerpt: '1 year and 4 months since last post :O',
     date: '2024-07-05',
-    selected: true,
     tags: [PostTags.ISRAEL, PostTags.WORKOUT, PostTags.NOVU],
   },
   {
@@ -105,9 +104,8 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,
     element: <BeingSwedishInAGlobalCompany />,
     title: 'Being Swedish in a global company',
-    date: '2024-07-08',
+    date: '2024-07-07',
     selected: true,
-    hide: true,
     tags: [PostTags.SWEDEN, PostTags.NOVU],
   },
 ];

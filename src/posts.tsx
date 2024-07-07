@@ -10,6 +10,7 @@ import { useClientPagination } from './hooks/useClientPagination';
 import { When } from './components/When';
 import { Link } from './components/Link';
 import { css } from '../styled-system/css';
+import { LatestPost } from './components/LatestPost';
 
 export const Posts = () => {
   const [selectedTag, setSelectedTag] = useState<PostTags | undefined>();
@@ -29,7 +30,6 @@ export const Posts = () => {
 
   const tags = useMemo(() => {
     return posts
-      .filter((post) => !post.hide)
       .map((post) => post.tags)
       .reduce((prev: PostTags[], current): PostTags[] => {
         if (!current) {
@@ -98,8 +98,10 @@ export const Posts = () => {
             marginTop: 100,
           })}
         >
-          No posts exists with tag <b>{selectedTag}</b> yet...
+          No posts exists with tag <b>{selectedTag}</b>, but here is my
+          recommended read:
         </Text>
+        <LatestPost />
       </When>
       <div className={center()}>
         <When truthy={hasMore && !loading}>
