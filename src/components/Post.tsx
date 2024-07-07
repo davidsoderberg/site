@@ -6,26 +6,36 @@ import { Heading } from './Heading';
 import { Link } from './Link';
 import { Text } from './Text';
 import { pages } from '../routes';
-import { Post as IPost } from '../types/post';
+import { Post as IPost, PostTags } from '../types/post';
+import { Tags } from './Tags';
+import { hstack } from '../../styled-system/patterns';
 
 const PostContent = ({
   to,
   title,
   excerpt,
   date,
+  tags = [],
 }: {
   to: string;
   title: string;
   excerpt: string;
   date: string;
+  tags?: PostTags[];
 }) => (
   <>
-    {' '}
     <Heading>
       <Link href={to}>{title}</Link>
     </Heading>
     <Date>{date}</Date>
     <Text>{excerpt}</Text>
+    <div
+      className={hstack({
+        marginBottom: 100,
+      })}
+    >
+      <Tags tags={tags} />
+    </div>
   </>
 );
 
@@ -42,7 +52,7 @@ export const Post = ({
   className?: string;
   style?: Styles;
 }) => {
-  const { title, date, excerpt }: IPost = useMemo(() => {
+  const { title, date, excerpt, tags }: IPost = useMemo(() => {
     return pages.find((route) => route.path === to) as IPost;
   }, [to]);
 
@@ -53,7 +63,13 @@ export const Post = ({
   if (selected) {
     return (
       <Card className={className} style={style}>
-        <PostContent to={to} title={title} excerpt={excerpt} date={date} />
+        <PostContent
+          tags={tags}
+          to={to}
+          title={title}
+          excerpt={excerpt}
+          date={date}
+        />
       </Card>
     );
   }
@@ -80,7 +96,13 @@ export const Post = ({
         className
       )}
     >
-      <PostContent to={to} title={title} excerpt={excerpt} date={date} />
+      <PostContent
+        tags={tags}
+        to={to}
+        title={title}
+        excerpt={excerpt}
+        date={date}
+      />
     </div>
   );
 };

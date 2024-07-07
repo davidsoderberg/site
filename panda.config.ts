@@ -23,6 +23,7 @@ export default defineConfig({
       },
       tokens: {
         fontSizes: {
+          badge: { value: '12px' },
           default: { value: '16px' },
           small: { value: '20px' },
           medium: { value: '24px' },
@@ -49,6 +50,7 @@ export default defineConfig({
         },
         radii: {
           default: { value: '8px' },
+          badge: { value: '16px' },
         },
         shadows: {
           default: { value: '0px 5px 20px rgba(0, 0, 0, 0.2)' },

@@ -9,7 +9,7 @@ import { TwoTimesInIsraelPart1 } from './posts/two-times-in-israel-part-1';
 import { TwoTimesInIsraelPart2 } from './posts/two-times-in-israel-part-2';
 import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite';
 import { CatchAll } from './CatchAll';
-import { Post } from './types/post';
+import { Post, PostTags } from './types/post';
 
 export const PATHS = {
   ROOT: '/',
@@ -41,6 +41,7 @@ export const pages: (RouteObject | Post)[] = [
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
     date: '2023-02-05',
     image: 'israel.png',
+    tags: [PostTags.ISRAEL],
   },
   {
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_1,
@@ -50,6 +51,7 @@ export const pages: (RouteObject | Post)[] = [
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
     date: '2023-02-04',
     image: 'israel.png',
+    tags: [PostTags.ISRAEL],
   },
   {
     path: PATHS.A_WEEK_IN_CYPRUS_WITH_NOVU,
@@ -58,6 +60,7 @@ export const pages: (RouteObject | Post)[] = [
     excerpt: 'An amazing week that I will never forget.',
     date: '2022-09-17',
     image: 'door.jpg',
+    tags: [PostTags.NOVU],
   },
   {
     path: PATHS.FIVE_MONTHS_OF_REMOTE_WORK,
@@ -65,6 +68,7 @@ export const pages: (RouteObject | Post)[] = [
     title: 'Five months of remote work',
     excerpt: 'How my first five months at Novu have been this far...',
     date: '2022-08-31',
+    tags: [PostTags.NOVU],
   },
   {
     path: PATHS.FIRST_TWO_MONTHS,
@@ -72,6 +76,7 @@ export const pages: (RouteObject | Post)[] = [
     title: 'The first two months at Novu',
     excerpt: 'About my two first month at Novu.',
     date: '2022-06-01',
+    tags: [PostTags.NOVU],
   },
   {
     path: PATHS.THE_FIRST_SWEDISH_GUY_AT_NOVU,
@@ -79,6 +84,7 @@ export const pages: (RouteObject | Post)[] = [
     title: 'The first Swedish guy at Novu',
     excerpt: 'About how I ended up at Novu after a few video calls.',
     date: '2022-04-05',
+    tags: [PostTags.NOVU],
   },
   {
     path: PATHS.WHICH_DAY_IS_YOUR_FAVORITE,
@@ -86,6 +92,8 @@ export const pages: (RouteObject | Post)[] = [
     title: 'Which day is your favorite?',
     excerpt: '1 year and 4 months since last post :O',
     date: '2024-07-05',
+    selected: true,
+    tags: [PostTags.ISRAEL, PostTags.WORKOUT, PostTags.NOVU],
   },
   {
     path: PATHS.CATCH_ALL,

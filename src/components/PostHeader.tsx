@@ -7,11 +7,18 @@ import { useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
 import { Meta } from './Meta';
 import { Post } from '../types/post';
+import { Tags } from './Tags';
 
 export const PostHeader = () => {
   const { pathname } = useLocation();
 
-  const { title, date, excerpt, image }: Post = useMemo(() => {
+  const {
+    title,
+    date,
+    excerpt,
+    image,
+    tags = [],
+  }: Post = useMemo(() => {
     return posts.find((route) => route.path === pathname) as Post;
   }, [pathname]);
 
@@ -21,7 +28,7 @@ export const PostHeader = () => {
       <div
         className={hstack({
           justifyContent: 'space-between',
-          marginBottom: '100',
+          marginBottom: '50',
           xsDown: {
             alignItems: 'flex-start',
             flexDirection: 'column',
@@ -31,6 +38,13 @@ export const PostHeader = () => {
       >
         <Heading>{title}</Heading>
         <Date className={css({ marginBottom: 0 })}>{date}</Date>
+      </div>
+      <div
+        className={hstack({
+          marginBottom: '100',
+        })}
+      >
+        <Tags tags={tags} />
       </div>
     </>
   );
