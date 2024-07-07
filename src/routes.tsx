@@ -104,7 +104,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,
     element: <BeingSwedishInAGlobalCompany />,
     title: 'Being Swedish in a global company',
-    excerpt: 'A post about the swedish "vemod" and "Jante"',
+    excerpt: 'A post about the swedish "vemod" and "Jante".',
     date: '2024-07-07',
     selected: true,
     tags: [PostTags.SWEDEN, PostTags.NOVU],
