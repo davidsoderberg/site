@@ -1,17 +1,12 @@
 import { Header } from '../components/Header';
 import { List } from '../components/List';
 import { Text } from '../components/Text';
-import { Meta } from '../components/Meta';
 import { PostHeader } from '../components/PostHeader';
 
 export const FirstTwoMonths = () => {
   return (
     <Header>
-      <Meta
-        title='The first two months at Novu'
-        description='About my two first month at Novu.'
-      />
-      <PostHeader title={'The first two months at Novu'} date={'2022-06-01'} />
+      <PostHeader />
       <Text>
         So when this week ends I have done two months at Novu and it feels like
         yesterday I had calls with both Tomer and Dima about starting at Novu.

@@ -2,18 +2,13 @@ import { Header } from '../components/Header';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
-import { Meta } from '../components/Meta';
 import { PostHeader } from '../components/PostHeader';
+import { PATHS } from '../routes';
 
 export const TwoTimesInIsraelPart1 = () => {
   return (
     <Header>
-      <Meta
-        title='Two times in Israel (part 1)'
-        description='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
-        image='israel.png'
-      />
-      <PostHeader title={'Two times in Israel (part 1)'} date={'2023-02-04'} />
+      <PostHeader />
       <Text>
         I see myself as any swedish guy, I dreamed about being a fire fighter or
         police officer when I was like 4-5 years old, I did not have any sports
@@ -122,7 +117,7 @@ export const TwoTimesInIsraelPart1 = () => {
       </Text>
       <Text>
         Okay this post got rather long so I will make a{' '}
-        <Link href='/two-times-in-israel-part-2'>second blog post</Link> about
+        <Link href={PATHS.TWO_TIMES_IN_ISRAEL_PART_2}>second blog post</Link> about
         my second time in Israel.
       </Text>
       <Image

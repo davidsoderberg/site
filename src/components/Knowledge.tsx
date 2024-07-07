@@ -22,7 +22,7 @@ export const Knowledge = () => {
       })}
     >
       <div className={hstack()}>
-        <Heading variant='h2'>
+        <Heading>
           <Link
             href='#'
             onClick={(e) => {

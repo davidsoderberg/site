@@ -3,6 +3,7 @@ import { DefaultProps } from '../types/defaultProps';
 import { Card } from './Card';
 import { hstack } from '../../styled-system/patterns';
 import { Link } from './Link';
+import { PATHS } from '../routes';
 
 const menuLink = css({
   fontWeight: 'bolder',
@@ -11,7 +12,7 @@ const menuLink = css({
 export const Header = ({ children, className, style }: DefaultProps) => {
   return (
     <div>
-      <Link href='/'>
+      <Link href={PATHS.ROOT}>
         <h1
           className={cx(
             css(
@@ -57,10 +58,10 @@ export const Header = ({ children, className, style }: DefaultProps) => {
               },
             })}
           >
-            <Link href='/' className={menuLink}>
+            <Link href={PATHS.ROOT} className={menuLink}>
               Home
             </Link>
-            <Link href='/posts' className={menuLink}>
+            <Link href={PATHS.POSTS} className={menuLink}>
               Posts
             </Link>
           </div>

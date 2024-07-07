@@ -1,18 +1,12 @@
 import { Header } from '../components/Header';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
-import { Meta } from '../components/Meta';
 import { PostHeader } from '../components/PostHeader';
 
 export const AWeekInCyprusWithNovu = () => {
   return (
     <Header>
-      <Meta
-        title='A week in Cyprus with Novu'
-        description='An amazing week that I will never forget.'
-        image='door.jpg'
-      />
-      <PostHeader title={'A week in Cyprus with Novu'} date={'2022-09-17'} />
+      <PostHeader />
       <Text>
         Five months have passed and half of the company trip to Cyprus have
         almost passed... I am writing this on a boat trip and enjoying being

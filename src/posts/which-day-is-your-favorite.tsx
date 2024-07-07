@@ -1,7 +1,6 @@
 import { css } from '../../styled-system/css';
 import { Divider } from '../components/Divider';
 import { Header } from '../components/Header';
-import { Meta } from '../components/Meta';
 import { PostHeader } from '../components/PostHeader';
 import { Quote } from '../components/Quote';
 import { Text } from '../components/Text';
@@ -9,11 +8,7 @@ import { Text } from '../components/Text';
 export const WhichDayIsYourFavorite = () => {
   return (
     <Header>
-      <Meta
-        title='Which day is your favorite?'
-        description='1 year and 4 months since last post :O'
-      />
-      <PostHeader title={'Which day is your favorite?'} date={'2024-06-30'} />
+      <PostHeader />
       <Text>
         1 year and 4 months since last post, time passes really quickly. Two
         offsites and a lot of code have been done during that time.

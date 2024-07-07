@@ -4,7 +4,6 @@ import { Heading } from './components/Heading';
 import { Text } from './components/Text';
 import { Link } from './components/Link';
 import { List } from './components/List';
-import { Post } from './components/Post';
 import { Image } from './components/Image';
 import { GithubCalendar } from './components/GithubCalendar';
 import { GithubStats } from './components/GithubStats';
@@ -13,6 +12,7 @@ import { GithubTopLangs } from './components/GithubTopLangs';
 import { css } from '../styled-system/css';
 import { Card } from './components/Card';
 import { hstack } from '../styled-system/patterns';
+import { LatestPost } from './components/LatestPost';
 
 export const App = () => {
   return (
@@ -46,13 +46,7 @@ export const App = () => {
                 developer, so food is my thing anyway.
               </li>
             </List>
-            <Post
-              to='/which-day-is-your-favorite'
-              title='Which day is your favorite?'
-              excerpt='1 year and 4 months since last post :O'
-              date='2024-07-05'
-              selected={true}
-            />
+            <LatestPost />
           </Column>
           <Column lg={5}>
             <Heading>👨‍💼 Jobs</Heading>

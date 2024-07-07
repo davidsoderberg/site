@@ -1,9 +1,12 @@
+import { useMemo } from 'react';
 import { Styles, css, cx } from '../../styled-system/css';
 import { Card } from './Card';
 import { Date } from './Date';
 import { Heading } from './Heading';
 import { Link } from './Link';
 import { Text } from './Text';
+import { pages } from '../routes';
+import { Post as IPost } from '../types/post';
 
 const PostContent = ({
   to,
@@ -28,23 +31,21 @@ const PostContent = ({
 
 export const Post = ({
   to,
-  title,
-  excerpt,
-  date,
   className,
   style,
   selected = false,
   hide = false,
 }: {
   to: string;
-  title: string;
-  excerpt: string;
-  date: string;
   hide?: boolean;
   selected?: boolean;
   className?: string;
   style?: Styles;
 }) => {
+  const { title, date, excerpt }: IPost = useMemo(() => {
+    return pages.find((route) => route.path === to) as IPost;
+  }, [to]);
+
   if (hide) {
     return null;
   }

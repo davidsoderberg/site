@@ -34,14 +34,20 @@ export const Heading = ({
 
   return (
     <h2
-      className={css({
-        color: 'white',
-        fontSize: 'medium',
-        fontWeight: 700,
-        lineHeight: 'large',
-        marginTop: 100,
-        marginBottom: 100,
-      })}
+      className={cx(
+        css(
+          {
+            color: 'white',
+            fontSize: 'medium',
+            fontWeight: 700,
+            lineHeight: 'large',
+            marginTop: 100,
+            marginBottom: 100,
+          },
+          style
+        ),
+        className
+      )}
     >
       {children}
     </h2>

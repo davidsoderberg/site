@@ -3,25 +3,20 @@ import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { css } from '../../styled-system/css';
-import { Meta } from '../components/Meta';
 import { PostHeader } from '../components/PostHeader';
+import { PATHS } from '../routes';
 
 export const TwoTimesInIsraelPart2 = () => {
   return (
     <Header>
-      <Meta
-        title='Two times in Israel (part 2)'
-        description='Amazing week in Israel... Welcome to Israel. Your life will never be the same.'
-        image='israel.png'
-      />
-      <PostHeader title={'Two times in Israel (part 2)'} date={'2023-02-05'} />
+      <PostHeader />
       <Text
         className={css({
           fontWeight: 'bolder',
         })}
       >
         If you have not read{' '}
-        <Link href='/two-times-in-israel-part-1'>part one</Link> please do
+        <Link href={PATHS.TWO_TIMES_IN_ISRAEL_PART_1}>part one</Link> please do
         before reading this.
       </Text>
       <Text>
