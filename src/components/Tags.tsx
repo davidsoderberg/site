@@ -16,11 +16,13 @@ export const Tags = ({
         return (
           <Badge
             selected={selected === tag}
-            onClick={() => {
-              if (onClick) {
-                onClick(tag);
-              }
-            }}
+            onClick={
+              onClick
+                ? () => {
+                    onClick(tag);
+                  }
+                : undefined
+            }
           >
             {tag}
           </Badge>

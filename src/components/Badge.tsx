@@ -10,6 +10,7 @@ export const Badge = ({
 }: DefaultProps & { onClick?: () => void; selected?: boolean }) => {
   return (
     <button
+      {...(onClick !== undefined ? { 'data-active': true } : {})}
       aria-selected={selected}
       className={cx(
         css(
@@ -26,6 +27,9 @@ export const Badge = ({
             _selected: {
               background: 'card',
               color: 'primary',
+            },
+            _active: {
+              cursor: 'pointer',
             },
           },
           style
