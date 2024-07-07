@@ -27,6 +27,25 @@ export const Posts = () => {
     3
   );
 
+  const tags = useMemo(() => {
+    return posts
+      .filter((post) => !post.hide)
+      .map((post) => post.tags)
+      .reduce((prev: PostTags[], current): PostTags[] => {
+        if (!current) {
+          return prev;
+        }
+        return [...prev, ...current];
+      }, [] as PostTags[])
+      .reduce((prev: PostTags[], current: PostTags): PostTags[] => {
+        if (prev.includes(current)) {
+          return prev;
+        }
+
+        return [...prev, current];
+      }, [] as PostTags[]);
+  }, []);
+
   return (
     <Header>
       <div
@@ -44,7 +63,7 @@ export const Posts = () => {
           Filter by tag:
         </Text>
         <Tags
-          tags={Object.values(PostTags)}
+          tags={tags}
           selected={selectedTag}
           onClick={(tag) => {
             if (selectedTag === tag) {
@@ -79,7 +98,7 @@ export const Posts = () => {
             marginTop: 100,
           })}
         >
-          No posts exists with tag <b>{selectedTag}</b>...
+          No posts exists with tag <b>{selectedTag}</b> yet...
         </Text>
       </When>
       <div className={center()}>
