@@ -13,6 +13,7 @@ import { GithubTopLangs } from './components/GithubTopLangs';
 import { css } from '../styled-system/css';
 import { Card } from './components/Card';
 import { hstack } from '../styled-system/patterns';
+import { Knowledge } from './components/Knowledge';
 
 export const App = () => {
   return (
@@ -102,7 +103,7 @@ export const App = () => {
             <div
               className={hstack({
                 justifyContent: 'flex-end',
-                xsDown: {
+                smDown: {
                   justifyContent: 'center',
                 },
               })}
@@ -112,6 +113,7 @@ export const App = () => {
           </Column>
         </Row>
       </Container>
+      <Knowledge />
     </Header>
   );
 };
