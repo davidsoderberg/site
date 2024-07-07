@@ -24,7 +24,7 @@ export const PATHS = {
   CATCH_ALL: '*',
 };
 
-export const pages = [
+export const pages: (RouteObject | Post)[] = [
   {
     path: PATHS.ROOT,
     element: <App />,
@@ -94,9 +94,9 @@ export const pages = [
 ];
 
 export const posts: Post[] = pages
-  .filter((page) => {
-    return page.path.includes(PATHS.POSTS) && page.path !== PATHS.POSTS;
-  })
+  .filter(
+    (page) => page.path?.includes(PATHS.POSTS) && page.path !== PATHS.POSTS
+  )
   .map((post) => post as Post)
   .sort((a, b) => {
     if (a.date > b.date) {

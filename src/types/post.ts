@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export type Post = {
   title: string;
   excerpt: string;
@@ -5,4 +7,5 @@ export type Post = {
   hide?: boolean;
   image?: string;
   path: string;
+  element?: ReactNode | null;
 };
