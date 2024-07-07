@@ -10,6 +10,7 @@ import { TwoTimesInIsraelPart2 } from './posts/two-times-in-israel-part-2';
 import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite';
 import { CatchAll } from './CatchAll';
 import { Post, PostTags } from './types/post';
+import { BeingSwedishInAGlobalCompany } from './posts/being-swedish-in-a-global-company';
 
 export const PATHS = {
   ROOT: '/',
@@ -21,6 +22,7 @@ export const PATHS = {
   FIRST_TWO_MONTHS: '/posts/first-two-months',
   THE_FIRST_SWEDISH_GUY_AT_NOVU: '/posts/the-first-swedish-guy-at-novu',
   WHICH_DAY_IS_YOUR_FAVORITE: '/posts/which-day-is-your-favorite',
+  BEING_SWEDISH_IN_A_GLOBAL_COMPANY: '/posts/being-swedish-in-a-global-company',
   CATCH_ALL: '*',
 };
 
@@ -98,6 +100,15 @@ export const pages: (RouteObject | Post)[] = [
   {
     path: PATHS.CATCH_ALL,
     element: <CatchAll />,
+  },
+  {
+    path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,
+    element: <BeingSwedishInAGlobalCompany />,
+    title: 'Being Swedish in a global company',
+    date: '2024-07-08',
+    selected: true,
+    hide: true,
+    tags: [PostTags.SWEDEN, PostTags.NOVU],
   },
 ];
 

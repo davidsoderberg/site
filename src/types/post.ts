@@ -16,4 +16,5 @@ export enum PostTags {
   ISRAEL = 'Israel',
   NOVU = 'Novu',
   WORKOUT = 'Workout',
+  SWEDEN = 'Sweden',
 }
