@@ -15,10 +15,12 @@ export const Posts = () => {
   const [selectedTag, setSelectedTag] = useState<PostTags | undefined>();
   const filteredPosts = useMemo(() => {
     if (!selectedTag) {
-      return posts;
+      return posts.filter((post) => !post.hide);
     }
 
-    return posts.filter((post) => post.tags?.includes(selectedTag));
+    return posts
+      .filter((post) => !post.hide)
+      .filter((post) => post.tags?.includes(selectedTag));
   }, [selectedTag]);
   const { items, hasMore, loading, fetch } = useClientPagination(
     filteredPosts,
