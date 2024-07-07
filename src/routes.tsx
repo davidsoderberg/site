@@ -110,4 +110,7 @@ export const posts: Post[] = pages
     return 0;
   });
 
-export const routes: RouteObject[] = pages;
+export const routes: RouteObject[] = pages.map((page) => ({
+  path: page.path,
+  element: page.element,
+}));
