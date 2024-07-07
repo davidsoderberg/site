@@ -51,14 +51,14 @@ export const Knowledge = () => {
               </div>
             </Column>
             <Column lg={4}>
-              <div className={vstack({ gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   GraphQL
                 </Heading>
                 <Image src='/icons/graphql.svg' alt='GraphQL' />
                 <Image src='/icons/apollographql.svg' alt='Apollo-GraphQL' />
               </div>
-              <div className={vstack({ gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Test frameworks
                 </Heading>
@@ -69,7 +69,7 @@ export const Knowledge = () => {
               </div>
             </Column>
             <Column lg={4}>
-              <div className={vstack({ alignItems: 'flex-end', gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Frameworks
                 </Heading>
@@ -108,7 +108,7 @@ export const Knowledge = () => {
               </div>
             </Column>
             <Column lg={4}>
-              <div className={vstack({ gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Tools
                 </Heading>
@@ -124,21 +124,21 @@ export const Knowledge = () => {
               </div>
             </Column>
             <Column lg={4}>
-              <div className={vstack({ alignItems: 'flex-end', gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Package managers
                 </Heading>
                 <Image src='/icons/npm.svg' alt='NPM' />
                 <Image src='/icons/yarn.svg' alt='Yarn' />
               </div>
-              <div className={vstack({ alignItems: 'flex-end', gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Servers
                 </Heading>
                 <Image src='/icons/nginx.svg' alt='Nginx' />
                 <Image src='/icons/apache.svg' alt='Apache' />
               </div>
-              <div className={vstack({ alignItems: 'flex-end', gap: 100 })}>
+              <div className={columnClass}>
                 <Heading style={{ marginBottom: 0 }} variant='h3'>
                   Hosts
                 </Heading>

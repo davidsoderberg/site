@@ -113,7 +113,6 @@ export const App = () => {
           </Column>
         </Row>
       </Container>
-      <Knowledge />
     </Header>
   );
 };
