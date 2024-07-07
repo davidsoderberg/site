@@ -20,7 +20,7 @@ export const useClientPagination = <T>(all: T[], perPage: number) => {
         setLoad(false);
         setPage(page + 1);
         setItems([...all].slice(0, perPage * (page + 1)));
-      }, 1000);
+      }, 333 * perPage);
     },
     items,
   };
