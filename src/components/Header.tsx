@@ -4,6 +4,10 @@ import { Card } from './Card';
 import { hstack } from '../../styled-system/patterns';
 import { Link } from './Link';
 
+const menuLink = css({
+  fontWeight: 'bolder',
+});
+
 export const Header = ({ children, className, style }: DefaultProps) => {
   return (
     <div>
@@ -53,8 +57,12 @@ export const Header = ({ children, className, style }: DefaultProps) => {
               },
             })}
           >
-            <Link href='/'>Home</Link>
-            <Link href='/posts'>Posts</Link>
+            <Link href='/' className={menuLink}>
+              Home
+            </Link>
+            <Link href='/posts' className={menuLink}>
+              Posts
+            </Link>
           </div>
           <div
             className={hstack({
@@ -66,13 +74,19 @@ export const Header = ({ children, className, style }: DefaultProps) => {
               },
             })}
           >
-            <Link href='https://novu.co/' target='_blank' rel='noreferrer'>
+            <Link
+              href='https://novu.co/'
+              target='_blank'
+              rel='noreferrer'
+              className={menuLink}
+            >
               Novu
             </Link>
             <Link
               href='https://github.com/davidsoderberg'
               target='_blank'
               rel='noreferrer'
+              className={menuLink}
             >
               Github
             </Link>
