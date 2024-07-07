@@ -13,7 +13,6 @@ import { GithubTopLangs } from './components/GithubTopLangs';
 import { css } from '../styled-system/css';
 import { Card } from './components/Card';
 import { hstack } from '../styled-system/patterns';
-import { Knowledge } from './components/Knowledge';
 
 export const App = () => {
   return (
@@ -39,7 +38,7 @@ export const App = () => {
               of databases.
             </Text>
             <List>
-              <li>⌨️ I’m currently working on a new Remix app.</li>
+              <li>⌨️ I’m currently working on a Remix app.</li>
               <li>📘 I’m currently learning Panda CSS.</li>
               <li>❔ Ask me about Remix, React, Nest.js stuff.</li>
               <li>
