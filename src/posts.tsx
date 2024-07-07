@@ -73,6 +73,15 @@ export const Posts = () => {
           />
         );
       })}
+      <When truthy={items.length === 0 && selectedTag !== undefined}>
+        <Text
+          className={css({
+            marginTop: 100,
+          })}
+        >
+          No posts exists with tag <b>{selectedTag}</b>...
+        </Text>
+      </When>
       <div className={center()}>
         <When truthy={hasMore && !loading}>
           <Link
