@@ -13,18 +13,20 @@ import { Post, PostTags } from './types/post';
 import { BeingSwedishInAGlobalCompany } from './posts/being-swedish-in-a-global-company';
 import { EatToWorkoutOrWorkoutToEat } from './posts/eat-to-workout-or-workout-to-eat';
 
+export const POSTS = '/posts';
+
 export const PATHS = {
   ROOT: '/',
-  POSTS: '/posts',
-  TWO_TIMES_IN_ISRAEL_PART_1: '/posts/two-times-in-israel-part-1',
-  TWO_TIMES_IN_ISRAEL_PART_2: '/posts/two-times-in-israel-part-2',
-  A_WEEK_IN_CYPRUS_WITH_NOVU: '/posts/a-week-in-cyprus-with-novu',
-  FIVE_MONTHS_OF_REMOTE_WORK: '/posts/five-months-of-remote-work',
-  FIRST_TWO_MONTHS: '/posts/first-two-months',
-  THE_FIRST_SWEDISH_GUY_AT_NOVU: '/posts/the-first-swedish-guy-at-novu',
-  WHICH_DAY_IS_YOUR_FAVORITE: '/posts/which-day-is-your-favorite',
-  BEING_SWEDISH_IN_A_GLOBAL_COMPANY: '/posts/being-swedish-in-a-global-company',
-  EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT: '/posts/eat-to-workout-or-workout-to-eat',
+  POSTS,
+  TWO_TIMES_IN_ISRAEL_PART_1: POSTS + '/two-times-in-israel-part-1',
+  TWO_TIMES_IN_ISRAEL_PART_2: POSTS + '/two-times-in-israel-part-2',
+  A_WEEK_IN_CYPRUS_WITH_NOVU: POSTS + '/a-week-in-cyprus-with-novu',
+  FIVE_MONTHS_OF_REMOTE_WORK: POSTS + '/five-months-of-remote-work',
+  FIRST_TWO_MONTHS: POSTS + '/first-two-months',
+  THE_FIRST_SWEDISH_GUY_AT_NOVU: POSTS + '/the-first-swedish-guy-at-novu',
+  WHICH_DAY_IS_YOUR_FAVORITE: POSTS + '/which-day-is-your-favorite',
+  BEING_SWEDISH_IN_A_GLOBAL_COMPANY: POSTS + '/being-swedish-in-a-global-company',
+  EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT: POSTS + '/eat-to-workout-or-workout-to-eat',
   CATCH_ALL: '*',
 };
 
@@ -36,6 +38,10 @@ export const pages: (RouteObject | Post)[] = [
   {
     path: PATHS.POSTS,
     element: <Posts />,
+  },
+  {
+    path: PATHS.CATCH_ALL,
+    element: <CatchAll />,
   },
   {
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_2,
@@ -97,10 +103,6 @@ export const pages: (RouteObject | Post)[] = [
     excerpt: '1 year and 4 months since last post :O',
     date: '2024-07-05',
     tags: [PostTags.ISRAEL, PostTags.WORKOUT, PostTags.NOVU],
-  },
-  {
-    path: PATHS.CATCH_ALL,
-    element: <CatchAll />,
   },
   {
     path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,

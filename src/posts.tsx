@@ -78,6 +78,8 @@ export const Posts = () => {
         />
       </div>
       {items.map((post, index) => {
+        const isLast = items.length - 1 === index;
+
         return (
           <Post
             hide={post.hide}
@@ -88,7 +90,11 @@ export const Posts = () => {
                 ? {
                     marginTop: 100,
                   }
-                : undefined
+                : isLast && !hasMore
+                  ? {
+                      borderBottom: 'none',
+                    }
+                  : undefined
             }
           />
         );
