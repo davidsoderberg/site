@@ -9,6 +9,8 @@ import { pages } from '../routes';
 import { Post as IPost, PostTags } from '../types/post';
 import { Tags } from './Tags';
 import { hstack } from '../../styled-system/patterns';
+import { When } from './When';
+import { Divider } from './Divider';
 
 const PostContent = ({
   to,
@@ -45,12 +47,14 @@ export const Post = ({
   style,
   selected = false,
   hide = false,
+  isLast = false,
 }: {
   to: string;
   hide?: boolean;
   selected?: boolean;
   className?: string;
   style?: Styles;
+  isLast?: boolean;
 }) => {
   const { title, date, excerpt, tags }: IPost = useMemo(() => {
     return pages.find((route) => route.path === to) as IPost;
@@ -79,17 +83,10 @@ export const Post = ({
       className={cx(
         css(
           {
-            borderBottom: 'post',
-            borderColor: 'border',
-            marginBottom: 100,
             paddingTop: 50,
             paddingBottom: 50,
             paddingLeft: 100,
             paddingRight: 100,
-            '&:last-of-type': {
-              borderBottom: 'none',
-              marginBottom: 0,
-            },
           },
           style
         ),
@@ -103,6 +100,9 @@ export const Post = ({
         excerpt={excerpt}
         date={date}
       />
+      <When truthy={!isLast}>
+        <Divider style={{ marginTop: 200, marginBottom: 0 }} />
+      </When>
     </div>
   );
 };

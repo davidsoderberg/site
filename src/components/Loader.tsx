@@ -1,9 +1,9 @@
 import { SystemStyleObject } from '../../styled-system/types';
-import { cva } from '../../styled-system/css';
+import { cva, cx } from '../../styled-system/css';
 
 type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 
-const className = cva<{ size: Record<Sizes, SystemStyleObject> }>({
+const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
   base: {
     fill: 'primary',
   },
@@ -28,12 +28,18 @@ const className = cva<{ size: Record<Sizes, SystemStyleObject> }>({
   },
 });
 
-export const Loader = ({ size = 'md' }: { size?: Sizes }) => {
+export const Loader = ({
+  size = 'md',
+  className,
+}: {
+  size?: Sizes;
+  className?: string;
+}) => {
   return (
     <svg
       viewBox='0 0 135 140'
       xmlns='http://www.w3.org/2000/svg'
-      className={className({ size })}
+      className={cx(loaderClassName({ size }), className)}
       role='presentation'
     >
       <rect y='10' width='15' height='120' rx='4'>

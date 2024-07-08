@@ -84,17 +84,14 @@ export const Posts = () => {
           <Post
             hide={post.hide}
             to={post.path}
+            isLast={isLast && !hasMore}
             selected={post.selected}
             style={
               index === 0
                 ? {
                     marginTop: 100,
                   }
-                : isLast && !hasMore
-                  ? {
-                      borderBottom: 'none',
-                    }
-                  : undefined
+                : undefined
             }
           />
         );
@@ -110,22 +107,28 @@ export const Posts = () => {
         </Text>
         <LatestPost />
       </When>
-      <div className={center()}>
-        <When truthy={hasMore && !loading}>
-          <Link
-            href='#'
-            onClick={(e) => {
-              e.preventDefault();
-              fetch();
-            }}
-          >
-            Load more
-          </Link>
-        </When>
-        <When truthy={loading}>
-          <Loader size='sm' />
-        </When>
-      </div>
+      <When truthy={hasMore}>
+        <div
+          className={center({
+            marginTop: 100,
+          })}
+        >
+          <When truthy={!loading}>
+            <Link
+              href='#'
+              onClick={(e) => {
+                e.preventDefault();
+                fetch();
+              }}
+            >
+              Load more
+            </Link>
+          </When>
+          <When truthy={loading}>
+            <Loader size='sm' />
+          </When>
+        </div>
+      </When>
     </Header>
   );
 };
