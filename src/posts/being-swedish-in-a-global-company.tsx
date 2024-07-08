@@ -11,9 +11,9 @@ export const BeingSwedishInAGlobalCompany = () => {
     <Header>
       <PostHeader />
       <Text>
-        By now I everyone reading these blog posts knows I am from Sweden and
-        are living in the south part of Sweden. This is something I think about
-        a lot, and I figured that I am doing/acting in some ways in different
+        By now everyone reading these blog posts knows I am from Sweden and are
+        living in the south part of Sweden. This is something I think about a
+        lot, and I figured that I am doing/acting in some ways in different
         situations because I am Swedish.
       </Text>
       <Text>
@@ -25,13 +25,11 @@ export const BeingSwedishInAGlobalCompany = () => {
         is called the law of Jante. It's very famous in Sweden, and everyone
         knows about it. The rule basically is: don't think that you are anything
         special. This one, I think I follow very much, I do not get annoyed if
-        some one stands out to much anymore and I think this is because I have
-        socialized with people from different countries almost my entire career
-        so I have learned to accept it.
+        some one stands out to much as what I have seen other Swedes do.
       </Text>
       <Text>
         But I try to think I am nothing special and try to not do things that do
-        not stand out. Even if other Swedes seems to think working for a global
+        stand out. Even if other Swedes seems to think working for a global
         company is something special.
       </Text>
       <Text>
@@ -44,7 +42,7 @@ export const BeingSwedishInAGlobalCompany = () => {
       <Text>
         My favorit artist Lars Winnerbäck describes this feeling in his lyrics
         and in the movie about him he says he thinks he have had it since he was
-        a kid. That it just showed up inside of him a day.
+        a kid. That it just showed up inside of him one day.
       </Text>
       <Text>
         Here is some quotes from Lars song "I think I'll find home" that I think
@@ -137,7 +135,7 @@ export const BeingSwedishInAGlobalCompany = () => {
       </Text>
       <Divider />
       <Text>
-        I have a lot of "vemod" inside of me, it is not that I am not happy and
+        I have a lot of "vemod" inside of me, it is not that I am not happy or
         can't laugh but for most part I feel it and it makes me calm and these
         days careful with what I do with my time.
       </Text>
@@ -158,12 +156,13 @@ export const BeingSwedishInAGlobalCompany = () => {
         diffrent in so many things when it comes to a general view of them. I
         learned to be more vocal and to actually say what I think about things,
         even if I did this before I think I have learned that it is okay to be
-        vocal about it.
+        more vocal about it.
       </Text>
       <Text>
         I now have an opinion of that countries should cooperate more with each
         other because we face the same issues and we could learn more from each
-        other than we do today. That is something I have realized working in a global company.
+        other than we do today. That is something I have realized working in a
+        global company.
       </Text>
     </Header>
   );
