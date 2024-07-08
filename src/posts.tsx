@@ -11,6 +11,7 @@ import { When } from './components/When';
 import { Link } from './components/Link';
 import { css } from '../styled-system/css';
 import { LatestPost } from './components/LatestPost';
+import { Loader } from './components/Loader';
 
 export const Posts = () => {
   const [selectedTag, setSelectedTag] = useState<PostTags | undefined>();
@@ -116,13 +117,7 @@ export const Posts = () => {
           </Link>
         </When>
         <When truthy={loading}>
-          <Text
-            className={css({
-              marginBottom: 0,
-            })}
-          >
-            Loading...
-          </Text>
+          <Loader size='sm' />
         </When>
       </div>
     </Header>
