@@ -1,15 +1,13 @@
 import { css } from '../../styled-system/css';
 import { hstack } from '../../styled-system/patterns';
 import { Divider } from '../components/Divider';
-import { Header } from '../components/Header';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 import { Quote } from '../components/Quote';
 import { Text } from '../components/Text';
 
 export const BeingSwedishInAGlobalCompany = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         By now everyone reading these blog posts knows I am from Sweden and are
         living in the south part of Sweden. This is something I think about a
@@ -164,6 +162,6 @@ export const BeingSwedishInAGlobalCompany = () => {
         other than we do today. That is something I have realized working in a
         global company.
       </Text>
-    </Header>
+    </PostWrapper>
   );
 };

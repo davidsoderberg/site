@@ -1,14 +1,12 @@
 import { css } from '../../styled-system/css';
 import { Divider } from '../components/Divider';
-import { Header } from '../components/Header';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 import { Quote } from '../components/Quote';
 import { Text } from '../components/Text';
 
 export const WhichDayIsYourFavorite = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         1 year and 4 months since last post, time passes really quickly. Two
         offsites and a lot of code have been done during that time.
@@ -128,6 +126,6 @@ export const WhichDayIsYourFavorite = () => {
         for the next near future when the near future have passed. Is it
         confusing? Well my brain is confused right now so this might be to.
       </Text>
-    </Header>
+    </PostWrapper>
   );
 };

@@ -1,12 +1,10 @@
-import { Header } from '../components/Header';
 import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 
 export const FiveMonthsOfRemoteWork = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         In the beginning of April this year(2022) I started at Novu after almost
         5 months since they reached out to hire me and now almost 5 months have
@@ -88,6 +86,6 @@ export const FiveMonthsOfRemoteWork = () => {
         like to be a part of a remote company or even just an open source
         community.
       </Text>
-    </Header>
+    </PostWrapper>
   );
 };

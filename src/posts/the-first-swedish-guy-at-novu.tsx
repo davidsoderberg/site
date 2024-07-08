@@ -1,11 +1,9 @@
-import { Header } from '../components/Header';
 import { Text } from '../components/Text';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 
 export const TheFirstSwedishGuyAtNovu = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         Hi, my name is David and I am 29 years old and living in Sweden, this
         year (2022) it is ten years since I wrote my first line of code (C#).
@@ -82,6 +80,6 @@ export const TheFirstSwedishGuyAtNovu = () => {
         this opportunity, I hope and think we will be together for a long time
         ❤️
       </Text>
-    </Header>
+    </PostWrapper>
   );
 };

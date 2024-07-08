@@ -1,15 +1,13 @@
-import { Header } from '../components/Header';
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
 import { css } from '../../styled-system/css';
-import { PostHeader } from '../components/PostHeader';
 import { PATHS } from '../routes';
+import { PostWrapper } from '../components/PostWrapper';
 
 export const TwoTimesInIsraelPart2 = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text
         className={css({
           fontWeight: 'bolder',
@@ -110,6 +108,6 @@ export const TwoTimesInIsraelPart2 = () => {
         src='/israel.png'
         alt='Welcome to Israel. Your life will never be the same.'
       />
-    </Header>
+    </PostWrapper>
   );
 };

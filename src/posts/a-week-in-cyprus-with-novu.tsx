@@ -1,12 +1,10 @@
-import { Header } from '../components/Header';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 
 export const AWeekInCyprusWithNovu = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         Five months have passed and half of the company trip to Cyprus have
         almost passed... I am writing this on a boat trip and enjoying being
@@ -124,6 +122,6 @@ export const AWeekInCyprusWithNovu = () => {
         for the future of Novu is wide open.
       </Text>
       <Image src='/door.jpg' />
-    </Header>
+    </PostWrapper>
   );
 };

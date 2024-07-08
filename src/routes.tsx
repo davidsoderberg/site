@@ -11,6 +11,7 @@ import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite';
 import { CatchAll } from './CatchAll';
 import { Post, PostTags } from './types/post';
 import { BeingSwedishInAGlobalCompany } from './posts/being-swedish-in-a-global-company';
+import { EatToWorkoutOrWorkoutToEat } from './posts/eat-to-workout-or-workout-to-eat';
 
 export const PATHS = {
   ROOT: '/',
@@ -23,6 +24,7 @@ export const PATHS = {
   THE_FIRST_SWEDISH_GUY_AT_NOVU: '/posts/the-first-swedish-guy-at-novu',
   WHICH_DAY_IS_YOUR_FAVORITE: '/posts/which-day-is-your-favorite',
   BEING_SWEDISH_IN_A_GLOBAL_COMPANY: '/posts/being-swedish-in-a-global-company',
+  EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT: '/posts/eat-to-workout-or-workout-to-eat',
   CATCH_ALL: '*',
 };
 
@@ -108,6 +110,16 @@ export const pages: (RouteObject | Post)[] = [
     date: '2024-07-07',
     selected: true,
     tags: [PostTags.SWEDEN, PostTags.NOVU],
+  },
+  {
+    path: PATHS.EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT,
+    element: <EatToWorkoutOrWorkoutToEat />,
+    title: 'Eat to workout, or workout to eat?',
+    excerpt: 'Workout to eat what every I like to did I do for a long time...',
+    date: '2024-07-21',
+    selected: true,
+    hide: true,
+    tags: [PostTags.WORKOUT],
   },
 ];
 

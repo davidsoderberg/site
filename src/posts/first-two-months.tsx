@@ -1,12 +1,10 @@
-import { Header } from '../components/Header';
 import { List } from '../components/List';
 import { Text } from '../components/Text';
-import { PostHeader } from '../components/PostHeader';
+import { PostWrapper } from '../components/PostWrapper';
 
 export const FirstTwoMonths = () => {
   return (
-    <Header>
-      <PostHeader />
+    <PostWrapper>
       <Text>
         So when this week ends I have done two months at Novu and it feels like
         yesterday I had calls with both Tomer and Dima about starting at Novu.
@@ -61,6 +59,6 @@ export const FirstTwoMonths = () => {
         collegues at Novu soon because I bet and know they are equal as amazing
         as those I meet this time.
       </Text>
-    </Header>
+    </PostWrapper>
   );
 };
