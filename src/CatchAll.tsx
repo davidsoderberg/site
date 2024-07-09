@@ -3,8 +3,10 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from './components/Header';
 import { PageHeader } from './components/PageHeader';
 import { LatestPost } from './components/LatestPost';
-import { PATHS, pages } from './routes';
+import { PATHS } from './routes';
 import { Bold } from './components/Bold';
+import { findPost } from './hooks/usePost';
+import { Post } from './types/post';
 
 export const CatchAll = () => {
   const params = useParams();
@@ -14,7 +16,7 @@ export const CatchAll = () => {
     let path = params['*'];
     path = PATHS.POSTS + '/' + path;
 
-    const found = pages.find((page) => page.path === path);
+    const found = findPost(path) as Post | undefined;
 
     if (!found) {
       return;

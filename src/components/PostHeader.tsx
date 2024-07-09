@@ -1,15 +1,13 @@
 import { PageHeader } from './PageHeader';
 import { css, cx } from '../../styled-system/css';
-import { posts } from '../routes';
 import { useLocation } from 'react-router-dom';
-import { useMemo } from 'react';
 import { Meta } from './Meta';
-import { Post } from '../types/post';
 import { Tags } from './Tags';
 import { Text } from './Text';
 import { Bold } from './Bold';
 import { DefaultProps } from '../types/defaultProps';
 import { Row } from './Row';
+import { usePost } from '../hooks/usePost';
 
 const PostHeaderRow = ({ className, children, style }: DefaultProps) => {
   return (
@@ -36,16 +34,7 @@ const PostHeaderRow = ({ className, children, style }: DefaultProps) => {
 
 export const PostHeader = () => {
   const { pathname } = useLocation();
-
-  const {
-    title,
-    date,
-    excerpt,
-    image,
-    tags = [],
-  }: Post = useMemo(() => {
-    return posts.find((route) => route.path === pathname) as Post;
-  }, [pathname]);
+  const { title, date, excerpt, image, tags = [] } = usePost(pathname);
 
   return (
     <>

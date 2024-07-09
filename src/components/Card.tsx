@@ -1,26 +1,36 @@
-import { css, cx } from '../../styled-system/css';
+import { css, cva, cx } from '../../styled-system/css';
+import { SystemStyleObject } from '../../styled-system/types';
 import { DefaultProps } from '../types/defaultProps';
 
-export const Card = ({ children, className, style }: DefaultProps) => {
+export type Variants = 'default' | 'transparent';
+
+const cardClassName = cva<{ variant: Record<Variants, SystemStyleObject> }>({
+  base: {
+    paddingTop: 50,
+    paddingBottom: 50,
+    paddingLeft: 100,
+    paddingRight: 100,
+  },
+  variants: {
+    variant: {
+      default: {
+        backgroundColor: 'card',
+        borderRadius: 'default',
+        boxShadow: 'default',
+      },
+      transparent: {},
+    },
+  },
+});
+
+export const Card = ({
+  children,
+  className,
+  style,
+  variant = 'default',
+}: DefaultProps & { variant?: Variants }) => {
   return (
-    <div
-      className={cx(
-        css(
-          {
-            backgroundColor: 'card',
-            borderRadius: 'default',
-            marginBottom: 100,
-            paddingTop: 50,
-            paddingBottom: 50,
-            paddingLeft: 100,
-            paddingRight: 100,
-            boxShadow: 'default',
-          },
-          style
-        ),
-        className
-      )}
-    >
+    <div className={cx(cardClassName({ variant }), css(style), className)}>
       {children}
     </div>
   );

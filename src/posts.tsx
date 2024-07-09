@@ -54,6 +54,7 @@ export const Posts = () => {
       <Row
         className={css({
           marginTop: 200,
+          marginBottom: 100,
         })}
       >
         <Bold
@@ -87,13 +88,6 @@ export const Posts = () => {
             to={post.path}
             isLast={isLast && !hasMore}
             selected={post.selected}
-            style={
-              index === 0
-                ? {
-                    marginTop: 100,
-                  }
-                : undefined
-            }
           />
         );
       })}
