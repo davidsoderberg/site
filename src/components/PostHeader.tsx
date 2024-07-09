@@ -1,7 +1,5 @@
-import { hstack } from '../../styled-system/patterns';
-import { Heading } from './Heading';
-import { Date } from './Date';
-import { css } from '../../styled-system/css';
+import { PageHeader } from './PageHeader';
+import { css, cx } from '../../styled-system/css';
 import { posts } from '../routes';
 import { useLocation } from 'react-router-dom';
 import { useMemo } from 'react';
@@ -9,6 +7,32 @@ import { Meta } from './Meta';
 import { Post } from '../types/post';
 import { Tags } from './Tags';
 import { Text } from './Text';
+import { Bold } from './Bold';
+import { DefaultProps } from '../types/defaultProps';
+import { Row } from './Row';
+
+const PostHeaderRow = ({ className, children, style }: DefaultProps) => {
+  return (
+    <Row
+      className={cx(
+        css(
+          {
+            justifyContent: 'space-between',
+            xsDown: {
+              alignItems: 'flex-start',
+              flexDirection: 'column',
+              gap: 50,
+            },
+          },
+          style
+        ),
+        className
+      )}
+    >
+      {children}
+    </Row>
+  );
+};
 
 export const PostHeader = () => {
   const { pathname } = useLocation();
@@ -26,38 +50,18 @@ export const PostHeader = () => {
   return (
     <>
       <Meta title={title} description={excerpt} image={image} />
-      <div
-        className={hstack({
-          justifyContent: 'space-between',
-          marginBottom: '50',
-          xsDown: {
-            alignItems: 'flex-start',
-            flexDirection: 'column',
-            gap: 0,
-          },
-        })}
-      >
-        <Heading>{title}</Heading>
-        <Date className={css({ marginBottom: 0 })}>{date}</Date>
-      </div>
-      <div
-        className={hstack({
-          marginBottom: 200,
-          justifyContent: 'space-between',
-          smDown: {
-            alignItems: 'flex-start',
-            flexDirection: 'column',
-            gap: 0,
-          },
-        })}
-      >
+      <PostHeaderRow className={css({ marginBottom: 50 })}>
+        <PageHeader>{title}</PageHeader>
+        <Bold className={css({ marginBottom: 0 })}>{date}</Bold>
+      </PostHeaderRow>
+      <PostHeaderRow className={css({ marginBottom: 200 })}>
         <Text className={css({ fontStyle: 'italic', marginBottom: 0 })}>
           {excerpt}
         </Text>
-        <div className={hstack()}>
+        <Row>
           <Tags tags={tags} />
-        </div>
-      </div>
+        </Row>
+      </PostHeaderRow>
     </>
   );
 };

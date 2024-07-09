@@ -1,22 +1,18 @@
 import { Link } from '../components/Link';
 import { Text } from '../components/Text';
 import { Image } from '../components/Image';
-import { css } from '../../styled-system/css';
 import { PATHS } from '../routes';
 import { PostWrapper } from '../components/PostWrapper';
+import { Bold } from '../components/Bold';
 
 export const TwoTimesInIsraelPart2 = () => {
   return (
     <PostWrapper>
-      <Text
-        className={css({
-          fontWeight: 'bolder',
-        })}
-      >
+      <Bold>
         If you have not read{' '}
         <Link href={PATHS.TWO_TIMES_IN_ISRAEL_PART_1}>part one</Link> please do
         before reading this.
-      </Text>
+      </Bold>
       <Text>
         Okay so now it is like beginning of January and Gali my collegue in
         Israel invites me to her wedding in Israel in beginning of February and

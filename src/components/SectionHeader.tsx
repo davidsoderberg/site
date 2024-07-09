@@ -1,16 +1,22 @@
 import { css, cx } from '../../styled-system/css';
 import { DefaultProps } from '../types/defaultProps';
 
-export const Text = ({ children, className, style }: DefaultProps) => {
+export const SectionHeader = ({
+  children,
+  className,
+  style,
+}: DefaultProps) => {
   return (
-    <p
+    <h3
       className={cx(
         css(
           {
             color: 'white',
+            fontSize: 'sectionHeader',
+            fontWeight: 'bold',
+            lineHeight: 'sectionHeader',
+            marginTop: 100,
             marginBottom: 100,
-            lineHeight: 'text',
-            fontSize: 'text',
           },
           style
         ),
@@ -18,6 +24,6 @@ export const Text = ({ children, className, style }: DefaultProps) => {
       )}
     >
       {children}
-    </p>
+    </h3>
   );
 };

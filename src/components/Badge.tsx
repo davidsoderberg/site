@@ -16,13 +16,13 @@ export const Badge = ({
         css(
           {
             backgroundColor: 'primary',
-            borderRadius: 'badge',
+            borderRadius: 'default',
             color: 'background',
             fontSize: 'badge',
             padding: 25,
             paddingLeft: 50,
             paddingRight: 50,
-            fontWeight: 'bolder',
+            fontWeight: 'bold',
             boxShadow: 'default',
             _selected: {
               background: 'card',

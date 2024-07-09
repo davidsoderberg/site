@@ -1,8 +1,8 @@
 import { css } from '../../styled-system/css';
-import { hstack } from '../../styled-system/patterns';
 import { Divider } from '../components/Divider';
 import { PostWrapper } from '../components/PostWrapper';
 import { Quote } from '../components/Quote';
+import { Row } from '../components/Row';
 import { Text } from '../components/Text';
 
 export const BeingSwedishInAGlobalCompany = () => {
@@ -46,8 +46,8 @@ export const BeingSwedishInAGlobalCompany = () => {
         Here is some quotes from Lars song "I think I'll find home" that I think
         is great examples of the swedish "vemod".
       </Text>
-      <div
-        className={hstack({
+      <Row
+        className={css({
           gap: 200,
           marginTop: 200,
           marginBottom: 200,
@@ -124,7 +124,7 @@ export const BeingSwedishInAGlobalCompany = () => {
             <br />
           </Text>
         </Quote>
-      </div>
+      </Row>
       <Text>
         First time I heard a song with Lars was 2006, I was 13 years old and I
         recognized myself in the same song as I do today and I think that is the

@@ -1,10 +1,18 @@
-import GitHubCalendar from 'react-github-calendar';
+import GitHubCalendar, { ColorScale } from 'react-github-calendar';
 import { token } from '../../styled-system/tokens';
-import { center } from '../../styled-system/patterns';
+import { Center } from './Center';
 
 export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
+  const theme: ColorScale = [
+    token('colors.primary'),
+    token('colors.primary2'),
+    token('colors.primary4'),
+    token('colors.primary6'),
+    token('colors.card'),
+  ];
+
   return (
-    <div className={center()}>
+    <Center>
       <GitHubCalendar
         style={{
           color: token('colors.white'),
@@ -13,25 +21,13 @@ export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
         }}
         weekStart={1}
         theme={{
-          dark: [
-            token('colors.primary'),
-            token('colors.primary.1'),
-            token('colors.primary.2'),
-            token('colors.primary.3'),
-            token('colors.card'),
-          ],
-          light: [
-            token('colors.primary'),
-            token('colors.primary.1'),
-            token('colors.primary.2'),
-            token('colors.primary.3'),
-            token('colors.card'),
-          ],
+          dark: theme,
+          light: theme,
         }}
         blockSize={16}
         showWeekdayLabels={true}
         username={username}
       />
-    </div>
+    </Center>
   );
 };

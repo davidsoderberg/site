@@ -1,16 +1,16 @@
 import { useMemo } from 'react';
 import { Styles, css, cx } from '../../styled-system/css';
 import { Card } from './Card';
-import { Date } from './Date';
-import { Heading } from './Heading';
 import { Link } from './Link';
 import { Text } from './Text';
 import { pages } from '../routes';
 import { Post as IPost, PostTags } from '../types/post';
 import { Tags } from './Tags';
-import { hstack } from '../../styled-system/patterns';
 import { When } from './When';
 import { Divider } from './Divider';
+import { Bold } from './Bold';
+import { SectionHeader } from './SectionHeader';
+import { Row } from './Row';
 
 const PostContent = ({
   to,
@@ -26,18 +26,18 @@ const PostContent = ({
   tags?: PostTags[];
 }) => (
   <>
-    <Heading>
+    <SectionHeader>
       <Link href={to}>{title}</Link>
-    </Heading>
-    <Date>{date}</Date>
+    </SectionHeader>
+    <Bold>{date}</Bold>
     <Text>{excerpt}</Text>
-    <div
-      className={hstack({
+    <Row
+      className={css({
         marginBottom: 100,
       })}
     >
       <Tags tags={tags} />
-    </div>
+    </Row>
   </>
 );
 

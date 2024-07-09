@@ -2,7 +2,6 @@ import { useMemo, useState } from 'react';
 import { Header } from './components/Header';
 import { Post } from './components/Post';
 import { posts } from './routes';
-import { center, hstack } from '../styled-system/patterns';
 import { Tags } from './components/Tags';
 import { Text } from './components/Text';
 import { PostTags } from './types/post';
@@ -12,6 +11,9 @@ import { Link } from './components/Link';
 import { css } from '../styled-system/css';
 import { LatestPost } from './components/LatestPost';
 import { Loader } from './components/Loader';
+import { Center } from './components/Center';
+import { Bold } from './components/Bold';
+import { Row } from './components/Row';
 
 export const Posts = () => {
   const [selectedTag, setSelectedTag] = useState<PostTags | undefined>();
@@ -49,20 +51,19 @@ export const Posts = () => {
 
   return (
     <Header>
-      <div
-        className={hstack({
+      <Row
+        className={css({
           marginTop: 200,
         })}
       >
-        <Text
+        <Bold
           style={{
             marginBottom: 0,
-            fontWeight: 'bolder',
             paddingRight: 50,
           }}
         >
           Filter by tag:
-        </Text>
+        </Bold>
         <Tags
           tags={tags}
           selected={selectedTag}
@@ -76,7 +77,7 @@ export const Posts = () => {
             setSelectedTag(tag);
           }}
         />
-      </div>
+      </Row>
       {items.map((post, index) => {
         const isLast = items.length - 1 === index;
 
@@ -108,11 +109,7 @@ export const Posts = () => {
         <LatestPost />
       </When>
       <When truthy={hasMore}>
-        <div
-          className={center({
-            marginTop: 100,
-          })}
-        >
+        <Center className={css({ marginTop: 100 })}>
           <When truthy={!loading}>
             <Link
               href='#'
@@ -127,7 +124,7 @@ export const Posts = () => {
           <When truthy={loading}>
             <Loader size='sm' />
           </When>
-        </div>
+        </Center>
       </When>
     </Header>
   );

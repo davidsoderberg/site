@@ -1,10 +1,10 @@
 import { useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Header } from './components/Header';
-import { Heading } from './components/Heading';
-import { Text } from './components/Text';
+import { PageHeader } from './components/PageHeader';
 import { LatestPost } from './components/LatestPost';
 import { PATHS, pages } from './routes';
+import { Bold } from './components/Bold';
 
 export const CatchAll = () => {
   const params = useParams();
@@ -26,10 +26,8 @@ export const CatchAll = () => {
 
   return (
     <Header>
-      <Heading style={{ marginTop: 200 }}>404 not found</Heading>
-      <Text style={{ fontWeight: 'bolder' }}>
-        I recommend that you read my latest post:
-      </Text>
+      <PageHeader style={{ marginTop: 200 }}>404 not found</PageHeader>
+      <Bold>I recommend that you read my latest post:</Bold>
       <LatestPost />
     </Header>
   );

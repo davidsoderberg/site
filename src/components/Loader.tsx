@@ -1,7 +1,6 @@
 import { SystemStyleObject } from '../../styled-system/types';
 import { cva, cx } from '../../styled-system/css';
-
-type Sizes = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+import { Sizes } from '../types/sizes';
 
 const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
   base: {

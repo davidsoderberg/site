@@ -1,6 +1,6 @@
-import { Heading } from '../components/Heading';
 import { Text } from '../components/Text';
 import { PostWrapper } from '../components/PostWrapper';
+import { SectionHeader } from '../components/SectionHeader';
 
 export const FiveMonthsOfRemoteWork = () => {
   return (
@@ -12,7 +12,7 @@ export const FiveMonthsOfRemoteWork = () => {
         try to figure out what I have learned and why I really enjoy working
         remote and with Novu.
       </Text>
-      <Heading variant='h3'>Working remote</Heading>
+      <SectionHeader>Working remote</SectionHeader>
       <Text>
         Due to Covid-19 pandemic I worked remote 3 days a week and 2 days in
         office, we were allowed to work full time but an empty office is not fun
@@ -27,7 +27,7 @@ export const FiveMonthsOfRemoteWork = () => {
         prepare a lunchbox (I have my kitchen behind me when I am working,
         literally).
       </Text>
-      <Heading variant='h3'>Communication</Heading>
+      <SectionHeader>Communication</SectionHeader>
       <Text>
         Communication is hard even in a "office company" and it is not easier in
         a fully remote company. But my opinion right now about it is that the
@@ -37,7 +37,7 @@ export const FiveMonthsOfRemoteWork = () => {
         in the world on communication but I think it is good because of being
         fully remote and also harder because of fully remote.
       </Text>
-      <Heading variant='h3'>Community and public communication</Heading>
+      <SectionHeader>Community and public communication</SectionHeader>
       <Text>
         This was not a topic I was afriad of starting at Novu, but when we
         decieded to make the engineering channel public in our Discord I got a
@@ -51,7 +51,7 @@ export const FiveMonthsOfRemoteWork = () => {
         to do. So if you are a community member and are reading this, thank
         you...
       </Text>
-      <Heading variant='h3'>English</Heading>
+      <SectionHeader>English</SectionHeader>
       <Text>
         If you would have asked me six years ago if I would work in a company
         that only speaks English I would with out a doubt say no. Because my
@@ -61,7 +61,7 @@ export const FiveMonthsOfRemoteWork = () => {
         languages fluently and I have had a friend from USA for five years now
         that have really helped me get to where I am now.
       </Text>
-      <Heading variant='h3'>World wide</Heading>
+      <SectionHeader>World wide</SectionHeader>
       <Text>
         With a fully remote company I have the privilege of being able to have
         collegues all over the world. This is one of the best thing to me
@@ -71,7 +71,7 @@ export const FiveMonthsOfRemoteWork = () => {
         would never been able to learn in school, like that people in Israel do
         have weekend on Friday and Saturday.
       </Text>
-      <Heading variant='h3'>Collegues</Heading>
+      <SectionHeader>Collegues</SectionHeader>
       <Text>
         Oh my this header is a privilege to have in this post, the people at
         Novu is amazing. Nothing and I mean nothing feels bad to say or to do
