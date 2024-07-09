@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
 import { cva, cx } from '../../../styled-system/css';
 import { SystemStyleObject } from '../../../styled-system/types';
 import { DefaultProps } from '../../types/defaultProps';
+import { Box } from '../Box';
 
 type ColSpan = 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12;
 
@@ -57,13 +57,12 @@ export const GridColumn = ({
   children,
   className,
   colSpan = 1,
-}: Pick<DefaultProps, 'className'> & {
+}: DefaultProps & {
   colSpan?: ColSpan;
-  children?: ReactNode;
 }) => {
   return (
-    <div className={cx(columnClassName({ colSpan }), className)}>
+    <Box className={cx(columnClassName({ colSpan }), className)}>
       {children}
-    </div>
+    </Box>
   );
 };

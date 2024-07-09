@@ -1,9 +1,10 @@
 import { css, cx } from '../../styled-system/css';
 import { DefaultProps } from '../types/defaultProps';
+import { Box } from './Box';
 
-export const Wrapper = ({ children, className, style }: DefaultProps) => {
+export const Wrapper = ({ children, className }: DefaultProps) => {
   return (
-    <div
+    <Box
       className={css({
         backgroundColor: 'background',
         width: '100%',
@@ -20,25 +21,22 @@ export const Wrapper = ({ children, className, style }: DefaultProps) => {
         },
       })}
     >
-      <div
+      <Box
         className={cx(
-          css(
-            {
-              width: '80%',
-              margin: '0 auto',
-              paddingBottom: 50,
-              xsDown: {
-                width: '100%',
-                padding: 100,
-              },
+          css({
+            width: '80%',
+            margin: '0 auto',
+            paddingBottom: 50,
+            xsDown: {
+              width: '100%',
+              padding: 100,
             },
-            style
-          ),
+          }),
           className
         )}
       >
         {children}
-      </div>
-    </div>
+      </Box>
+    </Box>
   );
 };

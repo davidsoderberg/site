@@ -57,17 +57,19 @@ export const App = () => {
             <li>Software Developer, Fortnox (2017-04-03 - 2020-06-30)</li>
             <li>Software Developer, Isotop (2017-08-24 - 2017-04-02 )</li>
           </List>
-          <Image style={{ width: '100%' }} src={'me.jpeg'} />
+          <Image className={css({ width: '100%' })} src={'me.jpeg'} />
         </GridColumn>
       </GridContainer>
       <Card
-        style={{
-          backgroundColor: 'transparent',
+        className={css({
           paddingTop: 0,
           paddingBottom: 0,
           marginBottom: 200,
           marginTop: 200,
-        }}
+          boxShadow: 'default',
+          borderRadius: 'default',
+        })}
+        variant='transparent'
       >
         <GithubCalendar />
       </Card>

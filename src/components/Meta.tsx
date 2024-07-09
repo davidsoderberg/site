@@ -1,8 +1,7 @@
 import { Helmet } from 'react-helmet';
-import { ReactNode, useMemo } from 'react';
+import { useMemo } from 'react';
 
 export const Meta = ({
-  children = null,
   title = 'Software Developer',
   description = 'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.',
   image = 'me.jpeg',
@@ -10,7 +9,6 @@ export const Meta = ({
   description?: string;
   image?: string;
   title?: string;
-  children?: ReactNode;
 }) => {
   const imageLink = useMemo(
     () => `https://www.davidsouthmountain.se/${image}`,
@@ -29,7 +27,6 @@ export const Meta = ({
       <meta name='twitter:title' content={fullTitle} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={imageLink} />
-      {children}
     </Helmet>
   );
 };

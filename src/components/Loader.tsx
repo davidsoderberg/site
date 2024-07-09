@@ -1,6 +1,7 @@
 import { SystemStyleObject } from '../../styled-system/types';
 import { cva, cx } from '../../styled-system/css';
 import { Sizes } from '../types/sizes';
+import { DefaultProps } from '../types/defaultProps';
 
 const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
   base: {
@@ -32,8 +33,7 @@ export const Loader = ({
   className,
 }: {
   size?: Sizes;
-  className?: string;
-}) => {
+} & Pick<DefaultProps, 'className'>) => {
   return (
     <svg
       viewBox='0 0 135 140'

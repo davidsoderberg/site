@@ -1,6 +1,7 @@
-import { css, cva, cx } from '../../styled-system/css';
+import { cva, cx } from '../../styled-system/css';
 import { SystemStyleObject } from '../../styled-system/types';
 import { DefaultProps } from '../types/defaultProps';
+import { Box } from './Box';
 
 export type Variants = 'default' | 'transparent';
 
@@ -26,12 +27,10 @@ const cardClassName = cva<{ variant: Record<Variants, SystemStyleObject> }>({
 export const Card = ({
   children,
   className,
-  style,
+
   variant = 'default',
 }: DefaultProps & { variant?: Variants }) => {
   return (
-    <div className={cx(cardClassName({ variant }), css(style), className)}>
-      {children}
-    </div>
+    <Box className={cx(cardClassName({ variant }), className)}>{children}</Box>
   );
 };

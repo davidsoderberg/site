@@ -1,5 +1,6 @@
 import { Link } from './Link';
 import { Image } from './Image';
+import { DefaultProps } from '../types/defaultProps';
 
 export const GithubRepo = ({
   username = 'davidsoderberg',
@@ -10,8 +11,7 @@ export const GithubRepo = ({
   username?: string;
   repo: string;
   alt: string;
-  className?: string;
-}) => {
+} & Pick<DefaultProps, 'className'>) => {
   return (
     <Link
       href={`https://github.com/${username}/${repo}`}

@@ -46,7 +46,7 @@ export const Knowledge = () => {
         <GridContainer className={css({ marginBottom: 100, columnGap: 0 })}>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>Lang</SectionHeader>
+              <SectionHeader className={css({ marginBottom: 0 })}>Lang</SectionHeader>
               <Image src='/icons/html5.svg' alt='HTML5' />
               <Image src='/icons/css3.svg' alt='CSS3' />
               <Image src='/icons/typescript.svg' alt='TypeScript' />
@@ -57,12 +57,12 @@ export const Knowledge = () => {
           </GridColumn>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>GraphQL</SectionHeader>
+              <SectionHeader className={css({ marginBottom: 0 })}>GraphQL</SectionHeader>
               <Image src='/icons/graphql.svg' alt='GraphQL' />
               <Image src='/icons/apollographql.svg' alt='Apollo-GraphQL' />
             </Column>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>
+              <SectionHeader className={css({ marginBottom: 0 })}>
                 Test frameworks
               </SectionHeader>
               <Image src='/icons/jasmine.svg' alt='Jasmine' />
@@ -73,7 +73,7 @@ export const Knowledge = () => {
           </GridColumn>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>
+              <SectionHeader className={css({ marginBottom: 0 })}>
                 Frameworks
               </SectionHeader>
               <Image src='/icons/expressjs.svg' alt='Express.js' />
@@ -92,7 +92,7 @@ export const Knowledge = () => {
         <GridContainer className={css({ marginBottom: 100, columnGap: 0 })}>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>
+              <SectionHeader className={css({ marginBottom: 0 })}>
                 Databases
               </SectionHeader>
               <Image src='/icons/mongodb.svg' alt='MongoDB' />
@@ -101,7 +101,7 @@ export const Knowledge = () => {
               <Image src='/icons/redis.svg' alt='Redis' />
             </Column>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>
+              <SectionHeader className={css({ marginBottom: 0 })}>
                 Builders
               </SectionHeader>
               <Image src='/icons/webpack.svg' alt='Webpack' />
@@ -112,7 +112,7 @@ export const Knowledge = () => {
           </GridColumn>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>Tools</SectionHeader>
+              <SectionHeader className={css({ marginBottom: 0 })}>Tools</SectionHeader>
               <Image src='/icons/insomnia.svg' alt='Insomnia' />
               <Image src='/icons/vscode.svg' alt='Visual Studio Code' />
               <Image src='/icons/git.svg' alt='Git' />
@@ -126,19 +126,19 @@ export const Knowledge = () => {
           </GridColumn>
           <GridColumn colSpan={4}>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>
+              <SectionHeader className={css({ marginBottom: 0 })}>
                 Package managers
               </SectionHeader>
               <Image src='/icons/npm.svg' alt='NPM' />
               <Image src='/icons/yarn.svg' alt='Yarn' />
             </Column>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>Servers</SectionHeader>
+              <SectionHeader className={css({ marginBottom: 0 })}>Servers</SectionHeader>
               <Image src='/icons/nginx.svg' alt='Nginx' />
               <Image src='/icons/apache.svg' alt='Apache' />
             </Column>
             <Column className={columnClass}>
-              <SectionHeader style={{ marginBottom: 0 }}>Hosts</SectionHeader>
+              <SectionHeader className={css({ marginBottom: 0 })}>Hosts</SectionHeader>
               <Image src='/icons/netlify.svg' alt='Netlify' />
               <Image src='/icons/scaleway.svg' alt='Scaleway' />
               <Image src='/icons/vercel.svg' alt='Vercel' />

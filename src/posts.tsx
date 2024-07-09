@@ -58,10 +58,10 @@ export const Posts = () => {
         })}
       >
         <Bold
-          style={{
+          className={css({
             marginBottom: 0,
             paddingRight: 50,
-          }}
+          })}
         >
           Filter by tag:
         </Bold>
@@ -88,6 +88,13 @@ export const Posts = () => {
             to={post.path}
             isLast={isLast && !hasMore}
             selected={post.selected}
+            className={
+              post.selected
+                ? css({
+                    marginBottom: 100,
+                  })
+                : undefined
+            }
           />
         );
       })}

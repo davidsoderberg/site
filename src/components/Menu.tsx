@@ -1,4 +1,3 @@
-import { ReactNode } from 'react';
 import { css, cx } from '../../styled-system/css';
 import { PATHS } from '../routes';
 import { DefaultProps } from '../types/defaultProps';
@@ -11,7 +10,7 @@ const menuLink = css({
   fontWeight: 'bold',
 });
 
-const MenuSection = ({ children }: { children: ReactNode }) => {
+const MenuSection = ({ children }: Pick<DefaultProps, 'children'>) => {
   return (
     <Row
       className={css({
@@ -27,27 +26,24 @@ const MenuSection = ({ children }: { children: ReactNode }) => {
   );
 };
 
-export const Menu = ({ className, style }: Omit<DefaultProps, 'children'>) => {
+export const Menu = ({ className }: Omit<DefaultProps, 'children'>) => {
   return (
     <Card
       className={cx(
-        css(
-          {
-            display: 'flex',
-            flexDirection: 'row',
-            backgroundColor: 'background',
-            paddingTop: 100,
-            paddingBottom: 100,
-            paddingLeft: 150,
-            paddingRight: 150,
-            justifyContent: 'space-between',
-            xsDown: {
-              flexDirection: 'column',
-              gap: 50,
-            },
+        css({
+          display: 'flex',
+          flexDirection: 'row',
+          backgroundColor: 'background',
+          paddingTop: 100,
+          paddingBottom: 100,
+          paddingLeft: 150,
+          paddingRight: 150,
+          justifyContent: 'space-between',
+          xsDown: {
+            flexDirection: 'column',
+            gap: 50,
           },
-          style
-        ),
+        }),
         className
       )}
     >

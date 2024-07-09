@@ -14,7 +14,6 @@ export const List = ({
   children,
   variant = 'unordered',
   className,
-  style,
 }: DefaultProps & {
   variant?: 'ordered' | 'unordered';
 }) => {
@@ -23,12 +22,9 @@ export const List = ({
       <ol
         className={cx(
           defaultClassName,
-          css(
-            {
-              listStyleType: 'decimal',
-            },
-            style
-          ),
+          css({
+            listStyleType: 'decimal',
+          }),
           className
         )}
       >
@@ -41,12 +37,9 @@ export const List = ({
     <ul
       className={cx(
         defaultClassName,
-        css(
-          {
-            listStyleType: 'disc',
-          },
-          style
-        ),
+        css({
+          listStyleType: 'disc',
+        }),
         className
       )}
     >

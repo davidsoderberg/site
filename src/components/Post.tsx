@@ -1,4 +1,4 @@
-import { Styles, css } from '../../styled-system/css';
+import { css } from '../../styled-system/css';
 import { Card } from './Card';
 import { Link } from './Link';
 import { Text } from './Text';
@@ -9,11 +9,11 @@ import { Bold } from './Bold';
 import { SectionHeader } from './SectionHeader';
 import { Row } from './Row';
 import { usePost } from '../hooks/usePost';
+import { DefaultProps } from '../types/defaultProps';
 
 export const Post = ({
   to,
   className,
-  style,
   selected = false,
   hide = false,
   isLast = false,
@@ -21,10 +21,8 @@ export const Post = ({
   to: string;
   hide?: boolean;
   selected?: boolean;
-  className?: string;
-  style?: Styles;
   isLast?: boolean;
-}) => {
+} & Pick<DefaultProps, 'className'>) => {
   const { title, date, excerpt, tags = [] } = usePost(to);
 
   if (hide) {
@@ -32,11 +30,7 @@ export const Post = ({
   }
 
   return (
-    <Card
-      className={className}
-      style={style}
-      variant={selected ? 'default' : 'transparent'}
-    >
+    <Card className={className} variant={selected ? 'default' : 'transparent'}>
       <SectionHeader>
         <Link href={to}>{title}</Link>
       </SectionHeader>
@@ -50,7 +44,7 @@ export const Post = ({
         <Tags tags={tags} />
       </Row>
       <When truthy={!isLast && !selected}>
-        <Divider style={{ marginTop: 200, marginBottom: 0 }} />
+        <Divider className={css({ marginTop: 200, marginBottom: 0 })} />
       </When>
     </Card>
   );

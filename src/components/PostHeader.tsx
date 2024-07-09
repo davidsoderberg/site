@@ -9,21 +9,18 @@ import { DefaultProps } from '../types/defaultProps';
 import { Row } from './Row';
 import { usePost } from '../hooks/usePost';
 
-const PostHeaderRow = ({ className, children, style }: DefaultProps) => {
+const PostHeaderRow = ({ className, children }: DefaultProps) => {
   return (
     <Row
       className={cx(
-        css(
-          {
-            justifyContent: 'space-between',
-            xsDown: {
-              alignItems: 'flex-start',
-              flexDirection: 'column',
-              gap: 50,
-            },
+        css({
+          justifyContent: 'space-between',
+          xsDown: {
+            alignItems: 'flex-start',
+            flexDirection: 'column',
+            gap: 50,
           },
-          style
-        ),
+        }),
         className
       )}
     >

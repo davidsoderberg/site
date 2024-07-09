@@ -7,6 +7,7 @@ import { PATHS } from './routes';
 import { Bold } from './components/Bold';
 import { findPost } from './hooks/usePost';
 import { Post } from './types/post';
+import { css } from '../styled-system/css';
 
 export const CatchAll = () => {
   const params = useParams();
@@ -28,7 +29,7 @@ export const CatchAll = () => {
 
   return (
     <Header>
-      <PageHeader style={{ marginTop: 200 }}>404 not found</PageHeader>
+      <PageHeader className={css({ marginTop: 200 })}>404 not found</PageHeader>
       <Bold>I recommend that you read my latest post:</Bold>
       <LatestPost />
     </Header>

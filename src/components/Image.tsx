@@ -5,19 +5,15 @@ export const Image = ({
   src,
   alt,
   className,
-  style,
 }: Omit<DefaultProps, 'children'> & { src: string; alt?: string }) => {
   return (
     <img
       src={src}
       className={cx(
-        css(
-          {
-            borderRadius: 'default',
-            boxShadow: 'default',
-          },
-          style
-        ),
+        css({
+          borderRadius: 'default',
+          boxShadow: 'default',
+        }),
         className
       )}
       alt={alt}

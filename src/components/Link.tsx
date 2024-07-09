@@ -6,7 +6,6 @@ export const Link = ({
   children,
   href,
   className,
-  style,
   target,
   rel,
   onClick,
@@ -23,12 +22,9 @@ export const Link = ({
       rel={rel}
       onClick={onClick}
       className={cx(
-        css(
-          {
-            color: 'primary',
-          },
-          style
-        ),
+        css({
+          color: 'primary',
+        }),
         className
       )}
     >
