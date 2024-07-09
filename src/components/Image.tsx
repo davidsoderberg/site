@@ -5,7 +5,7 @@ export const Image = ({
   src,
   alt,
   className,
-}: Omit<DefaultProps, 'children'> & { src: string; alt?: string }) => {
+}: Omit<DefaultProps<{ src: string; alt?: string }>, 'children'>) => {
   return (
     <img
       src={src}

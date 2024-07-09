@@ -1,49 +1,57 @@
-import { css, cx } from '../../styled-system/css';
+import { useMemo } from 'react';
+import { cva, cx } from '../../styled-system/css';
+import { SystemStyleObject } from '../../styled-system/types';
 import { DefaultProps } from '../types/defaultProps';
 
-const defaultClassName = css({
-  marginLeft: 100,
-  marginBottom: 100,
-  color: 'white',
-  '& > li': {
-    marginBottom: 50,
+export type Variants = 'ordered' | 'unordered';
+
+const listClassName = cva<{ variant: Record<Variants, SystemStyleObject> }>({
+  base: {
+    marginLeft: 100,
+    marginBottom: 100,
+    color: 'white',
+    '& > li': {
+      marginBottom: 50,
+    },
+  },
+  variants: {
+    variant: {
+      ordered: {
+        listStyleType: 'decimal',
+      },
+      unordered: {
+        listStyleType: 'disc',
+      },
+    },
   },
 });
+
+const OrderedList = (props: DefaultProps) => <ol {...props} />;
+
+const UnorderedList = (props: DefaultProps) => <ul {...props} />;
 
 export const List = ({
   children,
   variant = 'unordered',
   className,
-}: DefaultProps & {
-  variant?: 'ordered' | 'unordered';
-}) => {
-  if (variant === 'ordered') {
-    return (
-      <ol
-        className={cx(
-          defaultClassName,
-          css({
-            listStyleType: 'decimal',
-          }),
-          className
-        )}
-      >
-        {children}
-      </ol>
-    );
-  }
+}: DefaultProps<{
+  variant?: Variants;
+}>) => {
+  const Component = useMemo(
+    () => (variant === 'ordered' ? OrderedList : UnorderedList),
+    [variant]
+  );
 
   return (
-    <ul
+    <Component
       className={cx(
-        defaultClassName,
-        css({
-          listStyleType: 'disc',
+        listClassName({
+          variant,
         }),
         className
       )}
     >
       {children}
-    </ul>
+    </Component>
   );
 };

@@ -80,21 +80,14 @@ export const Posts = () => {
         />
       </Row>
       {items.map((post, index) => {
-        const isLast = items.length - 1 === index;
+        const isLast = items.length - 1 === index && !hasMore;
 
         return (
           <Post
             hide={post.hide}
             to={post.path}
-            isLast={isLast && !hasMore}
+            isLast={isLast}
             selected={post.selected}
-            className={
-              post.selected
-                ? css({
-                    marginBottom: 100,
-                  })
-                : undefined
-            }
           />
         );
       })}

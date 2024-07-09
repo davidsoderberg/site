@@ -17,12 +17,15 @@ export const Post = ({
   selected = false,
   hide = false,
   isLast = false,
-}: {
-  to: string;
-  hide?: boolean;
-  selected?: boolean;
-  isLast?: boolean;
-} & Pick<DefaultProps, 'className'>) => {
+}: Omit<
+  DefaultProps<{
+    to: string;
+    hide?: boolean;
+    selected?: boolean;
+    isLast?: boolean;
+  }>,
+  'children'
+>) => {
   const { title, date, excerpt, tags = [] } = usePost(to);
 
   if (hide) {
@@ -36,11 +39,7 @@ export const Post = ({
       </SectionHeader>
       <Bold>{date}</Bold>
       <Text>{excerpt}</Text>
-      <Row
-        className={css({
-          marginBottom: 100,
-        })}
-      >
+      <Row>
         <Tags tags={tags} />
       </Row>
       <When truthy={!isLast && !selected}>

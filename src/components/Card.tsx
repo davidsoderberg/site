@@ -18,6 +18,8 @@ const cardClassName = cva<{ variant: Record<Variants, SystemStyleObject> }>({
         backgroundColor: 'card',
         borderRadius: 'default',
         boxShadow: 'default',
+        marginBottom: 100,
+        paddingBottom: 150,
       },
       transparent: {},
     },
@@ -27,9 +29,8 @@ const cardClassName = cva<{ variant: Record<Variants, SystemStyleObject> }>({
 export const Card = ({
   children,
   className,
-
   variant = 'default',
-}: DefaultProps & { variant?: Variants }) => {
+}: DefaultProps<{ variant?: Variants }>) => {
   return (
     <Box className={cx(cardClassName({ variant }), className)}>{children}</Box>
   );

@@ -31,9 +31,12 @@ const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
 export const Loader = ({
   size = 'md',
   className,
-}: {
-  size?: Sizes;
-} & Pick<DefaultProps, 'className'>) => {
+}: Omit<
+  DefaultProps<{
+    size?: Sizes;
+  }>,
+  'children'
+>) => {
   return (
     <svg
       viewBox='0 0 135 140'

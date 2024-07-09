@@ -7,11 +7,14 @@ export const GithubRepo = ({
   repo,
   alt,
   className,
-}: {
-  username?: string;
-  repo: string;
-  alt: string;
-} & Pick<DefaultProps, 'className'>) => {
+}: Omit<
+  DefaultProps<{
+    username?: string;
+    repo: string;
+    alt: string;
+  }>,
+  'children'
+>) => {
   return (
     <Link
       href={`https://github.com/${username}/${repo}`}

@@ -6,7 +6,7 @@ export const Badge = ({
   children,
   onClick,
   selected = false,
-}: DefaultProps & { onClick?: () => void; selected?: boolean }) => {
+}: DefaultProps<{ onClick?: () => void; selected?: boolean }>) => {
   return (
     <button
       {...(onClick !== undefined ? { 'data-active': true } : {})}

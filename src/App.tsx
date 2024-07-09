@@ -76,17 +76,31 @@ export const App = () => {
       <GridContainer>
         <GridColumn colSpan={7}>
           <GithubStats />
-
-          <GithubRepo
+          <GridContainer
             className={css({
-              marginTop: 100,
-              marginBottom: 100,
-              display: 'block',
+              marginTop: 200,
+              marginBottom: 200,
+              alignItems: 'center',
             })}
-            username='novuhq'
-            repo='novu'
-            alt='Novu by novuhq'
-          />
+          >
+            <GridColumn colSpan={6}>
+              <GithubRepo username='novuhq' repo='novu' alt='Novu by novuhq' />
+            </GridColumn>
+            <GridColumn
+              colSpan={6}
+              className={css({
+                smDown: {
+                  marginTop: 200,
+                },
+              })}
+            >
+              <GithubRepo
+                username='davidsoderberg'
+                repo='site'
+                alt='This website'
+              />
+            </GridColumn>
+          </GridContainer>
         </GridColumn>
         <GridColumn colSpan={5}>
           <Row

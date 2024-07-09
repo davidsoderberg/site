@@ -56,10 +56,10 @@ const columnClassName = cva<{ colSpan: Record<ColSpan, SystemStyleObject> }>({
 export const GridColumn = ({
   children,
   className,
-  colSpan = 1,
-}: DefaultProps & {
-  colSpan?: ColSpan;
-}) => {
+  colSpan,
+}: DefaultProps<{
+  colSpan: ColSpan;
+}>) => {
   return (
     <Box className={cx(columnClassName({ colSpan }), className)}>
       {children}
