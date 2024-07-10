@@ -46,7 +46,7 @@ export const App = () => {
               developer, so food is my thing anyway.
             </li>
           </List>
-          <LatestPost />
+          <LatestPost className={css({ marginTop: 200 })} />
         </GridColumn>
         <GridColumn colSpan={5}>
           <SectionHeader>👨‍💼 Jobs</SectionHeader>
@@ -57,7 +57,10 @@ export const App = () => {
             <li>Software Developer, Fortnox (2017-04-03 - 2020-06-30)</li>
             <li>Software Developer, Isotop (2017-08-24 - 2017-04-02 )</li>
           </List>
-          <Image className={css({ width: '100%' })} src={'me.jpeg'} />
+          <Image
+            className={css({ width: '100%', marginTop: 200 })}
+            src={'me.jpeg'}
+          />
         </GridColumn>
       </GridContainer>
       <Card
