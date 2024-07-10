@@ -15,6 +15,7 @@ export const Tags = ({
       {tags.map((tag) => {
         return (
           <Badge
+            key={tag}
             selected={selected === tag}
             onClick={
               onClick

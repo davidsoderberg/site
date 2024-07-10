@@ -26,7 +26,7 @@ export const Post = ({
   }>,
   'children'
 >) => {
-  const { title, date, excerpt, tags = [] } = usePost(to);
+  const { title, date, description, tags = [] } = usePost(to);
 
   if (hide) {
     return null;
@@ -37,8 +37,12 @@ export const Post = ({
       <SectionHeader>
         <Link href={to}>{title}</Link>
       </SectionHeader>
-      <Bold>{date}</Bold>
-      <Text>{excerpt}</Text>
+      <When truthy={date !== undefined}>
+        <Bold>{date}</Bold>
+      </When>
+      <When truthy={description !== undefined}>
+        <Text>{description}</Text>
+      </When>
       <Row>
         <Tags tags={tags} />
       </Row>

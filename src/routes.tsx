@@ -1,5 +1,4 @@
-import { RouteObject } from 'react-router-dom';
-import { App } from './App';
+import { Home } from './Home';
 import { Posts } from './posts';
 import { AWeekInCyprusWithNovu } from './posts/a-week-in-cyprus-with-novu';
 import { FirstTwoMonths } from './posts/first-two-months';
@@ -25,29 +24,36 @@ export const PATHS = {
   FIRST_TWO_MONTHS: POSTS + '/first-two-months',
   THE_FIRST_SWEDISH_GUY_AT_NOVU: POSTS + '/the-first-swedish-guy-at-novu',
   WHICH_DAY_IS_YOUR_FAVORITE: POSTS + '/which-day-is-your-favorite',
-  BEING_SWEDISH_IN_A_GLOBAL_COMPANY: POSTS + '/being-swedish-in-a-global-company',
+  BEING_SWEDISH_IN_A_GLOBAL_COMPANY:
+    POSTS + '/being-swedish-in-a-global-company',
   EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT: POSTS + '/eat-to-workout-or-workout-to-eat',
   CATCH_ALL: '*',
 };
 
-export const pages: (RouteObject | Post)[] = [
+export const CATCH_ALL: Post = {
+  path: PATHS.CATCH_ALL,
+  element: <CatchAll />,
+  title: '404 not found',
+};
+
+export const routes: Post[] = [
   {
     path: PATHS.ROOT,
-    element: <App />,
+    element: <Home />,
+    title: 'Software Developer',
   },
   {
     path: PATHS.POSTS,
     element: <Posts />,
+    title: 'Posts',
+    description: 'All posts created by me',
   },
-  {
-    path: PATHS.CATCH_ALL,
-    element: <CatchAll />,
-  },
+  CATCH_ALL,
   {
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_2,
     element: <TwoTimesInIsraelPart2 />,
     title: 'Two times in Israel (part 2)',
-    excerpt:
+    description:
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
     date: '2023-02-05',
     image: 'israel.png',
@@ -57,7 +63,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_1,
     element: <TwoTimesInIsraelPart1 />,
     title: 'Two times in Israel (part 1)',
-    excerpt:
+    description:
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
     date: '2023-02-04',
     image: 'israel.png',
@@ -67,7 +73,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.A_WEEK_IN_CYPRUS_WITH_NOVU,
     element: <AWeekInCyprusWithNovu />,
     title: 'A week in Cyprus with Novu',
-    excerpt: 'An amazing week that I will never forget.',
+    description: 'An amazing week that I will never forget.',
     date: '2022-09-17',
     image: 'door.jpg',
     tags: [PostTags.NOVU],
@@ -76,7 +82,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.FIVE_MONTHS_OF_REMOTE_WORK,
     element: <FiveMonthsOfRemoteWork />,
     title: 'Five months of remote work',
-    excerpt: 'How my first five months at Novu have been this far...',
+    description: 'How my first five months at Novu have been this far...',
     date: '2022-08-31',
     tags: [PostTags.NOVU],
   },
@@ -84,7 +90,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.FIRST_TWO_MONTHS,
     element: <FirstTwoMonths />,
     title: 'The first two months at Novu',
-    excerpt: 'About my two first month at Novu.',
+    description: 'About my two first month at Novu.',
     date: '2022-06-01',
     tags: [PostTags.NOVU],
   },
@@ -92,7 +98,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.THE_FIRST_SWEDISH_GUY_AT_NOVU,
     element: <TheFirstSwedishGuyAtNovu />,
     title: 'The first Swedish guy at Novu',
-    excerpt: 'About how I ended up at Novu after a few video calls.',
+    description: 'About how I ended up at Novu after a few video calls.',
     date: '2022-04-05',
     tags: [PostTags.NOVU],
   },
@@ -100,7 +106,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.WHICH_DAY_IS_YOUR_FAVORITE,
     element: <WhichDayIsYourFavorite />,
     title: 'Which day is your favorite?',
-    excerpt: '1 year and 4 months since last post :O',
+    description: '1 year and 4 months since last post :O',
     date: '2024-07-05',
     tags: [PostTags.ISRAEL, PostTags.WORKOUT, PostTags.NOVU],
   },
@@ -108,7 +114,7 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,
     element: <BeingSwedishInAGlobalCompany />,
     title: 'Being Swedish in a global company',
-    excerpt: 'A post about the swedish "vemod" and "Jante".',
+    description: 'A post about the swedish "vemod" and "Jante".',
     date: '2024-07-07',
     selected: true,
     tags: [PostTags.SWEDEN, PostTags.NOVU],
@@ -117,7 +123,8 @@ export const pages: (RouteObject | Post)[] = [
     path: PATHS.EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT,
     element: <EatToWorkoutOrWorkoutToEat />,
     title: 'Eat to workout, or workout to eat?',
-    excerpt: 'Workout to eat what every I like to did I do for a long time...',
+    description:
+      'Workout to eat what every I like to did I do for a long time...',
     date: '2024-07-21',
     selected: true,
     hide: true,
@@ -125,11 +132,13 @@ export const pages: (RouteObject | Post)[] = [
   },
 ];
 
-export const posts: Post[] = pages
+type PostWithDate = Omit<Post, 'date'> & { date: string };
+
+export const posts: Post[] = routes
   .filter(
     (page) => page.path?.includes(PATHS.POSTS) && page.path !== PATHS.POSTS
   )
-  .map((post) => post as Post)
+  .map((post) => post as PostWithDate)
   .sort((a, b) => {
     if (a.date > b.date) {
       return -1;
@@ -141,8 +150,3 @@ export const posts: Post[] = pages
 
     return 0;
   });
-
-export const routes: RouteObject[] = pages.map((page) => ({
-  path: page.path,
-  element: page.element,
-}));

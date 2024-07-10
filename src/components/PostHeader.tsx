@@ -1,7 +1,5 @@
 import { PageHeader } from './PageHeader';
 import { css, cx } from '../../styled-system/css';
-import { useLocation } from 'react-router-dom';
-import { Meta } from './Meta';
 import { Tags } from './Tags';
 import { Text } from './Text';
 import { Bold } from './Bold';
@@ -30,19 +28,17 @@ const PostHeaderRow = ({ className, children }: DefaultProps) => {
 };
 
 export const PostHeader = () => {
-  const { pathname } = useLocation();
-  const { title, date, excerpt, image, tags = [] } = usePost(pathname);
+  const { title, date, description, tags = [] } = usePost();
 
   return (
     <>
-      <Meta title={title} description={excerpt} image={image} />
       <PostHeaderRow className={css({ marginBottom: 50 })}>
         <PageHeader>{title}</PageHeader>
-        <Bold className={css({ marginBottom: 0 })}>{date}</Bold>
+        <Bold className={css({ marginBottom: 0 })}>{date || null}</Bold>
       </PostHeaderRow>
       <PostHeaderRow className={css({ marginBottom: 200 })}>
         <Text className={css({ fontStyle: 'italic', marginBottom: 0 })}>
-          {excerpt}
+          {description || null}
         </Text>
         <Row>
           <Tags tags={tags} />

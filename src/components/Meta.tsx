@@ -1,15 +1,16 @@
 import { Helmet } from 'react-helmet';
 import { useMemo } from 'react';
+import { useRoute } from '../hooks/useRoute';
+import { CATCH_ALL } from '../routes';
 
-export const Meta = ({
-  title = 'Software Developer',
-  description = 'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.',
-  image = 'me.jpeg',
-}: {
-  description?: string;
-  image?: string;
-  title?: string;
-}) => {
+export const Meta = () => {
+  const {
+    title,
+    description = 'I am David and this is a website about me as a developer. I am currently working as a Software Engineer with a Typescript stack at @novuhq.',
+    image = 'me.jpeg',
+    keywords = [],
+    tags = [],
+  } = useRoute() || CATCH_ALL;
   const imageLink = useMemo(
     () => `https://www.davidsouthmountain.se/${image}`,
     [image]
@@ -27,6 +28,7 @@ export const Meta = ({
       <meta name='twitter:title' content={fullTitle} />
       <meta name='twitter:description' content={description} />
       <meta name='twitter:image' content={imageLink} />
+      <meta name='keywords' content={[...keywords, ...tags].join(', ')} />
     </Helmet>
   );
 };

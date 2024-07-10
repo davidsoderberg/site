@@ -1,9 +1,3 @@
-import { useMemo } from 'react';
-import { posts } from '../routes';
-import { Post } from '../types/post';
+import { useRoute } from './useRoute';
 
-export const usePost = (path: string): Post =>
-  useMemo(() => findPost(path), [path]);
-
-export const findPost = (path: string) =>
-  posts.find((route) => route.path === path) as Post;
+export const usePost = (path: string) => useRoute(path);
