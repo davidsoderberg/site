@@ -8,6 +8,7 @@ export const Badge = ({
   selected = false,
 }: DefaultProps<{ onClick?: () => void; selected?: boolean }>) => {
   return (
+    // eslint-disable-next-line jsx-a11y/role-supports-aria-props
     <button
       {...(onClick !== undefined ? { 'data-active': true } : {})}
       aria-selected={selected}

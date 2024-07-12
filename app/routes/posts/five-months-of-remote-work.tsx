@@ -1,6 +1,6 @@
-import { Text } from '../components/Text';
-import { PostWrapper } from '../components/PostWrapper';
-import { SectionHeader } from '../components/SectionHeader';
+import { Text } from '../../components/Text';
+import { PostWrapper } from '../../components/PostWrapper';
+import { SectionHeader } from '../../components/SectionHeader';
 
 export const FiveMonthsOfRemoteWork = () => {
   return (
@@ -89,3 +89,5 @@ export const FiveMonthsOfRemoteWork = () => {
     </PostWrapper>
   );
 };
+
+export default FiveMonthsOfRemoteWork;

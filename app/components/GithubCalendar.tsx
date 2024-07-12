@@ -1,8 +1,14 @@
 import GitHubCalendar, { ColorScale } from 'react-github-calendar';
 import { token } from '../../styled-system/tokens';
 import { Center } from './Center';
+import { useEffect, useState } from 'react';
 
-export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
+export const GithubCalendar = ({
+  username = 'davidsoderberg',
+}: {
+  username?: string;
+}) => {
+  const [isServer, setIsServer] = useState(true);
   const theme: ColorScale = [
     token('colors.primary'),
     token('colors.primary2'),
@@ -10,6 +16,14 @@ export const GithubCalendar = ({ username = 'davidsoderberg' }) => {
     token('colors.primary6'),
     token('colors.card'),
   ];
+
+  useEffect(() => {
+    setIsServer(false);
+  }, []);
+
+  if (isServer) {
+    return null;
+  }
 
   return (
     <Center>

@@ -1,9 +1,9 @@
-import { css } from '../../styled-system/css';
-import { Divider } from '../components/Divider';
-import { PostWrapper } from '../components/PostWrapper';
-import { Quote } from '../components/Quote';
-import { Row } from '../components/Row';
-import { Text } from '../components/Text';
+import { css } from '../../../styled-system/css';
+import { Divider } from '../../components/Divider';
+import { PostWrapper } from '../../components/PostWrapper';
+import { Quote } from '../../components/Quote';
+import { Row } from '../../components/Row';
+import { Text } from '../../components/Text';
 
 export const BeingSwedishInAGlobalCompany = () => {
   return (
@@ -165,3 +165,5 @@ export const BeingSwedishInAGlobalCompany = () => {
     </PostWrapper>
   );
 };
+
+export default BeingSwedishInAGlobalCompany;

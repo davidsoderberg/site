@@ -1,5 +1,5 @@
-import { Text } from '../components/Text';
-import { PostWrapper } from '../components/PostWrapper';
+import { Text } from '../../components/Text';
+import { PostWrapper } from '../../components/PostWrapper';
 
 export const TheFirstSwedishGuyAtNovu = () => {
   return (
@@ -83,3 +83,5 @@ export const TheFirstSwedishGuyAtNovu = () => {
     </PostWrapper>
   );
 };
+
+export default TheFirstSwedishGuyAtNovu;

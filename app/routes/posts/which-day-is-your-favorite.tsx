@@ -1,8 +1,8 @@
-import { css } from '../../styled-system/css';
-import { Divider } from '../components/Divider';
-import { PostWrapper } from '../components/PostWrapper';
-import { Quote } from '../components/Quote';
-import { Text } from '../components/Text';
+import { css } from '../../../styled-system/css';
+import { Divider } from '../../components/Divider';
+import { PostWrapper } from '../../components/PostWrapper';
+import { Quote } from '../../components/Quote';
+import { Text } from '../../components/Text';
 
 export const WhichDayIsYourFavorite = () => {
   return (
@@ -129,3 +129,5 @@ export const WhichDayIsYourFavorite = () => {
     </PostWrapper>
   );
 };
+
+export default WhichDayIsYourFavorite;

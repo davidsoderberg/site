@@ -1,8 +1,8 @@
-import { Link } from '../components/Link';
-import { Text } from '../components/Text';
-import { Image } from '../components/Image';
-import { PATHS } from '../routes';
-import { PostWrapper } from '../components/PostWrapper';
+import { Link } from '../../components/Link';
+import { Text } from '../../components/Text';
+import { Image } from '../../components/Image';
+import { PATHS } from '../../routes';
+import { PostWrapper } from '../../components/PostWrapper';
 
 export const TwoTimesInIsraelPart1 = () => {
   return (
@@ -125,3 +125,5 @@ export const TwoTimesInIsraelPart1 = () => {
     </PostWrapper>
   );
 };
+
+export default TwoTimesInIsraelPart1;

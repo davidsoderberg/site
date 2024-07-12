@@ -1,6 +1,6 @@
-import { List } from '../components/List';
-import { Text } from '../components/Text';
-import { PostWrapper } from '../components/PostWrapper';
+import { List } from '../../components/List';
+import { Text } from '../../components/Text';
+import { PostWrapper } from '../../components/PostWrapper';
 
 export const FirstTwoMonths = () => {
   return (
@@ -62,3 +62,5 @@ export const FirstTwoMonths = () => {
     </PostWrapper>
   );
 };
+
+export default FirstTwoMonths;
