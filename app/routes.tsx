@@ -1,16 +1,4 @@
-import { Home } from './Home';
-import { Posts } from './posts';
-import { AWeekInCyprusWithNovu } from './posts/a-week-in-cyprus-with-novu';
-import { FirstTwoMonths } from './posts/first-two-months';
-import { FiveMonthsOfRemoteWork } from './posts/five-months-of-remote-work';
-import { TheFirstSwedishGuyAtNovu } from './posts/the-first-swedish-guy-at-novu';
-import { TwoTimesInIsraelPart1 } from './posts/two-times-in-israel-part-1';
-import { TwoTimesInIsraelPart2 } from './posts/two-times-in-israel-part-2';
-import { WhichDayIsYourFavorite } from './posts/which-day-is-your-favorite';
-import { CatchAll } from './CatchAll';
 import { Post, PostTags } from './types/post';
-import { BeingSwedishInAGlobalCompany } from './posts/being-swedish-in-a-global-company';
-import { EatToWorkoutOrWorkoutToEat } from './posts/eat-to-workout-or-workout-to-eat';
 
 export const POSTS = '/posts';
 
@@ -32,26 +20,22 @@ export const PATHS = {
 
 export const CATCH_ALL: Post = {
   path: PATHS.CATCH_ALL,
-  element: <CatchAll />,
   title: '404 not found',
 };
 
 export const routes: Post[] = [
   {
     path: PATHS.ROOT,
-    element: <Home />,
     title: 'Software Developer',
   },
   {
     path: PATHS.POSTS,
-    element: <Posts />,
     title: 'Posts',
     description: 'All posts created by me',
   },
   CATCH_ALL,
   {
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_2,
-    element: <TwoTimesInIsraelPart2 />,
     title: 'Two times in Israel (part 2)',
     description:
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
@@ -61,7 +45,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.TWO_TIMES_IN_ISRAEL_PART_1,
-    element: <TwoTimesInIsraelPart1 />,
     title: 'Two times in Israel (part 1)',
     description:
       'Amazing week in Israel... Welcome to Israel. Your life will never be the same.',
@@ -71,7 +54,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.A_WEEK_IN_CYPRUS_WITH_NOVU,
-    element: <AWeekInCyprusWithNovu />,
     title: 'A week in Cyprus with Novu',
     description: 'An amazing week that I will never forget.',
     date: '2022-09-17',
@@ -80,7 +62,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.FIVE_MONTHS_OF_REMOTE_WORK,
-    element: <FiveMonthsOfRemoteWork />,
     title: 'Five months of remote work',
     description: 'How my first five months at Novu have been this far...',
     date: '2022-08-31',
@@ -88,7 +69,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.FIRST_TWO_MONTHS,
-    element: <FirstTwoMonths />,
     title: 'The first two months at Novu',
     description: 'About my two first month at Novu.',
     date: '2022-06-01',
@@ -96,7 +76,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.THE_FIRST_SWEDISH_GUY_AT_NOVU,
-    element: <TheFirstSwedishGuyAtNovu />,
     title: 'The first Swedish guy at Novu',
     description: 'About how I ended up at Novu after a few video calls.',
     date: '2022-04-05',
@@ -104,7 +83,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.WHICH_DAY_IS_YOUR_FAVORITE,
-    element: <WhichDayIsYourFavorite />,
     title: 'Which day is your favorite?',
     description: '1 year and 4 months since last post :O',
     date: '2024-07-05',
@@ -112,7 +90,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.BEING_SWEDISH_IN_A_GLOBAL_COMPANY,
-    element: <BeingSwedishInAGlobalCompany />,
     title: 'Being Swedish in a global company',
     description: 'A post about the swedish "vemod" and "Jante".',
     date: '2024-07-07',
@@ -121,7 +98,6 @@ export const routes: Post[] = [
   },
   {
     path: PATHS.EAT_TO_WORKOUT_OR_WORKOUT_TO_EAT,
-    element: <EatToWorkoutOrWorkoutToEat />,
     title: 'Eat to workout, or workout to eat?',
     description:
       'Workout to eat what every I like to did I do for a long time...',

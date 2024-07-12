@@ -1,19 +1,19 @@
-import { Header } from './components/Header';
-import { PageHeader } from './components/PageHeader';
-import { Text } from './components/Text';
-import { Link } from './components/Link';
-import { List } from './components/List';
-import { Image } from './components/Image';
-import { GithubCalendar } from './components/GithubCalendar';
-import { GithubStats } from './components/GithubStats';
-import { GithubRepo } from './components/GithubRepo';
-import { GithubTopLangs } from './components/GithubTopLangs';
-import { css } from '../styled-system/css';
-import { Card } from './components/Card';
-import { LatestPost } from './components/LatestPost';
-import { SectionHeader } from './components/SectionHeader';
-import { Row } from './components/Row';
-import { GridContainer, GridColumn } from './components/Grid';
+import { Header } from '../components/Header';
+import { PageHeader } from '../components/PageHeader';
+import { Text } from '../components/Text';
+import { Link } from '../components/Link';
+import { List } from '../components/List';
+import { Image } from '../components/Image';
+import { GithubCalendar } from '../components/GithubCalendar';
+import { GithubStats } from '../components/GithubStats';
+import { GithubRepo } from '../components/GithubRepo';
+import { GithubTopLangs } from '../components/GithubTopLangs';
+import { css } from '../../styled-system/css';
+import { Card } from '../components/Card';
+import { LatestPost } from '../components/LatestPost';
+import { SectionHeader } from '../components/SectionHeader';
+import { Row } from '../components/Row';
+import { GridContainer, GridColumn } from '../components/Grid';
 
 export const Home = () => {
   return (
@@ -121,3 +121,5 @@ export const Home = () => {
     </Header>
   );
 };
+
+export default Home;

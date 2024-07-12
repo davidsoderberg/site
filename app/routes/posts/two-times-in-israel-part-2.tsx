@@ -1,9 +1,9 @@
-import { Link } from '../components/Link';
-import { Text } from '../components/Text';
-import { Image } from '../components/Image';
-import { PATHS } from '../routes';
-import { PostWrapper } from '../components/PostWrapper';
-import { Bold } from '../components/Bold';
+import { Link } from '../../components/Link';
+import { Text } from '../../components/Text';
+import { Image } from '../../components/Image';
+import { PATHS } from '../../routes';
+import { PostWrapper } from '../../components/PostWrapper';
+import { Bold } from '../../components/Bold';
 
 export const TwoTimesInIsraelPart2 = () => {
   return (
@@ -107,3 +107,5 @@ export const TwoTimesInIsraelPart2 = () => {
     </PostWrapper>
   );
 };
+
+export default TwoTimesInIsraelPart2;

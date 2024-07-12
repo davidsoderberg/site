@@ -1,7 +1,7 @@
 import { Image } from './Image';
 import { Link } from './Link';
 
-export const GithubTopLangs = ({ username = 'davidsoderberg' }) => {
+export const GithubTopLangs = ({ username = 'davidsoderberg' }: {username?: string}) => {
   return (
     <Link
       href={`https://github.com/${username}?tab=repositories`}

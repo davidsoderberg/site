@@ -1,19 +1,19 @@
 import { useMemo, useState } from 'react';
-import { Header } from './components/Header';
-import { Post } from './components/Post';
-import { posts } from './routes';
-import { Tags } from './components/Tags';
-import { Text } from './components/Text';
-import { PostTags } from './types/post';
-import { useClientPagination } from './hooks/useClientPagination';
-import { When } from './components/When';
-import { Link } from './components/Link';
-import { css } from '../styled-system/css';
-import { LatestPost } from './components/LatestPost';
-import { Loader } from './components/Loader';
-import { Center } from './components/Center';
-import { Bold } from './components/Bold';
-import { Row } from './components/Row';
+import { Header } from '../../components/Header';
+import { Post } from '../../components/Post';
+import { Post as IPost, PostTags } from '../../types/post';
+import { posts } from '../../routes';
+import { Tags } from '../../components/Tags';
+import { Text } from '../../components/Text';
+import { useClientPagination } from '../../hooks/useClientPagination';
+import { When } from '../../components/When';
+import { Link } from '../../components/Link';
+import { LatestPost } from '../../components/LatestPost';
+import { Loader } from '../../components/Loader';
+import { Center } from '../../components/Center';
+import { Bold } from '../../components/Bold';
+import { Row } from '../../components/Row';
+import { css } from '../../../styled-system/css';
 
 export const Posts = () => {
   const [selectedTag, setSelectedTag] = useState<PostTags | undefined>();
@@ -26,7 +26,7 @@ export const Posts = () => {
       .filter((post) => !post.hide)
       .filter((post) => post.tags?.includes(selectedTag));
   }, [selectedTag]);
-  const { items, hasMore, loading, fetch } = useClientPagination(
+  const { items, hasMore, loading, fetch } = useClientPagination<IPost>(
     filteredPosts,
     3
   );
@@ -84,6 +84,7 @@ export const Posts = () => {
 
         return (
           <Post
+            key={post.path}
             hide={post.hide}
             to={post.path}
             isLast={isLast}
@@ -123,3 +124,5 @@ export const Posts = () => {
     </Header>
   );
 };
+
+export default Posts;

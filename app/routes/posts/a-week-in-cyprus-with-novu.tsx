@@ -1,6 +1,6 @@
-import { Text } from '../components/Text';
-import { Image } from '../components/Image';
-import { PostWrapper } from '../components/PostWrapper';
+import { Text } from '../../components/Text';
+import { Image } from '../../components/Image';
+import { PostWrapper } from '../../components/PostWrapper';
 
 export const AWeekInCyprusWithNovu = () => {
   return (
@@ -125,3 +125,5 @@ export const AWeekInCyprusWithNovu = () => {
     </PostWrapper>
   );
 };
+
+export default AWeekInCyprusWithNovu;
