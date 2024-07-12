@@ -56,6 +56,9 @@ export const BeingSwedishInAGlobalCompany = () => {
         <Quote
           className={css({
             flex: 1,
+            smDown: {
+              width: '100%'
+            }
           })}
         >
           <Text>
@@ -79,6 +82,9 @@ export const BeingSwedishInAGlobalCompany = () => {
         <Quote
           className={css({
             flex: 1,
+            smDown: {
+              width: '100%'
+            }
           })}
         >
           <Text>
@@ -103,6 +109,9 @@ export const BeingSwedishInAGlobalCompany = () => {
         <Quote
           className={css({
             flex: 1,
+            smDown: {
+              width: '100%'
+            }
           })}
         >
           <Text>

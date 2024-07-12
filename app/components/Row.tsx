@@ -4,5 +4,10 @@ import { DefaultProps } from '../types/defaultProps';
 import { Box } from './Box';
 
 export const Row = ({ className, children }: DefaultProps) => {
-  return <Box className={cx(hstack(), className)}>{children}</Box>;
+  return <Box className={cx(hstack({
+    smDown: {
+      flexDirection: 'column',
+      alignItems: 'flex-start',
+    }
+  }), className)}>{children}</Box>;
 };

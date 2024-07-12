@@ -14,7 +14,7 @@ export const Wrapper = ({ children, className }: DefaultProps) => {
         borderRadius: 'default',
         paddingBottom: 100,
         boxShadow: 'defaultInset',
-        xsDown: {
+        smDown: {
           border: 'none',
           borderRadius: 0,
           boxShadow: 'none',
@@ -27,7 +27,7 @@ export const Wrapper = ({ children, className }: DefaultProps) => {
             width: '80%',
             margin: '0 auto',
             paddingBottom: 50,
-            xsDown: {
+            smDown: {
               width: '100%',
               padding: 100,
             },

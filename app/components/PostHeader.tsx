@@ -13,7 +13,7 @@ const PostHeaderRow = ({ className, children }: DefaultProps) => {
       className={cx(
         css({
           justifyContent: 'space-between',
-          xsDown: {
+          smDown: {
             alignItems: 'flex-start',
             flexDirection: 'column',
             gap: 50,

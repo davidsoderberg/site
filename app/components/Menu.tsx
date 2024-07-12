@@ -15,9 +15,9 @@ const MenuSection = ({ children }: Pick<DefaultProps, 'children'>) => {
     <Row
       className={css({
         gap: 200,
-        xsDown: {
-          justifyContent: 'space-between',
+        smDown: {
           width: '100%',
+          gap: 50,
         },
       })}
     >
@@ -39,7 +39,7 @@ export const Menu = ({ className }: Omit<DefaultProps, 'children'>) => {
           paddingLeft: 150,
           paddingRight: 150,
           justifyContent: 'space-between',
-          xsDown: {
+          smDown: {
             flexDirection: 'column',
             gap: 50,
           },

@@ -15,7 +15,7 @@ export const Quote = ({ children, className }: DefaultProps) => {
           paddingLeft: 100,
           paddingRight: 100,
           borderRadius: 'quote',
-          xsDown: {
+          smDown: {
             borderLeft: 'none',
             borderRight: 'none',
             paddingLeft: 0,
