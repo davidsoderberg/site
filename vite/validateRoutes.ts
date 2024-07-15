@@ -1,8 +1,6 @@
 import { PATHS } from '../app/routes';
 import { bold, error } from './colors';
 
-export type RouteManifest = Record<string, { path?: string }>;
-
 const arrayEquals = (a: string[], b: string[]) => {
   return (
     Array.isArray(a) &&
@@ -12,16 +10,9 @@ const arrayEquals = (a: string[], b: string[]) => {
   );
 };
 
-export const validateRoutes = (routes: RouteManifest) => {
-  const paths = Object.values(routes)
-    .map((route) => route.path)
-    .map((path) => {
-      if (path === undefined) {
-        path = '';
-      }
-
-      return path === '*' ? path : '/' + path;
-    })
+export const validateRoutes = (paths: string[]): void => {
+  paths = paths
+    .map((path) => (path === '*' ? path : '/' + path))
     .reduce(
       (prev, current): string[] =>
         prev.includes(current) ? prev : [...prev, current],
@@ -33,23 +24,31 @@ export const validateRoutes = (routes: RouteManifest) => {
 
   const isProd = process.env.NODE_ENV === 'production';
 
-  if (!arrayEquals(expectedPaths, paths)) {
-    if (expectedPaths?.length > paths?.length) {
-      const found = expectedPaths.filter((path) => !paths.includes(path));
-      const result = `There is more paths than routes, could not find routes: ${bold(
-        found.join(', ')
-      )}`;
-
-      return isProd ? Promise.reject(result) : console.error(error(result));
-    }
-
-    const found = paths.filter((path) => !expectedPaths.includes(path));
-    const result = `There is less paths than routes, could not find paths: ${bold(
+  if (arrayEquals(expectedPaths, paths)) {
+    return;
+  }
+  if (expectedPaths?.length > paths?.length) {
+    const found = expectedPaths.filter((path) => !paths.includes(path));
+    const result = `There is more paths than routes, could not find routes: ${bold(
       found.join(', ')
     )}`;
 
-    return isProd ? Promise.reject(result) : console.error(error(result));
+    if (isProd) {
+      throw new Error(result);
+    }
+
+    console.error(error(result));
+    return;
   }
 
-  return Promise.resolve();
+  const found = paths.filter((path) => !expectedPaths.includes(path));
+  const result = `There is less paths than routes, could not find paths: ${bold(
+    found.join(', ')
+  )}`;
+
+  if (isProd) {
+    throw new Error(result);
+  }
+
+  console.error(error(result));
 };

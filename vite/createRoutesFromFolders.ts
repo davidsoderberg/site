@@ -8,6 +8,7 @@ import type {
   DefineRoutesFunction,
 } from '@remix-run/dev/dist/config/routes';
 import { createRouteId } from '@remix-run/dev/dist/config/routes';
+import { validateRoutes } from './validateRoutes';
 
 const paramPrefixChar = '$' as const;
 const escapeStart = '[' as const;
@@ -180,7 +181,13 @@ export const createRoutesFromFolders = (
     }
   }
 
-  return defineRoutes(defineNestedRoutes);
+  const defineRoute = defineRoutes(defineNestedRoutes);
+
+  validateRoutes(
+    Array.from(uniqueRoutes.keys()).map((path) => path.replace('?index', ''))
+  );
+
+  return defineRoute;
 };
 
 const isNewEscapeSequence = (
