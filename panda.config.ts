@@ -52,9 +52,10 @@ export default defineConfig({
           card: { value: '#212630' },
           border: { value: '#212630' },
           primary: { value: '#39d353' },
-          primary2: { value: '#26a641' },
-          primary4: { value: '#006d32' },
-          primary6: { value: '#0e4429' },
+          primary2: { value: '#2da842' },
+          primary4: { value: '#227e31' },
+          primary6: { value: '#165421' },
+          primary8: { value: '#0b2a10' },
         },
         shadows: {
           default: { value: '0px 5px 20px #212630' },

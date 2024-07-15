@@ -14,7 +14,7 @@ export const GithubCalendar = ({
     token('colors.primary2'),
     token('colors.primary4'),
     token('colors.primary6'),
-    token('colors.card'),
+    token('colors.primary8'),
   ];
 
   useEffect(() => {
