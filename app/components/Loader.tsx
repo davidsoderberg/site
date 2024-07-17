@@ -3,11 +3,24 @@ import { cva, cx } from '../../styled-system/css';
 import { Sizes } from '../types/sizes';
 import { DefaultProps } from '../types/defaultProps';
 
-const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
+type Color = 'primary' | 'white';
+
+const loaderClassName = cva<{
+  size: Record<Sizes, SystemStyleObject>;
+  color: Record<Color, SystemStyleObject>;
+}>({
   base: {
     fill: 'primary',
   },
   variants: {
+    color: {
+      primary: {
+        fill: 'primary',
+      },
+      white: {
+        fill: 'white',
+      },
+    },
     size: {
       xs: {
         width: '20px',
@@ -30,10 +43,12 @@ const loaderClassName = cva<{ size: Record<Sizes, SystemStyleObject> }>({
 
 export const Loader = ({
   size = 'md',
+  color = 'primary',
   className,
 }: Omit<
   DefaultProps<{
     size?: Sizes;
+    color?: Color;
   }>,
   'children'
 >) => {
@@ -41,7 +56,7 @@ export const Loader = ({
     <svg
       viewBox='0 0 135 140'
       xmlns='http://www.w3.org/2000/svg'
-      className={cx(loaderClassName({ size }), className)}
+      className={cx(loaderClassName({ size, color }), className)}
       role='presentation'
     >
       <rect y='10' width='15' height='120' rx='4'>
