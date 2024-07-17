@@ -9,7 +9,16 @@ export default defineConfig({
     remix({
       presets: [vercelPreset()],
       ignoredRouteFiles: ['**/.*'],
-      routes: async (defineRoutes) => createRoutesFromFolders(defineRoutes),
+      routes: async (defineRoutes) => {
+        try {
+          const routes = createRoutesFromFolders(defineRoutes);
+
+          return routes;
+        } catch (e) {
+          console.error(e);
+        }
+        return {};
+      },
       future: {
         v3_fetcherPersist: true,
         v3_relativeSplatPath: true,
