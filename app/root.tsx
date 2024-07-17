@@ -10,6 +10,7 @@ import { Analytics } from './components/Analytics';
 import './index.css';
 import { MetaFunction } from '@remix-run/node';
 import { CATCH_ALL, routes } from './routes';
+import { MantineProvider } from '@mantine/core';
 
 export const meta: MetaFunction = ({ location: { pathname } }) => {
   const {
@@ -48,7 +49,7 @@ export const meta: MetaFunction = ({ location: { pathname } }) => {
     },
     {
       name: 'keywords',
-      content: [...keywords, ...tags].join(', ')
+      content: [...keywords, ...tags].join(', '),
     },
     {
       property: 'twitter:title',
@@ -73,10 +74,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name='viewport' content='width=device-width, initial-scale=1' />
         <Meta />
         <Links />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel='icon' href='/favicon.ico' />
       </head>
       <body>
-        <Wrapper>{children}</Wrapper>
+        <MantineProvider>
+          <Wrapper>{children}</Wrapper>
+        </MantineProvider>
         <ScrollRestoration />
         <Scripts />
         <Analytics />

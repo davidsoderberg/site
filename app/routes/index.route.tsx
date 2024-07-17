@@ -14,6 +14,8 @@ import { LatestPost } from '../components/LatestPost';
 import { SectionHeader } from '../components/SectionHeader';
 import { Row } from '../components/Row';
 import { GridContainer, GridColumn } from '../components/Grid';
+import { token } from '../../styled-system/tokens';
+import { Tooltip } from '../components/Tooltip';
 
 export const Home = () => {
   return (
@@ -46,7 +48,11 @@ export const Home = () => {
               developer, so food is my thing anyway.
             </li>
           </List>
-          <LatestPost className={css({ marginTop: 200 })} />
+          <Tooltip position='left' label='My latest post'>
+            <div>
+              <LatestPost className={css({ marginTop: 200 })} />
+            </div>
+          </Tooltip>
         </GridColumn>
         <GridColumn colSpan={5}>
           <SectionHeader>👨‍💼 Jobs</SectionHeader>
@@ -57,10 +63,14 @@ export const Home = () => {
             <li>Software Developer, Fortnox (2017-04-03 - 2020-06-30)</li>
             <li>Software Developer, Isotop (2017-08-24 - 2017-04-02 )</li>
           </List>
-          <Image
-            className={css({ width: '100%', marginTop: 200 })}
-            src={'me.jpeg'}
-          />
+          <Tooltip position='right' label='Me'>
+            <div>
+              <Image
+                className={css({ width: '100%', marginTop: 200 })}
+                src={'me.jpeg'}
+              />
+            </div>
+          </Tooltip>
         </GridColumn>
       </GridContainer>
       <Card
