@@ -41,6 +41,8 @@ export const createRoutesFromFolders = (
     }
     const relativePath = path.join(routesDirectory, file);
     const routeId = createRouteId(relativePath.replace(routeSuffix, ''));
+    console.log(routeId, relativePath);
+
     files[routeId] = relativePath;
   });
 
