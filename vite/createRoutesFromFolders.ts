@@ -1,5 +1,7 @@
+/* eslint-disable no-inner-declarations */
 import fs from 'fs';
 import path from 'path';
+import { minimatch } from 'minimatch';
 import type {
   RouteManifest,
   DefineRouteFunction,
@@ -13,43 +15,82 @@ const escapeStart = '[' as const;
 const escapeEnd = ']' as const;
 const optionalStart = '(' as const;
 const optionalEnd = ')' as const;
-const routeSuffix = '.route' as const;
 
 const routeModuleExts = ['.js', '.jsx', '.ts', '.tsx', '.md', '.mdx'];
 
-const isRouteModuleFile = (filename: string): boolean =>
-  routeModuleExts.find((ext) => filename.endsWith(routeSuffix + ext)) !==
-  undefined;
+const isRouteModuleFile = (filename: string): boolean => {
+  return routeModuleExts.includes(path.extname(filename));
+};
 
-type CreateRoutesFromFoldersOptions = {
+export type CreateRoutesFromFoldersOptions = {
+  /**
+   * The directory where your app lives. Defaults to `app`.
+   * @default "app"
+   */
   appDirectory?: string;
+  /**
+   * A list of glob patterns to ignore when looking for route modules.
+   * Defaults to `[]`.
+   */
+  ignoredFilePatterns?: string[];
+  /**
+   * The directory where your routes live. Defaults to `routes`.
+   * This is relative to `appDirectory`.
+   * @default "routes"
+   */
   routesDirectory?: string;
 };
 
+/**
+ * Defines routes using the filesystem convention in `app/routes`. The rules are:
+ *
+ * - Route paths are derived from the file path. A `.` in the filename indicates
+ *   a `/` in the URL (a "nested" URL, but no route nesting). A `$` in the
+ *   filename indicates a dynamic URL segment.
+ * - Subdirectories are used for nested routes.
+ *
+ * For example, a file named `app/routes/gists/$username.tsx` creates a route
+ * with a path of `gists/:username`.
+ */
 export const createRoutesFromFolders = (
   defineRoutes: DefineRoutesFunction,
   options: CreateRoutesFromFoldersOptions = {}
 ): RouteManifest => {
-  const { appDirectory = 'app', routesDirectory = 'routes' } = options;
+  const {
+    appDirectory = 'app',
+    ignoredFilePatterns = [],
+    routesDirectory = 'routes',
+  } = options;
 
   const appRoutesDirectory = path.join(appDirectory, routesDirectory);
   const files: { [routeId: string]: string } = {};
 
+  // First, find all route modules in app/routes
   visitFiles(appRoutesDirectory, (file) => {
-    if (!isRouteModuleFile(file)) {
+    if (
+      ignoredFilePatterns.length > 0 &&
+      ignoredFilePatterns.some((pattern) => minimatch(file, pattern))
+    ) {
       return;
     }
-    const relativePath = path.join(routesDirectory, file);
-    const routeId = createRouteId(relativePath.replace(routeSuffix, ''));
-    console.log(routeId, relativePath);
 
-    files[routeId] = relativePath;
+    if (isRouteModuleFile(file)) {
+      const relativePath = path.join(routesDirectory, file);
+      const routeId = createRouteId(relativePath);
+      files[routeId] = relativePath;
+      return;
+    }
+
+    throw new Error(
+      `Invalid route module file: ${path.join(appRoutesDirectory, file)}`
+    );
   });
 
   const routeIds = Object.keys(files).sort(byLongestFirst);
   const parentRouteIds = getParentRouteIds(routeIds);
   const uniqueRoutes = new Map<string, string>();
 
+  // Then, recurse through all routes using the public defineRoutes() API
   function defineNestedRoutes(
     defineRoute: DefineRouteFunction,
     parentId?: string
@@ -206,7 +247,7 @@ const visitFiles = (
   }
 };
 
-const createRoutePath = (partialRouteId: string): string | undefined => {
+export const createRoutePath = (partialRouteId: string): string | undefined => {
   let result = '';
   let rawSegmentBuffer = '';
 

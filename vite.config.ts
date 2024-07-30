@@ -11,7 +11,9 @@ export default defineConfig({
       ignoredRouteFiles: ['**/.*'],
       routes: async (defineRoutes) => {
         try {
-          const routes = createRoutesFromFolders(defineRoutes);
+          const routes = createRoutesFromFolders(defineRoutes, {
+            ignoredFilePatterns: ['**/*.css'],
+          });
 
           return routes;
         } catch (e) {
